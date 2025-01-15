@@ -12,7 +12,7 @@
 - SubscriptionRemove
 #### GameStatisticsService.svc
 - GetUserChallenges
-- CheckNewUserChallenges
+- ~~CheckNewUserChallenges~~
 #### HeartbeatService.svc
 - ~~GetServicesStatus~~
 #### PresenceService.svc
@@ -38,7 +38,7 @@
 - ~~GetTitleTagsPatchConfiguration~~
 #### UserService.svc
 - GetUserStates
-- GetShop
+- ~~GetShop~~
 - GetItemOffers
 - GetTransactionHistory
 - GetUsersBaseData

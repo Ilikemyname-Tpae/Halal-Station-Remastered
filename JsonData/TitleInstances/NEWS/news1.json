@@ -1,0 +1,34 @@
+[
+  {
+    "className": "NEWS",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "news1",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 0,
+        "name": "SORT_INDEX"
+      },
+      {
+        "type": 3,
+        "strVal": "main_news_author_big",
+        "name": "NEWS_POSTER"
+      },
+      {
+        "type": 3,
+        "strVal": "main_news_body",
+        "name": "NEWS_STRING"
+      },
+      {
+        "type": 3,
+        "strVal": "20.03.2015",
+        "name": "NEWS_TIME_STAMP"
+      }
+    ],
+    "name": "news1",
+    "parents": []
+  }
+]

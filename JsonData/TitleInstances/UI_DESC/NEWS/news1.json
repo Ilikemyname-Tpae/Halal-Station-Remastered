@@ -1,0 +1,54 @@
+[
+  {
+    "className": "UI_DESC",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "news1",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "main_news_head",
+        "name": "UI_NAME_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_DESC_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_DESC_SHORT_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "iconNewsImage1",
+        "name": "UI_ICON"
+      },
+      {
+        "type": 3,
+        "strVal": "iconNewsImage1",
+        "name": "UI_ICON_MED"
+      },
+      {
+        "type": 3,
+        "strVal": "iconNewsImage1",
+        "name": "UI_ICON_BIG"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_VIDEO"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "ITEM_QUALITY"
+      }
+    ],
+    "name": "news1",
+    "parents": []
+  }
+]

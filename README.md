@@ -34,8 +34,8 @@
 - WriteDiagnosticsData
 - WriteADFPack
 #### TitleResourceService.svc
-- GetTitleConfiguration
-- GetTitleTagsPatchConfiguration
+- ~~GetTitleConfiguration~~
+- ~~GetTitleTagsPatchConfiguration~~
 #### UserService.svc
 - GetUserStates
 - GetShop

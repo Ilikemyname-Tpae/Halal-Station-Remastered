@@ -1,4 +1,5 @@
 ﻿using Halal_Station_Remastered.Utils.Authorization;
+using Halal_Station_Remastered.Utils.Enums;
 using Halal_Station_Remastered.Utils.ResponseUtils;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,7 +18,7 @@ namespace Halal_Station_Remastered.Controllers
             {
                 GetAuthorizationEndpointsAndDateResult = new
                 {
-                    retCode = 0,
+                    retCode = ClientCodes.Success,
                     data = new
                     {
                         Endpoints = endpoints,

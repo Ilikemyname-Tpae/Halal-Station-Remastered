@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halal Station Account Creation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+            button:hover {
+                background-color: #45a049;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Halal Station Account Creation</h2>
+        <form id="registrationForm">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+            <button type="button" onclick="registerUser()">Submit</button>
+        </form>
+    </div>
+
+    <script>function registerUser() {
+        var form = document.getElementById("registrationForm");
+        var formData = new FormData(form);
+        var username = formData.get("username");
+        var password = formData.get("password");
+
+        if (username.trim() === '' || password.trim() === '') {
+            alert("Please enter both username and password.");
+            return;
+        }
+
+        var jsonObject = {};
+
+        formData.forEach(function(value, key){
+            jsonObject[key] = value;
+        });
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/AuthorizationService.svc/Register", true);
+        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    alert("Spartan has registered successfully!");
+                } else {
+                    alert("Error registering user.");
+                }
+            }
+        };
+        xhr.send(JSON.stringify(jsonObject));
+    }</script>
+
+</body>
+</html>

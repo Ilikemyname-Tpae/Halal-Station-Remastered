@@ -9,11 +9,11 @@ namespace Halal_Station_Remastered.Controllers
 {
     [ApiController]
     [Route("AuthorizationService.svc")]
-    public class RegistrationController : ControllerBase
+    public class AuthorizationServices : ControllerBase
     {
         private readonly AuthorizationUser _authorizationUser;
 
-        public RegistrationController(IConfiguration configuration)
+        public AuthorizationServices(IConfiguration configuration)
         {
             _authorizationUser = new AuthorizationUser(configuration);
         }

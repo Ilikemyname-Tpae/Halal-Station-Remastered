@@ -14,7 +14,7 @@
 - GetUserChallenges
 - CheckNewUserChallenges
 #### HeartbeatService.svc
-- GetServicesStatus
+- ~~GetServicesStatus~~
 #### PresenceService.svc
 - PresenceConnect
 - ReportOnlineStats

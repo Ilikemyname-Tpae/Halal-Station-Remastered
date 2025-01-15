@@ -10,6 +10,13 @@ namespace Halal_Station_Remastered.Controllers
     [Route("UserService.svc")]
     public class UserServices : ControllerBase
     {
+        private readonly IConfiguration _configuration;
+
+        public UserServices(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         [HttpPost("GetShop")]
         public IActionResult GetShop()
         {
@@ -53,6 +60,31 @@ namespace Halal_Station_Remastered.Controllers
                 {
                     retCode = ClientCodes.Success,
                     data = allItemOffers
+                }
+            };
+            return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+        }
+
+        [HttpPost("GetUserStates")]
+        public async Task<IActionResult> GetUserStates()
+        {
+            var userId = Header.ExtractUserIdFromHeaders(Request.Headers);
+            var userService = new UserService(_configuration);
+
+            (List<UserState> userStates, string nickname) = await userService.GetUserStatesAsync(userId);
+
+            var response = new
+            {
+                GetUserStatesResult = new
+                {
+                    retCode = ClientCodes.Success,
+                    data = new
+                    {
+                        UserStateList = userStates,
+                        TimeStamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
+                        User = new { Id = userId },
+                        Nickname = nickname
+                    }
                 }
             };
             return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);

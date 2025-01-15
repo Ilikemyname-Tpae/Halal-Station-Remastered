@@ -37,7 +37,7 @@
 - ~~GetTitleConfiguration~~
 - ~~GetTitleTagsPatchConfiguration~~
 #### UserService.svc
-- GetUserStates
+- ~~GetUserStates~~
 - ~~GetShop~~
 - ~~GetItemOffers~~
 - GetTransactionHistory

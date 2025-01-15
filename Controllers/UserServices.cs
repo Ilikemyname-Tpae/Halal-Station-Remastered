@@ -31,7 +31,30 @@ namespace Halal_Station_Remastered.Controllers
                     data = allShops
                 }
             };
+            return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+        }
 
+        [HttpPost("GetItemOffers")]
+        public IActionResult GetItemOffers()
+        {
+            var offersDirectoryPath = Path.Combine(AppContext.BaseDirectory, "JsonData", "Offers");
+
+            var allItemOffers = Directory.Exists(offersDirectoryPath)
+                ? Directory.GetFiles(offersDirectoryPath, "*.json", SearchOption.AllDirectories)
+                    .Select(System.IO.File.ReadAllText)
+                    .Select(json => JsonSerializer.Deserialize<ItemOffer>(json))
+                    .Where(offer => offer != null)
+                    .ToList()
+                : new List<ItemOffer>();
+
+            var response = new
+            {
+                GetItemOffersResult = new
+                {
+                    retCode = ClientCodes.Success,
+                    data = allItemOffers
+                }
+            };
             return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
         }
     }

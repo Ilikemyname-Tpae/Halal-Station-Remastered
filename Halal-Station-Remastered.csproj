@@ -20,4 +20,9 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="JsonData\Offers\" />
+    <Folder Include="JsonData\Shop\" />
+  </ItemGroup>
+
 </Project>

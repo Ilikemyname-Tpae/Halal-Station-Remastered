@@ -39,7 +39,7 @@
 #### UserService.svc
 - GetUserStates
 - ~~GetShop~~
-- GetItemOffers
+- ~~GetItemOffers~~
 - GetTransactionHistory
 - GetUsersBaseData
 - GetUsersPrimaryStates

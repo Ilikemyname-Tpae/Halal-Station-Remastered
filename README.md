@@ -31,8 +31,8 @@
 - LeaveChannels
 - Send
 ### ArbitraryStorageService.svc
-- WriteDiagnosticsData
-- WriteADFPack
+- ~~WriteDiagnosticsData~~
+- ~~WriteADFPack~~
 #### TitleResourceService.svc
 - ~~GetTitleConfiguration~~
 - ~~GetTitleTagsPatchConfiguration~~

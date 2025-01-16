@@ -11,7 +11,7 @@
 - SubscriptionAdd
 - SubscriptionRemove
 #### GameStatisticsService.svc
-- GetUserChallenges
+- ~~GetUserChallenges~~
 - ~~CheckNewUserChallenges~~
 #### HeartbeatService.svc
 - ~~GetServicesStatus~~
@@ -47,7 +47,7 @@
 - ApplyOfferListAndGetTransactionHistory
 - NicknameChange
 #### UserStorageService.svc
-- GetPublicData
+- ~~GetPublicData~~
 - ~~GetPrivateData~~
 - SetPublicData
 - SetPrivateData

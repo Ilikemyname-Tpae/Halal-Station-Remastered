@@ -1,7 +1,9 @@
 ﻿using Halal_Station_Remastered.Utils.Enums;
 using Halal_Station_Remastered.Utils.ResponseUtils;
+using Halal_Station_Remastered.Utils.Services.UserServices;
 using Halal_Station_Remastered.Utils.Services.UserStorageServices;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 
 namespace Halal_Station_Remastered.Controllers
 {
@@ -10,9 +12,10 @@ namespace Halal_Station_Remastered.Controllers
     public class UserStorageServices : ControllerBase
     {
         private readonly UserPrivateDataService _userPrivateDataService;
-
+        private readonly IConfiguration _configuration;	
         public UserStorageServices(IConfiguration configuration)
         {
+            _configuration = configuration;
             _userPrivateDataService = new UserPrivateDataService(configuration);
         }
 
@@ -36,6 +39,61 @@ namespace Halal_Station_Remastered.Controllers
                     }
                 }
             };
+            return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+        }
+
+        [HttpPost("GetPublicData")]
+        public async Task<IActionResult> GetPublicData()
+        {
+            string requestBody;
+            using (var reader = new StreamReader(Request.Body))
+            {
+                requestBody = await reader.ReadToEndAsync();
+            }
+
+            UserRequest requestData;
+            try
+            {
+                using (var jsonDoc = JsonDocument.Parse(requestBody))
+                {
+                    var root = jsonDoc.RootElement;
+
+                    if (!root.TryGetProperty("containerName", out var containerNameElement) ||
+                        !root.TryGetProperty("users", out var usersElement) ||
+                        usersElement.GetArrayLength() == 0)
+                    {
+                        return BadRequest("Request must contain 'containerName' and 'users'.");
+                    }
+
+                    var containerName = containerNameElement.GetString();
+                    var userIds = usersElement.EnumerateArray()
+                        .Select(u => u.GetProperty("Id").GetInt32())
+                        .ToList();
+
+                    requestData = new UserRequest
+                    {
+                        Users = userIds.Select(id => new UserId { Id = id }).ToList(),
+                        ContainerName = containerName
+                    };
+                }
+            }
+            catch (JsonException)
+            {
+                return BadRequest("Invalid JSON format.");
+            }
+
+            var publicDataService = new GetPublicDataService(_configuration);
+            var responseDataList = await publicDataService.GetPublicDataAsync(requestData);
+
+            var response = new
+            {
+                GetPublicDataResult = new
+                {
+                    retCode = ClientCodes.Success,
+                    data = responseDataList
+                }
+            };
+
             return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
         }
     }

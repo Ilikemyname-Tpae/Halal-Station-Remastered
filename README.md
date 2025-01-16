@@ -48,6 +48,6 @@
 - NicknameChange
 #### UserStorageService.svc
 - GetPublicData
-- GetPrivateData
+- ~~GetPrivateData~~
 - SetPublicData
 - SetPrivateData

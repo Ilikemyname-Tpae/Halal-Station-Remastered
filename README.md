@@ -41,7 +41,7 @@
 - ~~GetShop~~
 - ~~GetItemOffers~~
 - GetTransactionHistory
-- GetUsersBaseData
+- ~~GetUsersBaseData~~
 - GetUsersPrimaryStates
 - GetUsersByNickname
 - ApplyOfferListAndGetTransactionHistory

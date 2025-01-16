@@ -1,4 +1,5 @@
 ﻿using Halal_Station_Remastered.Utils.Enums;
+using Halal_Station_Remastered.Utils.Requests.UserServices;
 using Halal_Station_Remastered.Utils.ResponseUtils;
 using Halal_Station_Remastered.Utils.Services.UserServices;
 using Microsoft.AspNetCore.Mvc;
@@ -85,6 +86,24 @@ namespace Halal_Station_Remastered.Controllers
                         User = new { Id = userId },
                         Nickname = nickname
                     }
+                }
+            };
+            return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+        }
+
+        [HttpPost("GetUsersBaseData")]
+        public async Task<IActionResult> GetUsersBaseData([FromBody] UserBaseDataRequest usersRequest)
+        {
+            var userIds = usersRequest.Users.Select(u => u.Id).ToList();
+            var userService = new UserBaseDataService(_configuration);
+            var usersData = await userService.GetUsersBaseDataAsync(userIds);
+
+            var response = new
+            {
+                GetUsersBaseDataResult = new
+                {
+                    retCode = ClientCodes.Success,
+                    data = usersData
                 }
             };
             return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);

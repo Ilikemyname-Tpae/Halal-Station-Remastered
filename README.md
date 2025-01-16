@@ -7,7 +7,7 @@
 #### AuthorizationService.svc
 - ~~SignIn~~
 #### FriendsService.svc
-- GetSubscriptions
+- ~~GetSubscriptions~~
 - SubscriptionAdd
 - SubscriptionRemove
 #### GameStatisticsService.svc

@@ -26,9 +26,9 @@
 - MatchmakeGetStatus
 - MatchmakeStop
 #### MessagingService.svc
-- JoinChannels
+- ~~JoinChannels~~
 - Receive
-- LeaveChannels
+- ~~LeaveChannels~~
 - Send
 ### ArbitraryStorageService.svc
 - ~~WriteDiagnosticsData~~

@@ -16,8 +16,8 @@
 #### HeartbeatService.svc
 - ~~GetServicesStatus~~
 #### PresenceService.svc
-- PresenceConnect
-- ReportOnlineStats
+- ~~PresenceConnect~~
+- ~~ReportOnlineStats~~
 - PartyGetStatus
 - GetPlaylistStats
 - PresenceGetUsersPresence

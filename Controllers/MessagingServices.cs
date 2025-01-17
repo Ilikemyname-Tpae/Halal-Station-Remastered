@@ -11,10 +11,12 @@ namespace Halal_Station_Remastered.Controllers
     public class MessagingServices : ControllerBase
     {
         private readonly IConfiguration _configuration;
-
-        public MessagingServices(IConfiguration configuration)
+        private readonly UserStateUpdaterServices _userStateUpdaterServices;
+		
+        public MessagingServices(IConfiguration configuration, UserStateUpdaterServices userstateupdaterservices)
         {
             _configuration = configuration;
+            _userStateUpdaterServices = userstateupdaterservices;
         }
 
         [HttpPost("JoinChannels")]
@@ -56,6 +58,26 @@ namespace Halal_Station_Remastered.Controllers
                 {
                     retCode = ClientCodes.Success,
                     data = remainingChannels
+                }
+            };
+            return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+        }
+
+        [HttpPost("Receive")]
+        public async Task<IActionResult> Receive([FromBody] ReceiveRequest request)
+        {
+            var userId = Header.ExtractUserIdFromHeaders(Request.Headers);
+            _userStateUpdaterServices.UpdateUserRequestTime(userId);
+
+            var channelService = new ChannelService(_configuration, _userStateUpdaterServices);
+            var channelsData = await channelService.GetChannelDataAsync(request.Channels, userId);
+
+            var response = new
+            {
+                ReceiveResult = new
+                {
+                    retCode = 0,
+                    data = channelsData
                 }
             };
             return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);

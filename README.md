@@ -27,7 +27,7 @@
 - MatchmakeStop
 #### MessagingService.svc
 - ~~JoinChannels~~
-- Receive
+- ~~Receive~~
 - ~~LeaveChannels~~
 - Send
 ### ArbitraryStorageService.svc

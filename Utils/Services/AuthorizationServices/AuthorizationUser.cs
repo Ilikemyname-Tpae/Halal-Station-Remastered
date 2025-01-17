@@ -29,6 +29,7 @@ namespace Halal_Station_Remastered.Utils.Services.AuthorizationServices
                 command.Parameters.AddWithValue("@Nickname", "Welcome!");
                 command.Parameters.AddWithValue("@BattleTag", "TEST");
                 command.Parameters.AddWithValue("@Level", 1);
+                command.Parameters.AddWithValue("@ClanTag", "TEST");
 
                 var userId = Convert.ToInt32(await command.ExecuteScalarAsync());
 

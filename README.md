@@ -1,5 +1,5 @@
 # Halal-Station-Remastered
-![Logo](https://i.postimg.cc/xCM5Zc5G/EF7-Ss3-UDvmk.jpg)
+![Logo](Utils/Logo.PNG)
 #### USERS CAN NOW LOGIN BUT WILL FACE ALOT OF LOBBY FREEZING AND CLICKING BUTTONS CAN CAUSE A -107 ERROR DUE TO INCOMPLETE API REQUESTS HANDLING.
 ## TODO for the API:
 #### EndpointsDispatcherService.svc
@@ -42,10 +42,10 @@
 - ~~GetItemOffers~~
 - ~~GetTransactionHistory~~
 - ~~GetUsersBaseData~~
-- GetUsersPrimaryStates
-- GetUsersByNickname
+- ~~GetUsersPrimaryStates~~
+- ~~GetUsersByNickname~~
 - ApplyOfferListAndGetTransactionHistory
-- NicknameChange
+- ~~NicknameChange~~
 #### UserStorageService.svc
 - ~~GetPublicData~~
 - ~~GetPrivateData~~

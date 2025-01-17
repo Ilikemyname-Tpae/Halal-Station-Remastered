@@ -130,5 +130,81 @@ namespace Halal_Station_Remastered.Controllers
             };
             return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
         }
+
+        [HttpPost("GetUsersPrimaryStates")]
+        public async Task<IActionResult> GetUsersPrimaryStates([FromBody] GetPrimaryStatesRequest request)
+        {
+            var primaryStateService = new PrimaryStateService(_configuration);
+            var primaryStates = await primaryStateService.GetUsersPrimaryStatesAsync(request.Users);
+
+            var response = new
+            {
+                GetUsersPrimaryStatesResult = new
+                {
+                    retCode = ClientCodes.Success,
+                    data = primaryStates
+                }
+            };
+            return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+        }
+
+        [HttpPost("GetUsersByNickname")]
+        public async Task<IActionResult> GetUsersByNickname([FromBody] GetUsersByNicknameRequest request)
+        {
+            var userService = new GetUsersByNicknameService(_configuration);
+            var users = await userService.GetUsersByNicknameAsync(request.NicknamePrefix, request.MaxResults);
+
+            var response = new
+            {
+                GetUsersByNicknameResult = new
+                {
+                    retCode = ClientCodes.Success,
+                    data = users
+                }
+            };
+            return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+        }
+
+        [HttpPost("NicknameChange")]
+        public async Task<IActionResult> NicknameChange([FromBody] JsonElement requestBody)
+        {
+            var userId = Header.ExtractUserIdFromHeaders(Request.Headers);
+
+            if (!requestBody.TryGetProperty("nickname", out var nicknameProperty))
+            {
+                return BadRequest("Nickname is required.");
+            }
+
+            var newNickname = nicknameProperty.GetString();
+
+
+            var userService = new ChangeNicknameService(_configuration);
+            bool success = await userService.ChangeNicknameAsync(userId, newNickname);
+
+            if (success)
+            {
+                var response = new
+                {
+                    NicknameChangeResult = new
+                    {
+                        retCode = ClientCodes.Success,
+                        data = true
+                    }
+                };
+                return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+            }
+            else
+            {
+                var response = new
+                {
+                    NicknameChangeResult = new
+                    {
+                        retCode = ClientCodes.Success,
+                        data = false
+                    }
+                };
+                return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+            }
+        }
     }
 }

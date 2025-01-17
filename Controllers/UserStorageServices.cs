@@ -90,5 +90,38 @@ namespace Halal_Station_Remastered.Controllers
 
             return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
         }
+
+        [HttpPost("SetPrivateData")]
+        public async Task<IActionResult> SetPrivateData()
+        {
+            var userId = Header.ExtractUserIdFromHeaders(Request.Headers);
+            string requestBody;
+            using (var reader = new StreamReader(Request.Body))
+            {
+                requestBody = await reader.ReadToEndAsync();
+            }
+
+            var jsonStartIndex = requestBody.IndexOf('{');
+            var jsonString = requestBody.Substring(jsonStartIndex);
+            var jsonDoc = JsonDocument.Parse(jsonString);
+
+            if (jsonDoc.RootElement.TryGetProperty("data", out JsonElement dataElement))
+            {
+                var preferences = dataElement.GetRawText();
+
+                var userPrivateService = new UserSetPrivateDataService(_configuration);
+                await userPrivateService.SetPreferencesAsync(userId, preferences);
+            }
+
+            var response = new
+            {
+                SetPrivateDataResult = new
+                {
+                    retCode = ClientCodes.Success,
+                    data = true,
+                }
+            };
+            return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+        }
     }
 }

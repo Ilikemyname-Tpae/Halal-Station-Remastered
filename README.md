@@ -40,7 +40,7 @@
 - ~~GetUserStates~~
 - ~~GetShop~~
 - ~~GetItemOffers~~
-- GetTransactionHistory
+- ~~GetTransactionHistory~~
 - ~~GetUsersBaseData~~
 - GetUsersPrimaryStates
 - GetUsersByNickname
@@ -50,4 +50,4 @@
 - ~~GetPublicData~~
 - ~~GetPrivateData~~
 - SetPublicData
-- SetPrivateData
+- ~~SetPrivateData~~

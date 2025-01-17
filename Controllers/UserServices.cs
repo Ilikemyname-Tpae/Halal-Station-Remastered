@@ -108,5 +108,27 @@ namespace Halal_Station_Remastered.Controllers
             };
             return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
         }
+
+        [HttpPost("GetTransactionHistory")]
+        public async Task<IActionResult> GetTransactionHistory()
+        {
+            var userId = Header.ExtractUserIdFromHeaders(Request.Headers);
+            var transactionService = new TransactionService(_configuration);
+            List<object> transactionsList = await transactionService.GetTransactionHistoryAsync(userId);
+
+            var response = new
+            {
+                GetTransactionHistoryResult = new
+                {
+                    retCode = ClientCodes.Success,
+                    data = new
+                    {
+                        totalResults = transactionsList.Count,
+                        transactions = transactionsList.ToArray()
+                    }
+                }
+            };
+            return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+        }
     }
 }

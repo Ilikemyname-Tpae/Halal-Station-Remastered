@@ -64,5 +64,39 @@ namespace Halal_Station_Remastered.Controllers
             };
             return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
         }
+
+        [HttpPost("PartyGetStatus")]
+        public async Task<IActionResult> PartyGetStatus()
+        {
+            var userId = Header.ExtractUserIdFromHeaders(Request.Headers);
+            var partyService = new PartyService(_configuration);
+            var (partyId, isOwner, matchmakeState, gameData) = await partyService.GetPartyStatusAsync(userId);
+
+            var response = new
+            {
+                PartyGetStatusResult = new
+                {
+                    retCode = ClientCodes.Success,
+                    data = new
+                    {
+                        Party = new
+                        {
+                            Id = partyId
+                        },
+                        SessionMembers = new[]
+                        {
+                    new
+                    {
+                        User = new { Id = userId },
+                        IsOwner = isOwner
+                    }
+                },
+                        MatchmakeState = matchmakeState,
+                        GameData = gameData
+                    }
+                }
+            };
+            return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+        }
     }
 }

@@ -18,7 +18,7 @@
 #### PresenceService.svc
 - ~~PresenceConnect~~
 - ~~ReportOnlineStats~~
-- PartyGetStatus
+- ~~PartyGetStatus~~
 - GetPlaylistStats
 - PresenceGetUsersPresence
 - PartySetGameData

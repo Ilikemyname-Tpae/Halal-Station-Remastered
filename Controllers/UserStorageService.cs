@@ -12,7 +12,7 @@ namespace Halal_Station_Remastered.Controllers
     public class UserStorageServices : ControllerBase
     {
         private readonly UserPrivateDataService _userPrivateDataService;
-        private readonly IConfiguration _configuration;	
+        private readonly IConfiguration _configuration;
         public UserStorageServices(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -52,34 +52,28 @@ namespace Halal_Station_Remastered.Controllers
             }
 
             UserRequest requestData;
-            try
+
+            using (var jsonDoc = JsonDocument.Parse(requestBody))
             {
-                using (var jsonDoc = JsonDocument.Parse(requestBody))
+                var root = jsonDoc.RootElement;
+
+                if (!root.TryGetProperty("containerName", out var containerNameElement) ||
+                    !root.TryGetProperty("users", out var usersElement) ||
+                    usersElement.GetArrayLength() == 0)
                 {
-                    var root = jsonDoc.RootElement;
-
-                    if (!root.TryGetProperty("containerName", out var containerNameElement) ||
-                        !root.TryGetProperty("users", out var usersElement) ||
-                        usersElement.GetArrayLength() == 0)
-                    {
-                        return BadRequest("Request must contain 'containerName' and 'users'.");
-                    }
-
-                    var containerName = containerNameElement.GetString();
-                    var userIds = usersElement.EnumerateArray()
-                        .Select(u => u.GetProperty("Id").GetInt32())
-                        .ToList();
-
-                    requestData = new UserRequest
-                    {
-                        Users = userIds.Select(id => new UserId { Id = id }).ToList(),
-                        ContainerName = containerName
-                    };
+                    return BadRequest("Request must contain 'containerName' and 'users'.");
                 }
-            }
-            catch (JsonException)
-            {
-                return BadRequest("Invalid JSON format.");
+
+                var containerName = containerNameElement.GetString();
+                var userIds = usersElement.EnumerateArray()
+                    .Select(u => u.GetProperty("Id").GetInt32())
+                    .ToList();
+
+                requestData = new UserRequest
+                {
+                    Users = userIds.Select(id => new UserId { Id = id }).ToList(),
+                    ContainerName = containerName
+                };
             }
 
             var publicDataService = new GetPublicDataService(_configuration);

@@ -1,5 +1,5 @@
 # Halal-Station-Remastered
-![Logo](Utils/Logo.PNG)
+![Logo](Utils/logo.PNG)
 #### USERS CAN NOW LOGIN BUT WILL FACE ALOT OF LOBBY FREEZING AND CLICKING BUTTONS CAN CAUSE A -107 ERROR DUE TO INCOMPLETE API REQUESTS HANDLING.
 ## TODO for the API:
 #### EndpointsDispatcherService.svc

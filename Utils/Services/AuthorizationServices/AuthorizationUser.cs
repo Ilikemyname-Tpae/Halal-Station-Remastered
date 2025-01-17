@@ -22,7 +22,7 @@ namespace Halal_Station_Remastered.Utils.Services.AuthorizationServices
 
             try
             {
-                var query = "INSERT INTO Users (Name, Password, Nickname, BattleTag, Level) VALUES (@Name, @Password, @Nickname, @BattleTag, @Level); SELECT LAST_INSERT_ID();";
+                var query = "INSERT INTO Users (Name, Password, Nickname, BattleTag, ClanTag, Level) VALUES (@Name, @Password, @Nickname, @BattleTag, @ClanTag, @Level); SELECT LAST_INSERT_ID();";
                 using var command = new MySqlCommand(query, connection, transaction);
                 command.Parameters.AddWithValue("@Name", username);
                 command.Parameters.AddWithValue("@Password", hashedPassword);

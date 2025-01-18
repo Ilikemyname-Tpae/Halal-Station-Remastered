@@ -26,7 +26,7 @@ public class JWTGenerator
             username,
             iss = Issuer,
             aud = Audience,
-            exp = UnixTime.GetNow() + 30 * 60,
+            exp = UnixTime.GetNow() + 24 * 60 * 60,
             nbf = UnixTime.GetNow(),
         };
 

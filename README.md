@@ -19,13 +19,14 @@
 - ~~PresenceConnect~~
 - ~~ReportOnlineStats~~
 - ~~PartyGetStatus~~
-- GetPlaylistStats
+- ~~GetPlaylistStats~~
 - ~~PresenceGetUsersPresence~~
-- PartySetGameData
+- ~~PartySetGameData~~
+- PartyJoin
 - ~~PartyLeave~~
-- MatchmakeGetStatus
+- ~~MatchmakeGetStatus~~
 - ~~MatchmakeStart~~
-- MatchmakeStop
+- ~~MatchmakeStop~~
 #### MessagingService.svc
 - ~~JoinChannels~~
 - ~~Receive~~
@@ -53,4 +54,4 @@
 - SetPublicData
 - ~~SetPrivateData~~
 #### SessionControlService.svc
-- ClientGetStatus
+- ~~ClientGetStatus~~

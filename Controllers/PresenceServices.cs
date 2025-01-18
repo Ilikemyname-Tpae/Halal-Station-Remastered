@@ -1,7 +1,10 @@
 ﻿using Halal_Station_Remastered.Utils.Enums;
+using Halal_Station_Remastered.Utils.Requests.PresenceServices;
 using Halal_Station_Remastered.Utils.ResponseUtils;
 using Halal_Station_Remastered.Utils.Services.PresenceServices;
 using Microsoft.AspNetCore.Mvc;
+using MySql.Data.MySqlClient;
+using System.Text;
 using System.Text.Json;
 
 namespace Halal_Station_Remastered.Controllers
@@ -195,6 +198,111 @@ namespace Halal_Station_Remastered.Controllers
                 }
             };
             return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+        }
+
+        [HttpPost("MatchmakeGetStatus")]
+        public async Task<IActionResult> MatchmakeGetStatus()
+        {
+            var matchmakingService = new MatchmakeGetStatusService(_configuration);
+            var members = await matchmakingService.GetAllMembersWithMatchmakeStateAsync();
+
+            var response = new
+            {
+                MatchmakeGetStatusResult = new
+                {
+                    retCode = ClientCodes.Success,
+                    data = new
+                    {
+                        Id = new
+                        {
+                            Id = "2222b2d4-eeb5-4ad4-b8bf-dea7266c9177"
+                        },
+                        Members = members,
+                        MatchmakeTimer = 5
+                    }
+                }
+            };
+            return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+        }
+
+        [HttpPost("GetPlaylistStat")]
+        public async Task<IActionResult> GetPlaylistStat([FromBody] PlaylistRequest request)
+        {
+            var playlistService = new GetPlaylistStatService(_configuration);
+            var playlistStats = await playlistService.GetPlaylistStatsAsync(request.Playlists.ToList());
+
+            var response = new
+            {
+                GetPlaylistStatResult = new
+                {
+                    retCode = ClientCodes.Success,
+                    data = playlistStats.ToArray()
+                }
+            };
+            return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+        }
+
+        [HttpPost("PartySetGameData")]
+        public async Task<IActionResult> PartySetGameData()
+        {
+            var userId = Header.ExtractUserIdFromHeaders(Request.Headers);
+            string requestBody;
+            using (var reader = new StreamReader(Request.Body))
+            {
+                requestBody = await reader.ReadToEndAsync();
+            }
+
+            var requestData = JsonDocument.Parse(requestBody);
+            if (!requestData.RootElement.TryGetProperty("gameData", out var gameDataElement) || gameDataElement.ValueKind != JsonValueKind.String)
+            {
+            }
+
+            var newGameData = gameDataElement.GetString();
+            var partyService = new PartySetGameDataService(_configuration);
+            var success = await partyService.UpdateGameDataAsync(userId, newGameData);
+
+            var response = new
+            {
+                PartySetGameDataResult = new
+                {
+                    retCode = ClientCodes.Success,
+                    data = true,
+                }
+            };
+            return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+        }
+
+        [HttpPost("MatchmakeStop")]
+        public async Task<IActionResult> MatchmakeStop()
+        {
+            var userId = Header.ExtractUserIdFromHeaders(Request.Headers);
+            var partyService = new MatchmakeStopService(_configuration);
+            var isMatchmakingStopped = await partyService.StopMatchmakingAsync(userId);
+
+            if (isMatchmakingStopped)
+            {
+                var response = new
+                {
+                    MatchmakeStopResult = new
+                    {
+                        retCode = ClientCodes.Success,
+                        data = true,
+                    }
+                };
+                return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+            }
+            else
+            {
+                var response = new
+                {
+                    MatchmakeStopResult = new
+                    {
+                        retCode = ClientCodes.CantConnectToDedicatedServer,
+                        data = false,
+                    }
+                };
+                return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+            }
         }
     }
 }

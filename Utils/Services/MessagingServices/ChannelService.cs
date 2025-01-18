@@ -74,6 +74,19 @@ namespace Halal_Station_Remastered.Utils.Services.MessagingServices
                         }
                     }
                 }
+
+                if (userId.HasValue)
+                {
+                    var updateQuery = "UPDATE users SET State = @State, IsInvitable = @IsInvitable WHERE UserId = @UserId";
+                    using (var updateCommand = new MySqlCommand(updateQuery, connection))
+                    {
+                        updateCommand.Parameters.AddWithValue("@State", 1);
+                        updateCommand.Parameters.AddWithValue("@IsInvitable", 1);
+                        updateCommand.Parameters.AddWithValue("@UserId", userId.Value);
+
+                        await updateCommand.ExecuteNonQueryAsync();
+                    }
+                }
             }
 
             return channelsData;

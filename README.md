@@ -8,8 +8,8 @@
 - ~~SignIn~~
 #### FriendsService.svc
 - ~~GetSubscriptions~~
-- SubscriptionAdd
-- SubscriptionRemove
+- ~~SubscriptionAdd~~
+- ~~SubscriptionRemove~~
 #### GameStatisticsService.svc
 - ~~GetUserChallenges~~
 - ~~CheckNewUserChallenges~~
@@ -20,7 +20,7 @@
 - ~~ReportOnlineStats~~
 - ~~PartyGetStatus~~
 - GetPlaylistStats
-- PresenceGetUsersPresence
+- ~~PresenceGetUsersPresence~~
 - PartySetGameData
 - PartyLeave
 - MatchmakeGetStatus

@@ -76,7 +76,7 @@ namespace Halal_Station_Remastered.Controllers
             {
                 ReceiveResult = new
                 {
-                    retCode = 0,
+                    retCode = ClientCodes.Success,
                     data = channelsData
                 }
             };

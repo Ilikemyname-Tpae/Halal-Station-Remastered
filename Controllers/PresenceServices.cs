@@ -2,6 +2,7 @@
 using Halal_Station_Remastered.Utils.ResponseUtils;
 using Halal_Station_Remastered.Utils.Services.PresenceServices;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 
 namespace Halal_Station_Remastered.Controllers
 {
@@ -94,6 +95,36 @@ namespace Halal_Station_Remastered.Controllers
                         MatchmakeState = matchmakeState,
                         GameData = gameData
                     }
+                }
+            };
+            return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+        }
+
+        [HttpPost("PresenceGetUsersPresence")]
+        public async Task<IActionResult> PresenceGetUsersPresence()
+        {
+            using var reader = new StreamReader(Request.Body);
+            var requestBody = await reader.ReadToEndAsync();
+
+            using var jsonDoc = JsonDocument.Parse(requestBody);
+            var root = jsonDoc.RootElement;
+            var usersJsonArray = root.GetProperty("users").EnumerateArray();
+
+            var userIds = new List<int>();
+            foreach (var userElement in usersJsonArray)
+            {
+                userIds.Add(userElement.GetProperty("Id").GetInt32());
+            }
+
+            var userPresenceService = new GetUserPresenceService(_configuration);
+            var userPresences = await userPresenceService.GetUserPresencesAsync(userIds);
+
+            var response = new
+            {
+                PresenceGetUsersPresenceResult = new
+                {
+                    retCode = ClientCodes.Success,
+                    data = userPresences
                 }
             };
             return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);

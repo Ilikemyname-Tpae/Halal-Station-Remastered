@@ -129,5 +129,72 @@ namespace Halal_Station_Remastered.Controllers
             };
             return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
         }
+
+        [HttpPost("MatchmakeStart")]
+        public async Task<IActionResult> MatchmakeStart()
+        {
+            var userId = Header.ExtractUserIdFromHeaders(Request.Headers);
+            var partyService = new MatchmakeStartService(_configuration);
+            var isMatchmakingStarted = await partyService.StartMatchmakingAsync(userId);
+
+            if (isMatchmakingStarted)
+            {
+                var response = new
+                {
+                    MatchmakeStartResult = new
+                    {
+                        retCode = ClientCodes.Success,
+                        data = true,
+                    }
+                };
+                return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+            }
+            else
+            {
+                var response = new
+                {
+                    MatchmakeStartResult = new
+                    {
+                        retCode = ClientCodes.CantConnectToDedicatedServer,
+                        data = false,
+                    }
+                };
+                return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+            }
+        }
+
+        [HttpPost("PartyLeave")]
+        public async Task<IActionResult> PartyLeave()
+        {
+            var userId = Header.ExtractUserIdFromHeaders(Request.Headers);
+            var partyService = new PartyLeaveService(_configuration);
+            var (partyId, isOwner, matchmakeState, gameData, success) = await partyService.LeavePartyAsync(userId);
+
+            var response = new
+            {
+                PartyLeaveResult = new
+                {
+                    retCode = ClientCodes.Success,
+                    data = new
+                    {
+                        Party = new
+                        {
+                            Id = partyId
+                        },
+                        SessionMembers = new[]
+                        {
+                    new
+                    {
+                        User = new { Id = userId },
+                        IsOwner = isOwner
+                    }
+                },
+                        MatchmakeState = 0,
+                        GameData = gameData
+                    }
+                }
+            };
+            return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+        }
     }
 }

@@ -51,7 +51,7 @@
 #### UserStorageService.svc
 - ~~GetPublicData~~
 - ~~GetPrivateData~~
-- SetPublicData
+- ~~SetPublicData~~
 - ~~SetPrivateData~~
 #### SessionControlService.svc
 - ~~ClientGetStatus~~

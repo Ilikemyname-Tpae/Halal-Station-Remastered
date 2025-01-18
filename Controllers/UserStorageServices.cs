@@ -3,6 +3,7 @@ using Halal_Station_Remastered.Utils.ResponseUtils;
 using Halal_Station_Remastered.Utils.Services.UserServices;
 using Halal_Station_Remastered.Utils.Services.UserStorageServices;
 using Microsoft.AspNetCore.Mvc;
+using System.Text;
 using System.Text.Json;
 
 namespace Halal_Station_Remastered.Controllers
@@ -119,6 +120,62 @@ namespace Halal_Station_Remastered.Controllers
                 {
                     retCode = ClientCodes.Success,
                     data = true,
+                }
+            };
+            return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+        }
+
+        [HttpPost("SetPublicData")]
+        public async Task<IActionResult> SetPublicData()
+        {
+            var userId = Header.ExtractUserIdFromHeaders(Request.Headers);
+
+            string requestBody;
+            using (var reader = new StreamReader(Request.Body, Encoding.UTF8))
+            {
+                requestBody = await reader.ReadToEndAsync();
+            }
+
+            var requestData = JsonSerializer.Deserialize<Dictionary<string, object>>(requestBody);
+            if (requestData == null || !requestData.TryGetValue("containerName", out var containerNameObj) || !requestData.TryGetValue("data", out var dataObj))
+            {
+                return BadRequest("bad request data");
+            }
+
+            string containerName = containerNameObj.ToString();
+            var data = dataObj as JsonElement?;
+
+            string armorLoadout = null, weaponLoadout = null, customization = null;
+
+            switch (containerName)
+            {
+                case "armor_loadouts":
+                    armorLoadout = data?.ToString();
+                    break;
+                case "weapon_loadouts":
+                    weaponLoadout = data?.ToString();
+                    break;
+                case "customization":
+                    customization = data?.ToString();
+                    break;
+                default:
+                    return BadRequest("unsupported container");
+            }
+
+            var userLoadoutService = new SetPublicDataService(_configuration);
+            await userLoadoutService.UpdateUserLoadoutAsync(userId, armorLoadout, weaponLoadout, customization);
+
+            var response = new
+            {
+                SetPublicDataResult = new
+                {
+                    retCode = ClientCodes.Success,
+                    data = new
+                    {
+                        ArmorLoadout = armorLoadout,
+                        Customization = customization,
+                        WeaponLoadout = weaponLoadout,
+                    }
                 }
             };
             return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);

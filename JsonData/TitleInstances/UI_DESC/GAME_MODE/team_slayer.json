@@ -1,0 +1,54 @@
+[
+  {
+    "className": "UI_DESC",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "team_slayer",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "gm_team_slayer_name",
+        "name": "UI_NAME_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "gm_team_slayer_desc",
+        "name": "UI_DESC_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_DESC_SHORT_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "slayerMode",
+        "name": "UI_ICON"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_ICON_MED"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_ICON_BIG"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_VIDEO"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "ITEM_QUALITY"
+      }
+    ],
+    "name": "team_slayer",
+    "parents": []
+  }
+]

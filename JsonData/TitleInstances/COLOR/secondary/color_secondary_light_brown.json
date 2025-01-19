@@ -1,0 +1,39 @@
+[
+  {
+    "className": "COLOR",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "color_secondary_light_brown",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "secondary",
+        "name": "COLOR_TYPE"
+      },
+      {
+        "type": 1,
+        "intVal": 146,
+        "name": "COLOR_R"
+      },
+      {
+        "type": 1,
+        "intVal": 75,
+        "name": "COLOR_G"
+      },
+      {
+        "type": 1,
+        "intVal": 31,
+        "name": "COLOR_B"
+      },
+      {
+        "type": 1,
+        "name": "UI_LIST_ID",
+        "intVal": 5
+      }
+    ],
+    "name": "color_secondary_light_brown",
+    "parents": []
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "className": "GAME_MODE",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "koth",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 4,
+        "name": "ID"
+      },
+      {
+        "type": 1,
+        "intVal": 4,
+        "name": "SECONDARY_ID"
+      },
+      {
+        "type": 1,
+        "intVal": 7,
+        "name": "ROUND_TIME_LIMIT"
+      }
+    ],
+    "name": "koth",
+    "parents": []
+  }
+]

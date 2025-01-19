@@ -1,0 +1,39 @@
+[
+  {
+    "className": "COLOR",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "color_lights_purple",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "lights",
+        "name": "COLOR_TYPE"
+      },
+      {
+        "type": 1,
+        "intVal": 79,
+        "name": "COLOR_R"
+      },
+      {
+        "type": 1,
+        "intVal": 55,
+        "name": "COLOR_G"
+      },
+      {
+        "type": 1,
+        "intVal": 141,
+        "name": "COLOR_B"
+      },
+      {
+        "type": 1,
+        "name": "UI_LIST_ID",
+        "intVal": 6
+      }
+    ],
+    "name": "color_lights_purple",
+    "parents": []
+  }
+]

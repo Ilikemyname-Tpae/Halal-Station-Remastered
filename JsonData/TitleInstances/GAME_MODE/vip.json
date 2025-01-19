@@ -1,0 +1,29 @@
+[
+  {
+    "className": "GAME_MODE",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "vip",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 8,
+        "name": "ID"
+      },
+      {
+        "type": 1,
+        "intVal": 8,
+        "name": "SECONDARY_ID"
+      },
+      {
+        "type": 1,
+        "intVal": 7,
+        "name": "ROUND_TIME_LIMIT"
+      }
+    ],
+    "name": "vip",
+    "parents": []
+  }
+]

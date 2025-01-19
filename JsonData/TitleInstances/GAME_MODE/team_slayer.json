@@ -1,0 +1,29 @@
+[
+  {
+    "className": "GAME_MODE",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "team_slayer",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 10,
+        "name": "ID"
+      },
+      {
+        "type": 1,
+        "intVal": 10,
+        "name": "SECONDARY_ID"
+      },
+      {
+        "type": 1,
+        "intVal": 7,
+        "name": "ROUND_TIME_LIMIT"
+      }
+    ],
+    "name": "team_slayer",
+    "parents": []
+  }
+]

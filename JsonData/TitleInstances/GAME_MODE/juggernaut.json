@@ -1,0 +1,29 @@
+[
+  {
+    "className": "GAME_MODE",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "juggernaut",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 5,
+        "name": "ID"
+      },
+      {
+        "type": 1,
+        "intVal": 5,
+        "name": "SECONDARY_ID"
+      },
+      {
+        "type": 1,
+        "intVal": 7,
+        "name": "ROUND_TIME_LIMIT"
+      }
+    ],
+    "name": "juggernaut",
+    "parents": []
+  }
+]

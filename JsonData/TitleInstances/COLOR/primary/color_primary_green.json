@@ -1,0 +1,39 @@
+[
+  {
+    "className": "COLOR",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "color_primary_green",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "primary",
+        "name": "COLOR_TYPE"
+      },
+      {
+        "type": 1,
+        "intVal": 40,
+        "name": "COLOR_R"
+      },
+      {
+        "type": 1,
+        "intVal": 197,
+        "name": "COLOR_G"
+      },
+      {
+        "type": 1,
+        "intVal": 48,
+        "name": "COLOR_B"
+      },
+      {
+        "type": 1,
+        "name": "UI_LIST_ID",
+        "intVal": 19
+      }
+    ],
+    "name": "color_primary_green",
+    "parents": []
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "className": "COLOR",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "color_holo_blue",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "holo",
+        "name": "COLOR_TYPE"
+      },
+      {
+        "type": 1,
+        "intVal": 16,
+        "name": "COLOR_R"
+      },
+      {
+        "type": 1,
+        "intVal": 65,
+        "name": "COLOR_G"
+      },
+      {
+        "type": 1,
+        "intVal": 199,
+        "name": "COLOR_B"
+      },
+      {
+        "type": 1,
+        "name": "UI_LIST_ID",
+        "intVal": 5
+      }
+    ],
+    "name": "color_holo_blue",
+    "parents": []
+  }
+]

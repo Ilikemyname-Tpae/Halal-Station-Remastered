@@ -1,0 +1,24 @@
+[
+  {
+    "className": "WEAPON",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "magnum_v1",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "weapon_secondary",
+        "name": "TYPE"
+      },
+      {
+        "type": 1,
+        "intVal": 62,
+        "name": "ID"
+      }
+    ],
+    "name": "magnum_v2",
+    "parents": []
+  }
+]

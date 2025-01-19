@@ -1,0 +1,24 @@
+[
+  {
+    "className": "WEAPON",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "dmr",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "weapon_primary",
+        "name": "TYPE"
+      },
+      {
+        "type": 1,
+        "intVal": 22,
+        "name": "ID"
+      }
+    ],
+    "name": "dmr",
+    "parents": []
+  }
+]

@@ -1,0 +1,48 @@
+[
+  {
+    "className": "PLAYLIST",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "SlayerFFA",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strList": [
+          "slayer"
+        ],
+        "name": "GAME_MODE_COLLECTION"
+      },
+      {
+        "type": 3,
+        "strList": [
+          "guardian","riverworld","s3d_avalanche","s3d_edge","s3d_reactor","s3d_turf"
+        ],
+        "name": "MAP_COLLECTION"
+      },
+      {
+        "type": 1,
+        "intVal": 2,
+        "name": "MIN_PLAYERS"
+      },
+      {
+        "type": 1,
+        "intVal": 8,
+        "name": "MAX_PLAYERS"
+      },
+      {
+        "type": 1,
+        "intVal": 1,
+        "name": "MAX_PARTY"
+      },
+      {
+        "type": 3,
+        "boolVal": false,
+        "name": "IS_TEAM_PLAYLIST"
+      }
+    ],
+    "name": "SlayerFFA",
+    "parents": []
+  }
+]

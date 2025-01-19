@@ -1,0 +1,29 @@
+[
+  {
+    "className": "ADVERTISMENT",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "ad2",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 1,
+        "name": "SORT_INDEX"
+      },
+      {
+        "type": 3,
+        "strVal": "http://www.google.com/?q=ad2",
+        "name": "ADVERTISMENT_URL"
+      },
+      {
+        "type": 2,
+        "floatVal": 4,
+        "name": "ADVERTISMENT_TIMER"
+      }
+    ],
+    "name": "ad2",
+    "parents": []
+  }
+]

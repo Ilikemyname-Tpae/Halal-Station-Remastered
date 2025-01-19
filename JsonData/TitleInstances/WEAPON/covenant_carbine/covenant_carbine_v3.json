@@ -1,0 +1,24 @@
+[
+  {
+    "className": "WEAPON",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "covenant_carbine_v3",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "weapon_primary",
+        "name": "TYPE"
+      },
+      {
+        "type": 1,
+        "intVal": 55,
+        "name": "ID"
+      }
+    ],
+    "name": "covenant_carbine_v3",
+    "parents": []
+  }
+]

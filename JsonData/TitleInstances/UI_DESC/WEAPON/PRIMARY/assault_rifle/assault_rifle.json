@@ -1,0 +1,54 @@
+[
+  {
+    "className": "UI_DESC",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "assault_rifle",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "wpn_assault_rifle_name",
+        "name": "UI_NAME_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "wpn_assault_rifle_desc",
+        "name": "UI_DESC_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "wpn_assault_rifle_desc",
+        "name": "UI_DESC_SHORT_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "unscma5bSmall",
+        "name": "UI_ICON"
+      },
+      {
+        "type": 3,
+        "strVal": "unscma5bMed",
+        "name": "UI_ICON_MED"
+      },
+      {
+        "type": 3,
+        "strVal": "unscma5bBig",
+        "name": "UI_ICON_BIG"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_VIDEO"
+      },
+      {
+        "type": 3,
+        "strVal": "uncommon",
+        "name": "ITEM_QUALITY"
+      }
+    ],
+    "name": "assault_rifle",
+    "parents": []
+  }
+]

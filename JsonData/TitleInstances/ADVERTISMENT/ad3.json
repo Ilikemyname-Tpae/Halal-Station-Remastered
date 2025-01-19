@@ -1,0 +1,29 @@
+[
+  {
+    "className": "ADVERTISMENT",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "ad3",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 0,
+        "name": "SORT_INDEX"
+      },
+      {
+        "type": 3,
+        "strVal": "https://vk.com/halo.online",
+        "name": "ADVERTISMENT_URL"
+      },
+      {
+        "type": 2,
+        "floatVal": 4,
+        "name": "ADVERTISMENT_TIMER"
+      }
+    ],
+    "name": "ad3",
+    "parents": []
+  }
+]

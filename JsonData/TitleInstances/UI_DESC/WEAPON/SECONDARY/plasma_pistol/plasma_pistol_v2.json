@@ -1,0 +1,54 @@
+[
+  {
+    "className": "UI_DESC",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "plasma_pistol_v2",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "wpn_dmg_pp_name",
+        "name": "UI_NAME_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "wpn_dmg_pp_desc",
+        "name": "UI_DESC_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_DESC_SHORT_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "plasmapistol_m2Small",
+        "name": "UI_ICON"
+      },
+      {
+        "type": 3,
+        "strVal": "plasmapistol_m2Med",
+        "name": "UI_ICON_MED"
+      },
+      {
+        "type": 3,
+        "strVal": "plasmapistol_m2Big",
+        "name": "UI_ICON_BIG"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_VIDEO"
+      },
+      {
+        "type": 3,
+        "strVal": "epic",
+        "name": "ITEM_QUALITY"
+      }
+    ],
+    "name": "plasma_pistol_v2",
+    "parents": []
+  }
+]

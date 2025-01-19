@@ -1,0 +1,54 @@
+[
+  {
+    "className": "UI_DESC",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mauler_v2",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "wpn_rof_mauler_name",
+        "name": "UI_NAME_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "wpn_rof_mauler_desc",
+        "name": "UI_DESC_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "wpn_rof_mauler_desc",
+        "name": "UI_DESC_SHORT_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "mauler_m2Small",
+        "name": "UI_ICON"
+      },
+      {
+        "type": 3,
+        "strVal": "mauler_m2Small",
+        "name": "UI_ICON_MED"
+      },
+      {
+        "type": 3,
+        "strVal": "mauler_m2Small",
+        "name": "UI_ICON_BIG"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_VIDEO"
+      },
+      {
+        "type": 3,
+        "strVal": "rare",
+        "name": "ITEM_QUALITY"
+      }
+    ],
+    "name": "mauler_v2",
+    "parents": []
+  }
+]

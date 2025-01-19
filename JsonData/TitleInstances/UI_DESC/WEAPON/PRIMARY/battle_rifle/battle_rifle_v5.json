@@ -1,0 +1,54 @@
+[
+  {
+    "className": "UI_DESC",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "battle_rifle_v5",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "wpn_spr_battle_rifle_name",
+        "name": "UI_NAME_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "wpn_spr_battle_rifle_desc",
+        "name": "UI_DESC_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "wpn_spr_battle_rifle_desc",
+        "name": "UI_DESC_SHORT_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "battlerifle_m5Small",
+        "name": "UI_ICON"
+      },
+      {
+        "type": 3,
+        "strVal": "battlerifle_m5Med",
+        "name": "UI_ICON_MED"
+      },
+      {
+        "type": 3,
+        "strVal": "battlerifle_m5Big",
+        "name": "UI_ICON_BIG"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_VIDEO"
+      },
+      {
+        "type": 3,
+        "strVal": "epic",
+        "name": "ITEM_QUALITY"
+      }
+    ],
+    "name": "battle_rifle_v5",
+    "parents": []
+  }
+]

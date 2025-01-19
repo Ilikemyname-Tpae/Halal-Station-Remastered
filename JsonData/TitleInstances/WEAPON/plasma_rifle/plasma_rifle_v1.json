@@ -1,0 +1,24 @@
+[
+  {
+    "className": "WEAPON",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "plasma_rifle_v1",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "weapon_primary",
+        "name": "TYPE"
+      },
+      {
+        "type": 1,
+        "intVal": 47,
+        "name": "ID"
+      }
+    ],
+    "name": "plasma_rifle_v1",
+    "parents": []
+  }
+]

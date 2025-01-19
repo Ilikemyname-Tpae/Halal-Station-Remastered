@@ -1,0 +1,54 @@
+[
+  {
+    "className": "UI_DESC",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "smg_v6",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "wpn_adv_smg_name",
+        "name": "UI_NAME_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "wpn_adv_smg_desc",
+        "name": "UI_DESC_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "wpn_adv_smg_desc",
+        "name": "UI_DESC_SHORT_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "smg_m6Small",
+        "name": "UI_ICON"
+      },
+      {
+        "type": 3,
+        "strVal": "smg_m6Med",
+        "name": "UI_ICON_MED"
+      },
+      {
+        "type": 3,
+        "strVal": "smg_m6Big",
+        "name": "UI_ICON_BIG"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_VIDEO"
+      },
+      {
+        "type": 3,
+        "strVal": "legendary",
+        "name": "ITEM_QUALITY"
+      }
+    ],
+    "name": "smg_v6",
+    "parents": []
+  }
+]

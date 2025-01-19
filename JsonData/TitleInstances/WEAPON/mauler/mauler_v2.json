@@ -1,0 +1,24 @@
+[
+  {
+    "className": "WEAPON",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mauler_v2",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "weapon_secondary",
+        "name": "TYPE"
+      },
+      {
+        "type": 1,
+        "intVal": 60,
+        "name": "ID"
+      }
+    ],
+    "name": "mauler_v2",
+    "parents": []
+  }
+]

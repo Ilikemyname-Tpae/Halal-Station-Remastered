@@ -12,7 +12,7 @@ namespace Halal_Station_Remastered.Controllers
     {
         private readonly IConfiguration _configuration;
         private readonly UserStateUpdaterServices _userStateUpdaterServices;
-		
+
         public MessagingServices(IConfiguration configuration, UserStateUpdaterServices userstateupdaterservices)
         {
             _configuration = configuration;
@@ -78,6 +78,29 @@ namespace Halal_Station_Remastered.Controllers
                 {
                     retCode = ClientCodes.Success,
                     data = channelsData
+                }
+            };
+            return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+        }
+
+        [HttpPost("Send")]
+        public async Task<IActionResult> Send([FromBody] SendRequest request)
+        {
+            var userId = Header.ExtractUserIdFromHeaders(Request.Headers);
+            var channelService = new SendService(_configuration);
+            var isSuccess = await channelService.AddMessageToChannelAsync(userId, request.ChannelName, request.Message);
+
+            if (!isSuccess)
+            {
+                return NotFound("Channel not found.");
+            }
+
+            var response = new
+            {
+                SendResult = new
+                {
+                    retCode = ClientCodes.Success,
+                    data = true
                 }
             };
             return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);

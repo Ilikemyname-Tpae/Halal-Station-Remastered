@@ -1,6 +1,6 @@
 # Halal-Station-Remastered
-![Logo](Utils/logo.PNG)
-#### USERS CAN NOW LOGIN BUT WILL FACE ALOT OF LOBBY FREEZING AND CLICKING BUTTONS CAN CAUSE A -107 ERROR DUE TO INCOMPLETE API REQUESTS HANDLING.
+![Logo](Utils/Thumbnails/logo.PNG)
+#### USERS CAN NOW PROPERLY LOGIN AND WONT FACE ANY PROBLEMS, BUT SHOPS AND SUCH WILL BE EMPTY ATM WHILST I ADD ALL THE TITLE INSTANCES.
 ## TODO for the API:
 #### EndpointsDispatcherService.svc
 - ~~GetAuthorizationEndpointsAndDate~~
@@ -31,7 +31,7 @@
 - ~~JoinChannels~~
 - ~~Receive~~
 - ~~LeaveChannels~~
-- Send
+- ~~Send~~
 ### ArbitraryStorageService.svc
 - ~~WriteDiagnosticsData~~
 - ~~WriteADFPack~~
@@ -55,3 +55,10 @@
 - ~~SetPrivateData~~
 #### SessionControlService.svc
 - ~~ClientGetStatus~~
+
+## CURRENT MAINMENU
+![Logo](Utils/Thumbnails/logo_2.jpg)
+![Logo](Utils/Thumbnails/logo_3.jpg)
+![Logo](Utils/Thumbnails/logo_4.jpg)
+
+#### There is still many fixes and addons to implement, so please be patient.

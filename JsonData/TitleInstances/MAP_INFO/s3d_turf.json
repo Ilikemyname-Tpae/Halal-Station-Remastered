@@ -1,0 +1,19 @@
+[
+  {
+    "className": "MAP_INFO",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "s3d_turf",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 31,
+        "name": "ID"
+      }
+    ],
+    "name": "s3d_turf",
+    "parents": []
+  }
+]

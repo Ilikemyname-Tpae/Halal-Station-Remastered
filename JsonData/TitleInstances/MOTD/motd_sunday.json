@@ -1,0 +1,19 @@
+[
+  {
+    "className": "MOTD",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "motd_sunday",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "Sunday, Sunday message of the day.",
+        "name": "UI_DESC_ID"
+      }
+    ],
+    "name": "motd_sunday",
+    "parents": []
+  }
+]

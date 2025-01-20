@@ -1,0 +1,19 @@
+[
+  {
+    "className": "MAP_INFO",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "s3d_waterfall",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 706,
+        "name": "ID"
+      }
+    ],
+    "name": "mainmenu",
+    "parents": []
+  }
+]

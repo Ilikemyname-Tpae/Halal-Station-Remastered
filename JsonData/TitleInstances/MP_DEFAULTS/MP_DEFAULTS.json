@@ -1,0 +1,29 @@
+[
+  {
+    "className": "MP_DEFAULTS",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "default",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "SlayerFFA",
+        "name": "DEFAULT_PLAYLIST"
+      },
+      {
+        "type": 3,
+        "strVal": "guardian",
+        "name": "DEFAULT_MAP"
+      },
+      {
+        "type": 3,
+        "strVal": "slayer",
+        "name": "DEFAULT_GAME_MODE"
+      }
+    ],
+    "name": "default",
+    "parents": []
+  }
+]

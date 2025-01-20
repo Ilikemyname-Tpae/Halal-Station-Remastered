@@ -1,0 +1,19 @@
+[
+  {
+    "className": "MAP_INFO",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "riverworld",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 340,
+        "name": "ID"
+      }
+    ],
+    "name": "riverworld",
+    "parents": []
+  }
+]

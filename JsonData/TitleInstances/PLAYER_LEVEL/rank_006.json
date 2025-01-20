@@ -1,0 +1,34 @@
+[
+  {
+    "className": "PLAYER_LEVEL",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "rank_006",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 6,
+        "name": "LEVEL_INDEX"
+      },
+      {
+        "type": 1,
+        "intVal": 5000,
+        "name": "XP_UNLOCK"
+      },
+      {
+        "type": 7,
+        "strList": [],
+        "name": "ITEMS_RECIEVED"
+      },
+      {
+        "type": 7,
+        "strList": [],
+        "name": "ITEMS_UNLOCKED"
+      }
+    ],
+    "name": "rank_006",
+    "parents": []
+  }
+]

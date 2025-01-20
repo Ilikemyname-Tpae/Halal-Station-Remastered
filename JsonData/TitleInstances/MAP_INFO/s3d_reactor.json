@@ -1,0 +1,19 @@
+[
+  {
+    "className": "MAP_INFO",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "s3d_reactor",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 700,
+        "name": "ID"
+      }
+    ],
+    "name": "s3d_reactor",
+    "parents": []
+  }
+]

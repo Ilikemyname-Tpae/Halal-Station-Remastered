@@ -1,0 +1,19 @@
+[
+  {
+    "className": "MAP_INFO",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "guardian",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 320,
+        "name": "ID"
+      }
+    ],
+    "name": "guardian",
+    "parents": []
+  }
+]

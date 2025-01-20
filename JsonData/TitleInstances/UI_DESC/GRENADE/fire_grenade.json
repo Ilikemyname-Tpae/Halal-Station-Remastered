@@ -1,0 +1,54 @@
+[
+  {
+    "className": "UI_DESC",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "fire_grenade",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "wpn_fire_grenade_name",
+        "name": "UI_NAME_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "wpn_fire_grenade_desc",
+        "name": "UI_DESC_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "wpn_fire_grenade_desc",
+        "name": "UI_DESC_SHORT_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "fire_grenadeSmall",
+        "name": "UI_ICON"
+      },
+      {
+        "type": 3,
+        "strVal": "fire_grenadeMed",
+        "name": "UI_ICON_MED"
+      },
+      {
+        "type": 3,
+        "strVal": "fire_grenadeBig",
+        "name": "UI_ICON_BIG"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_VIDEO"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "ITEM_QUALITY"
+      }
+    ],
+    "name": "fire_grenade",
+    "parents": []
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "className": "UI_DESC",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "concussive_blast",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "cons_concussive_blast_name",
+        "name": "UI_NAME_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "cons_concussive_blast_desc",
+        "name": "UI_DESC_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_DESC_SHORT_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "tpConcussiveBlastSmall",
+        "name": "UI_ICON"
+      },
+      {
+        "type": 3,
+        "strVal": "tpConcussiveBlastMed",
+        "name": "UI_ICON_MED"
+      },
+      {
+        "type": 3,
+        "strVal": "tpConcussiveBlastBig",
+        "name": "UI_ICON_BIG"
+      },
+      {
+        "type": 3,
+        "strVal": "cons_concussive_blast",
+        "name": "UI_VIDEO"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "ITEM_QUALITY"
+      }
+    ],
+    "name": "concussive_blast",
+    "parents": []
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "className": "MAP_INFO",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "s3d_avalanche",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 705,
+        "name": "ID"
+      }
+    ],
+    "name": "s3d_avalanche",
+    "parents": []
+  }
+]

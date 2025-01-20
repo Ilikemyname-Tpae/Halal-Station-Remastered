@@ -1,0 +1,54 @@
+[
+  {
+    "className": "UI_DESC",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "vehicle_shield",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "cons_vehicle_shield_name",
+        "name": "UI_NAME_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "cons_vehicle_shield_desc",
+        "name": "UI_DESC_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_DESC_SHORT_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "tpVehicleShieldSmall",
+        "name": "UI_ICON"
+      },
+      {
+        "type": 3,
+        "strVal": "tpVehicleShieldMed",
+        "name": "UI_ICON_MED"
+      },
+      {
+        "type": 3,
+        "strVal": "tpVehicleShieldBig",
+        "name": "UI_ICON_BIG"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_VIDEO"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "ITEM_QUALITY"
+      }
+    ],
+    "name": "vehicle_shield",
+    "parents": []
+  }
+]

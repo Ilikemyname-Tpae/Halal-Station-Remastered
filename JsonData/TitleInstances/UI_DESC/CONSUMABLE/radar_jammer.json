@@ -1,0 +1,54 @@
+[
+  {
+    "className": "UI_DESC",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "radar_jammer",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "cons_radar_jammer_name",
+        "name": "UI_NAME_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "cons_radar_jammer_desc",
+        "name": "UI_DESC_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_DESC_SHORT_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "tpRadarJammerSmall",
+        "name": "UI_ICON"
+      },
+      {
+        "type": 3,
+        "strVal": "tpRadarJammerMed",
+        "name": "UI_ICON_MED"
+      },
+      {
+        "type": 3,
+        "strVal": "tpRadarJammerBig",
+        "name": "UI_ICON_BIG"
+      },
+      {
+        "type": 3,
+        "strVal": "cons_radar_jammer",
+        "name": "UI_VIDEO"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "ITEM_QUALITY"
+      }
+    ],
+    "name": "radar_jammer",
+    "parents": []
+  }
+]

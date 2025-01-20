@@ -1,0 +1,19 @@
+[
+  {
+    "className": "GRENADE",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "frag_grenade",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 0,
+        "name": "ID"
+      }
+    ],
+    "name": "frag_grenade",
+    "parents": []
+  }
+]

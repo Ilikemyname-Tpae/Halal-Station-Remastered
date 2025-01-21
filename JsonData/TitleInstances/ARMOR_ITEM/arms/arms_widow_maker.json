@@ -1,0 +1,54 @@
+[
+  {
+    "className": "ARMOR_ITEM",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "arms_widow_maker",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 4,
+        "name": "RACE_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "arms",
+        "name": "TYPE"
+      },
+      {
+        "type": 1,
+        "intVal": 3,
+        "name": "OBJ_REGION"
+      },
+      {
+        "type": 1,
+        "intVal": 0,
+        "name": "OBJ_PERMUTATION"
+      },
+      {
+        "type": 1,
+        "intVal": 3,
+        "name": "ARMOR_BODY_REGION"
+      },
+      {
+        "type": 1,
+        "intVal": 43,
+        "name": "ARMOR_BODY_ID"
+      },
+      {
+        "type": 3,
+        "strVal": ";",
+        "name": "ARMOR_MODIFIERS_VALUES"
+      },
+      {
+        "type": 3,
+        "strVal": ";",
+        "name": "ARMOR_MODIFIERS_LIST"
+      }
+    ],
+    "name": "arms_widow_maker",
+    "parents": []
+  }
+]

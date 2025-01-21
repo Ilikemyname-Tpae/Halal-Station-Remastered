@@ -1,0 +1,39 @@
+[
+  {
+    "className": "ASSIGN_KIT",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "sniper_kit_offer",
+        "name": "OFFER_NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 3,
+        "name": "RACE_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "dmr",
+        "name": "WEAPON_TO_EQUIP"
+      },
+      {
+        "type": 3,
+        "strVal": "helmet_chameleon;chest_chameleon;shoulders_chameleon;arms_chameleon;legs_chameleon;",
+        "name": "ARMOR_TO_EQUIP"
+      },
+      {
+        "type": 3,
+        "strVal": "color_primary_lime_green;color_secondary_black;color_visor_orange;",
+        "name": "COLORS_TO_EQUIP"
+      },
+      {
+        "type": 3,
+        "strVal": "sniper_kit_offer",
+        "name": "NAME"
+      }
+    ],
+    "name": "sniper_kit_offer",
+    "parents": []
+  }
+]

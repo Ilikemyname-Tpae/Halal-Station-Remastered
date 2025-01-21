@@ -1,0 +1,54 @@
+[
+  {
+    "className": "ARMOR_ITEM",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "shoulders_widow_maker",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 4,
+        "name": "RACE_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "shoulder",
+        "name": "TYPE"
+      },
+      {
+        "type": 1,
+        "intVal": 4,
+        "name": "OBJ_REGION"
+      },
+      {
+        "type": 1,
+        "intVal": 0,
+        "name": "OBJ_PERMUTATION"
+      },
+      {
+        "type": 1,
+        "intVal": 2,
+        "name": "ARMOR_BODY_REGION"
+      },
+      {
+        "type": 1,
+        "intVal": 80,
+        "name": "ARMOR_BODY_ID"
+      },
+      {
+        "type": 3,
+        "strVal": ";",
+        "name": "ARMOR_MODIFIERS_VALUES"
+      },
+      {
+        "type": 3,
+        "strVal": ";",
+        "name": "ARMOR_MODIFIERS_LIST"
+      }
+    ],
+    "name": "shoulders_widow_maker",
+    "parents": []
+  }
+]

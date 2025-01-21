@@ -1,0 +1,29 @@
+[
+  {
+    "className": "CONS_UI_STATS",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "hologram",
+        "name": "NAME"
+      },
+      {
+        "type": 2,
+        "name": "UI_CONS_STATS_DURATION",
+        "floatVal": 1.0
+      },
+      {
+        "type": 1,
+        "intVal": 1,
+        "name": "UI_CONS_STATS_COST"
+      },
+      {
+        "type": 2,
+        "name": "UI_CONS_STATS_COOLDOWN",
+        "floatVal": 1.0
+      }
+    ],
+    "name": "hologram",
+    "parents": []
+  }
+]

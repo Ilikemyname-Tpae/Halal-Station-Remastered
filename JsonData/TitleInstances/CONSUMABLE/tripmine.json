@@ -1,0 +1,34 @@
+[
+  {
+    "className": "CONSUMABLE",
+    "props": [
+      {
+        "type": 1,
+        "intVal": 8,
+        "name": "CONSUMABLE_INDEX"
+      },
+      {
+        "type": 3,
+        "strVal": "tripmine",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 2,
+        "name": "ENERGY_COST"
+      },
+      {
+        "type": 1,
+        "intVal": 90,
+        "name": "COOLDOWN"
+      },
+      {
+        "type": 1,
+        "intVal": 1,
+        "name": "COOLDOWN_INIT"
+      }
+    ],
+    "name": "tripmine",
+    "parents": []
+  }
+]

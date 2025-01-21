@@ -4,17 +4,17 @@
     "props": [
       {
         "type": 3,
-        "strVal": "guardian",
+        "strVal": "rank_006",
         "name": "NAME"
       },
       {
         "type": 3,
-        "strVal": "map_guardian_name",
+        "strVal": "lvl_rank_006",
         "name": "UI_NAME_ID"
       },
       {
         "type": 3,
-        "strVal": "map_guardian_desc",
+        "strVal": "",
         "name": "UI_DESC_ID"
       },
       {
@@ -24,17 +24,17 @@
       },
       {
         "type": 3,
-        "strVal": "Guardian_300x200",
+        "strVal": "rank006_corporal_3",
         "name": "UI_ICON"
       },
       {
         "type": 3,
-        "strVal": "guardianBg",
+        "strVal": "",
         "name": "UI_ICON_MED"
       },
       {
         "type": 3,
-        "strVal": "MapBig_guardian",
+        "strVal": "rank006_corporal_3_big",
         "name": "UI_ICON_BIG"
       },
       {
@@ -48,7 +48,7 @@
         "name": "ITEM_QUALITY"
       }
     ],
-    "name": "Guardian",
+    "name": "rank_006",
     "parents": []
   }
 ]

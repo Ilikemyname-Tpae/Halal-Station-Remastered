@@ -1,0 +1,54 @@
+[
+  {
+    "className": "ARMOR_ITEM",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "legs_gungnir",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 4,
+        "name": "RACE_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "legs",
+        "name": "TYPE"
+      },
+      {
+        "type": 1,
+        "intVal": 4,
+        "name": "OBJ_REGION"
+      },
+      {
+        "type": 1,
+        "intVal": 0,
+        "name": "OBJ_PERMUTATION"
+      },
+      {
+        "type": 1,
+        "intVal": 4,
+        "name": "ARMOR_BODY_REGION"
+      },
+      {
+        "type": 1,
+        "intVal": 41,
+        "name": "ARMOR_BODY_ID"
+      },
+      {
+        "type": 3,
+        "strVal": ";",
+        "name": "ARMOR_MODIFIERS_VALUES"
+      },
+      {
+        "type": 3,
+        "strVal": ";",
+        "name": "ARMOR_MODIFIERS_LIST"
+      }
+    ],
+    "name": "legs_gungnir",
+    "parents": []
+  }
+]

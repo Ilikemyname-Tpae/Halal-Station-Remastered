@@ -1,0 +1,29 @@
+[
+  {
+    "className": "CONS_UI_STATS",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "tripmine",
+        "name": "NAME"
+      },
+      {
+        "type": 2,
+        "name": "UI_CONS_STATS_DURATION",
+        "floatVal": 60.0
+      },
+      {
+        "type": 1,
+        "intVal": 2,
+        "name": "UI_CONS_STATS_COST"
+      },
+      {
+        "type": 2,
+        "name": "UI_CONS_STATS_COOLDOWN",
+        "floatVal": 1.0
+      }
+    ],
+    "name": "tripmine",
+    "parents": []
+  }
+]

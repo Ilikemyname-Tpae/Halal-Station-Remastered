@@ -1,0 +1,54 @@
+[
+  {
+    "className": "ARMOR_ITEM",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "chest_air_assault",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 0,
+        "name": "RACE_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "chest",
+        "name": "TYPE"
+      },
+      {
+        "type": 1,
+        "intVal": 1,
+        "name": "OBJ_REGION"
+      },
+      {
+        "type": 1,
+        "intVal": 0,
+        "name": "OBJ_PERMUTATION"
+      },
+      {
+        "type": 1,
+        "intVal": 1,
+        "name": "ARMOR_BODY_REGION"
+      },
+      {
+        "type": 1,
+        "intVal": 3,
+        "name": "ARMOR_BODY_ID"
+      },
+      {
+        "type": 3,
+        "strVal": ";",
+        "name": "ARMOR_MODIFIERS_VALUES"
+      },
+      {
+        "type": 3,
+        "strVal": ";",
+        "name": "ARMOR_MODIFIERS_LIST"
+      }
+    ],
+    "name": "chest_air_assault",
+    "parents": []
+  }
+]

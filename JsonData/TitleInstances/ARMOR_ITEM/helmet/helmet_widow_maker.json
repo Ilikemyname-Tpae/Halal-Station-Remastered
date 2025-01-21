@@ -1,0 +1,54 @@
+[
+  {
+    "className": "ARMOR_ITEM",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "helmet_widow_maker",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 4,
+        "name": "RACE_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "helmet",
+        "name": "TYPE"
+      },
+      {
+        "type": 1,
+        "intVal": 2,
+        "name": "OBJ_REGION"
+      },
+      {
+        "type": 1,
+        "intVal": 0,
+        "name": "OBJ_PERMUTATION"
+      },
+      {
+        "type": 1,
+        "intVal": 0,
+        "name": "ARMOR_BODY_REGION"
+      },
+      {
+        "type": 1,
+        "intVal": 80,
+        "name": "ARMOR_BODY_ID"
+      },
+      {
+        "type": 3,
+        "strVal": ";",
+        "name": "ARMOR_MODIFIERS_VALUES"
+      },
+      {
+        "type": 3,
+        "strVal": ";",
+        "name": "ARMOR_MODIFIERS_LIST"
+      }
+    ],
+    "name": "helmet_widow_maker",
+    "parents": []
+  }
+]

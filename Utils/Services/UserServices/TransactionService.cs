@@ -63,7 +63,7 @@ namespace Halal_Station_Remastered.Utils.Services.UserServices
 
                             transactionsList.Add(transaction);
 
-                            await UpdateResultingValueAsync(userId.Value, reader["OfferId"].ToString(), updatedResultingValue, ownType);
+                            await UpdateResultingValueAsync(userId.Value, reader["OfferId"].ToString(), updatedResultingValue, ownType, resultingValue);
                         }
                     }
                 }
@@ -71,8 +71,13 @@ namespace Halal_Station_Remastered.Utils.Services.UserServices
             return transactionsList;
         }
 
-        private async Task UpdateResultingValueAsync(int userId, string offerId, int updatedResultingValue, int ownType)
+        private async Task UpdateResultingValueAsync(int userId, string offerId, int updatedResultingValue, int ownType, int currentResultingValue)
         {
+            if (currentResultingValue <= 0)
+            {
+                return;
+            }
+
             using (var connection = new MySqlConnection(_connectionString))
             {
                 await connection.OpenAsync();
@@ -82,8 +87,8 @@ namespace Halal_Station_Remastered.Utils.Services.UserServices
               SET ResultingValue = @UpdatedResultingValue, OwnType = @OwnType 
               WHERE UserId = @UserId AND OfferId = @OfferId", connection);
 
-                updateCommand.Parameters.AddWithValue("@UpdatedResultingValue", updatedResultingValue);
-                updateCommand.Parameters.AddWithValue("@OwnType", ownType);
+                updateCommand.Parameters.AddWithValue("@UpdatedResultingValue", updatedResultingValue <= 0 ? 0 : updatedResultingValue);
+                updateCommand.Parameters.AddWithValue("@OwnType", updatedResultingValue <= 0 ? 0 : ownType);
                 updateCommand.Parameters.AddWithValue("@UserId", userId);
                 updateCommand.Parameters.AddWithValue("@OfferId", offerId);
 

@@ -46,7 +46,7 @@
 - ~~GetUsersBaseData~~
 - ~~GetUsersPrimaryStates~~
 - ~~GetUsersByNickname~~
-- ApplyOfferListAndGetTransactionHistory
+- ~~ApplyOfferListAndGetTransactionHistory~~
 - ~~NicknameChange~~
 #### UserStorageService.svc
 - ~~GetPublicData~~
@@ -60,5 +60,8 @@
 ![Logo](Utils/Thumbnails/logo_2.jpg)
 ![Logo](Utils/Thumbnails/logo_3.jpg)
 ![Logo](Utils/Thumbnails/logo_4.jpg)
+![Logo](Utils/Thumbnails/logo_5.jpg)
+![Logo](Utils/Thumbnails/logo_6.jpg)
+![Logo](Utils/Thumbnails/logo_7.jpg)
 
 #### There is still many fixes and addons to implement, so please be patient.

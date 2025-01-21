@@ -1,0 +1,54 @@
+[
+  {
+    "className": "UI_DESC",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "statUntouchable",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "medal_untouchable_name",
+        "name": "UI_NAME_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "medal_untouchable_desc",
+        "name": "UI_DESC_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_DESC_SHORT_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "statUntouchable",
+        "name": "UI_ICON"
+      },
+      {
+        "type": 3,
+        "strVal": "statUntouchable",
+        "name": "UI_ICON_MED"
+      },
+      {
+        "type": 3,
+        "strVal": "statUntouchable",
+        "name": "UI_ICON_BIG"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_VIDEO"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "ITEM_QUALITY"
+      }
+    ],
+    "name": "statUntouchable",
+    "parents": []
+  }
+]

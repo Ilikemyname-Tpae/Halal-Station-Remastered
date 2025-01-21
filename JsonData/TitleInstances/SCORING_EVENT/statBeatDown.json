@@ -1,0 +1,28 @@
+[
+    {
+        "className": "SCORING_EVENT",
+        "props": [
+            {
+                "type": 3,
+                "strVal": "statBeatDown",
+                "name": "NAME"
+            },
+            {
+                "type": 1,
+                "intVal": 13,
+                "name": "SCORING_EVENT_ID"
+            },
+            {
+                "type": 1,
+                "intVal": 1,
+                "name": "IS_MEDAL"
+            },
+            {
+                "type": 1,
+                "intVal": 20,
+                "name": "SCORING_REWARD_WP"
+            }
+        ],
+        "parents": []
+    }
+]

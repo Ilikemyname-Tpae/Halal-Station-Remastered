@@ -1,0 +1,33 @@
+[
+    {
+        "className": "SCORING_EVENT",
+        "props": [
+            {
+                "type": 3,
+                "strVal": "statPerfection",
+                "name": "INSTANCE_NAME"
+            },
+            {
+                "type": 3,
+                "strVal": "statPerfection",
+                "name": "NAME"
+            },
+            {
+                "type": 1,
+                "intVal": 2,
+                "name": "SCORING_EVENT_ID"
+            },
+            {
+                "type": 1,
+                "intVal": 1,
+                "name": "IS_MEDAL"
+            },
+            {
+                "type": 1,
+                "intVal": 800,
+                "name": "SCORING_REWARD_WP"
+            }
+        ],
+        "parents": []
+    }
+]

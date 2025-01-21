@@ -1,0 +1,33 @@
+[
+    {
+        "className": "SCORING_EVENT",
+        "props": [
+            {
+                "type": 3,
+                "strVal": "statAssist",
+                "name": "INSTANCE_NAME"
+            },
+            {
+                "type": 3,
+                "strVal": "statAssist",
+                "name": "NAME"
+            },
+            {
+                "type": 1,
+                "intVal": 1,
+                "name": "SCORING_EVENT_ID"
+            },
+            {
+                "type": 1,
+                "intVal": 0,
+                "name": "IS_MEDAL"
+            },
+            {
+                "type": 1,
+                "intVal": 10,
+                "name": "SCORING_REWARD_WP"
+            }
+        ],
+        "parents": []
+    }
+]

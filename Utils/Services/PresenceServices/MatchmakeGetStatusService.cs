@@ -19,7 +19,8 @@ namespace Halal_Station_Remastered.Utils.Services.PresenceServices
             const string query = @"
                 SELECT UserId, PartyId, Owner, MatchmakeState
                 FROM Party
-                WHERE MatchmakeState = 2";
+                WHERE MatchmakeState = 2
+                ORDER BY UserId ASC";
 
             using var command = new MySqlCommand(query, connection);
 

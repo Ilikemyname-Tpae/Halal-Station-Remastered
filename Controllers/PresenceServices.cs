@@ -3,8 +3,6 @@ using Halal_Station_Remastered.Utils.Requests.PresenceServices;
 using Halal_Station_Remastered.Utils.ResponseUtils;
 using Halal_Station_Remastered.Utils.Services.PresenceServices;
 using Microsoft.AspNetCore.Mvc;
-using MySql.Data.MySqlClient;
-using System.Text;
 using System.Text.Json;
 
 namespace Halal_Station_Remastered.Controllers

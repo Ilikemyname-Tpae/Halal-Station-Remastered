@@ -1,5 +1,6 @@
 ﻿using Halal_Station_Remastered.Utils.Enums;
 using Halal_Station_Remastered.Utils.ResponseUtils;
+using Halal_Station_Remastered.Utils.Services.SessionControlServices;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Halal_Station_Remastered.Controllers
@@ -8,6 +9,13 @@ namespace Halal_Station_Remastered.Controllers
     [Route("SessionControlService.svc")]
     public class SessionControlServices : ControllerBase
     {
+        private readonly IConfiguration _configuration;
+
+        public SessionControlServices(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         [HttpPost("ClientGetStatus")]
         public IActionResult ClientGetStatus()
         {
@@ -20,14 +28,32 @@ namespace Halal_Station_Remastered.Controllers
                     {
                         Game = new
                         {
-                            Id = "f6cd36b5-39aa-46af-b7ca-0d15b69e7107"
                         },
                         DedicatedServer = new
                         {
-                            ServerID = "00000000-0000-0000-0000-000000000000",
                             ServerAddr = "000.00.000.0",
                             Port = 11774
                         }
+                    }
+                }
+            };
+            return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+        }
+
+        [HttpPost("GetSessionUsers")]
+        public async Task<IActionResult> GetSessionUsers()
+        {
+            var matchmakingService = new GetSessionUsersService(_configuration);
+            var userIds = await matchmakingService.GetUserIdsWithMatchmakeStateAsync();
+
+            var response = new
+            {
+                GetSessionUsersResult = new
+                {
+                    retCode = ClientCodes.Success,
+                    data = new
+                    {
+                        UserIds = userIds
                     }
                 }
             };

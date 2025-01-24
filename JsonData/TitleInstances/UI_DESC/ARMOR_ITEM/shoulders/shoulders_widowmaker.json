@@ -1,0 +1,64 @@
+[
+  {
+    "className": "UI_DESC",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "shoulders_widowmaker",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "armor_widow_maker_name",
+        "name": "UI_NAME_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "armor_widow_maker_desc_short",
+        "name": "UI_DESC_SHORT_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "armor_widow_maker_name",
+        "name": "UI_NAME_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "armor_widow_maker_desc",
+        "name": "UI_DESC_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "armor_widow_maker_desc_short",
+        "name": "UI_DESC_SHORT_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "shoulders_premiumSmall",
+        "name": "UI_ICON"
+      },
+      {
+        "type": 3,
+        "strVal": "shoulders_premiumMed",
+        "name": "UI_ICON_MED"
+      },
+      {
+        "type": 3,
+        "strVal": "shoulders_premium",
+        "name": "UI_ICON_BIG"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_VIDEO"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "ITEM_QUALITY"
+      }
+    ],
+    "name": "shoulders_widowmaker",
+    "parents": []
+  }
+]

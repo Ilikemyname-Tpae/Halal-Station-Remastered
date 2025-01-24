@@ -1,0 +1,54 @@
+[
+  {
+    "className": "UI_DESC",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "helmet_air_assault",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "armor_air_assault_name",
+        "name": "UI_NAME_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "armor_air_assault_desc",
+        "name": "UI_DESC_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "armor_air_assault_desc_short",
+        "name": "UI_DESC_SHORT_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "helmet_standardSmall",
+        "name": "UI_ICON"
+      },
+      {
+        "type": 3,
+        "strVal": "helmet_standardMed",
+        "name": "UI_ICON_MED"
+      },
+      {
+        "type": 3,
+        "strVal": "helmet_standard",
+        "name": "UI_ICON_BIG"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_VIDEO"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "ITEM_QUALITY"
+      }
+    ],
+    "name": "helmet_air_assault",
+    "parents": []
+  }
+]

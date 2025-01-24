@@ -1,0 +1,54 @@
+[
+  {
+    "className": "UI_DESC",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "shoulders_tankmode_human",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "armor_tanker_name",
+        "name": "UI_NAME_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "armor_tanker_desc",
+        "name": "UI_DESC_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "armor_tanker_desc_short",
+        "name": "UI_DESC_SHORT_ID"
+      },
+      {
+        "type": 3,
+        "strVal": "shoulders_premiumSmall",
+        "name": "UI_ICON"
+      },
+      {
+        "type": 3,
+        "strVal": "shoulders_premiumMed",
+        "name": "UI_ICON_MED"
+      },
+      {
+        "type": 3,
+        "strVal": "shoulders_premium",
+        "name": "UI_ICON_BIG"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "UI_VIDEO"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "ITEM_QUALITY"
+      }
+    ],
+    "name": "shoulders_tankmode_human",
+    "parents": []
+  }
+]

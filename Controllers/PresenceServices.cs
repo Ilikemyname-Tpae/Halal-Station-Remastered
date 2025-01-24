@@ -203,6 +203,8 @@ namespace Halal_Station_Remastered.Controllers
         {
             var matchmakingService = new MatchmakeGetStatusService(_configuration);
             var members = await matchmakingService.GetAllMembersWithMatchmakeStateAsync();
+            var dedicatedServerService = new DedicatedServerInfoService(_configuration);
+            var (serverId, serverAddress, transportAddress, port) = await dedicatedServerService.GetDedicatedServerInfoAsync();
 
             var response = new
             {
@@ -213,7 +215,7 @@ namespace Halal_Station_Remastered.Controllers
                     {
                         Id = new
                         {
-                            Id = "2222b2d4-eeb5-4ad4-b8bf-dea7266c9177"
+                            Id = serverId
                         },
                         Members = members,
                         MatchmakeTimer = 5

@@ -1,4 +1,5 @@
 ﻿using Halal_Station_Remastered.Utils.Enums;
+using Halal_Station_Remastered.Utils.Requests.SessionControlServices;
 using Halal_Station_Remastered.Utils.ResponseUtils;
 using Halal_Station_Remastered.Utils.Services.SessionControlServices;
 using Microsoft.AspNetCore.Mvc;
@@ -17,8 +18,11 @@ namespace Halal_Station_Remastered.Controllers
         }
 
         [HttpPost("ClientGetStatus")]
-        public IActionResult ClientGetStatus()
+        public async Task<IActionResult> ClientGetStatus()
         {
+            var dedicatedServerService = new DedicatedServerInfoService(_configuration);
+            var (serverId, serverAddress, transportAddress, port) = await dedicatedServerService.GetDedicatedServerInfoAsync();
+
             var response = new
             {
                 ClientGetStatusResult = new
@@ -28,13 +32,13 @@ namespace Halal_Station_Remastered.Controllers
                     {
                         Game = new
                         {
-                            Id = "cda60f93-18d1-41a6-9908-5dd962b898da"
+                            Id = serverId
                         },
                         DedicatedServer = new
                         {
-                            ServerID = "143b1a10-85e4-4190-9694-41bb7ad92727",
-                            ServerAddr = "000.00.000.0",
-                            Port = 11774
+                            ServerID = serverAddress,                        
+                            ServerAddr = transportAddress,
+                            Port = port
                         }
                     }
                 }
@@ -60,6 +64,29 @@ namespace Halal_Station_Remastered.Controllers
                 }
             };
             return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+        }
+
+        [HttpPost("DedicatedServerInfo")]
+        public async Task<IActionResult> DedicatedServerInfo([FromBody] DedicatedServerInfoRequest request)
+        {
+            var dedicatedServerService = new DedicatedServerInfoService(_configuration);
+			
+            await dedicatedServerService.AddDedicatedServerAsync(
+                request.SecureID,
+                request.SecureAddress,
+                request.TransportAddress,
+                11774
+            );
+
+            var response = new
+            {
+                DedicatedServerInfoResult = new
+                {
+                    retCode = ClientCodes.Success,
+                    data = true
+                }
+            };
+           return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
         }
     }
 }

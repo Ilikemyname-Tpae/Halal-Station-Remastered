@@ -28,9 +28,11 @@ namespace Halal_Station_Remastered.Controllers
                     {
                         Game = new
                         {
+                            Id = "cda60f93-18d1-41a6-9908-5dd962b898da"
                         },
                         DedicatedServer = new
                         {
+                            ServerID = "143b1a10-85e4-4190-9694-41bb7ad92727",
                             ServerAddr = "000.00.000.0",
                             Port = 11774
                         }

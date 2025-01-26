@@ -1,0 +1,68 @@
+{
+  "Name": "weapon",
+  "Type": "weapon",
+  "Race": 3,
+  "Sections": [
+    {
+      "Name": "carousel_weapon_primary",
+      "Shelves": [
+        {
+          "Name": "assault_rifles",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "assault_rifle",
+            "assault_rifle_v5",
+            "assault_rifle_v6"
+          ]
+        },
+        {
+          "Name": "battle_rifles",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "battle_rifle", 
+            "battle_rifle_v6"
+          ]
+        },
+        {
+          "Name": "dmrs",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "dmr", 
+            "dmr_v2", 
+            "dmr_v4",
+            "dmr_v6"
+          ]
+        },
+        {
+          "Name": "smgs",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "smg", 
+            "smg_v1", 
+            "smg_v6"
+          ]
+        },
+        {
+          "Name": "covenant_carbines",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "covenant_carbine"
+          ]
+        },
+        {
+          "Name": "plasma_rifles",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "plasma_rifle"
+          ]
+        }
+      ]
+    }
+  ]
+}

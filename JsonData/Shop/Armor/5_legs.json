@@ -1,0 +1,46 @@
+{
+  "Name": "armor_legs",
+  "Type": "armor",
+  "Race": 1,
+  "Sections": [
+    {
+      "Name": "carousel_armor_legs",
+      "Shelves": [
+        {
+          "Name": "carousel_armor_standard",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "legs_scanner",
+            "legs_air_assault",
+            "legs_juggernaut",
+            "legs_gungnir",
+            "legs_hoplite"
+          ]
+        },
+        {
+          "Name": "carousel_armor_premium",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "legs_chameleon",
+            "legs_orbital",
+            "legs_widow_maker"
+          ]
+        },
+        {
+          "Name": "carousel_armor_platinum",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "legs_oracle",
+            "legs_dutch",
+            "legs_ballista",
+            "legs_spectrum",
+            "legs_hammerhead"	
+          ]
+        }
+      ]
+    }
+  ]
+}

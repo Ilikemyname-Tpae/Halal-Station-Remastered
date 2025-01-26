@@ -1,0 +1,38 @@
+{
+  "Name": "weapon",
+  "Type": "weapon",
+  "Race": 3,
+  "Sections": [
+    {
+      "Name": "carousel_weapon_secondary",
+      "Shelves": [
+        {
+          "Name": "magnums",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "magnum", 
+            "magnum_v2", 
+            "magnum_v3"
+          ]
+        },
+        {
+          "Name": "plasma_pistols",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "plasma_pistol"
+          ]
+        },
+        {
+          "Name": "maulers",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "mauler"
+          ]
+        }
+      ]
+    }
+  ]
+}

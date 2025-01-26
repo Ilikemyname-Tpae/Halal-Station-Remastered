@@ -1,0 +1,46 @@
+{
+  "Name": "armor_helmet",
+  "Type": "armor",
+  "Race": 1,
+  "Sections": [
+    {
+      "Name": "carousel_armor_helmet",
+      "Shelves": [
+        {
+          "Name": "carousel_armor_standard",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "helmet_scanner",
+            "helmet_air_assault",
+            "helmet_juggernaut",
+            "helmet_gungnir",
+            "helmet_hoplite"
+          ]
+        },
+        {
+          "Name": "carousel_armor_premium",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "helmet_chameleon",
+            "helmet_orbital",
+            "helmet_widow_maker"
+          ]
+        },
+        {
+          "Name": "carousel_armor_platinum",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "helmet_oracle",
+            "helmet_dutch",
+            "helmet_ballista",
+            "helmet_spectrum",
+            "helmet_hammerhead"	
+          ]
+        }
+      ]
+    }
+  ]
+}

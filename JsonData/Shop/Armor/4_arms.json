@@ -1,0 +1,46 @@
+{
+  "Name": "armor_arms",
+  "Type": "armor",
+  "Race": 1,
+  "Sections": [
+    {
+      "Name": "carousel_armor_arms",
+      "Shelves": [
+        {
+          "Name": "carousel_armor_standard",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "arms_scanner",
+            "arms_air_assault",
+            "arms_juggernaut",
+            "arms_gungnir",
+            "arms_hoplite"
+          ]
+        },
+        {
+          "Name": "carousel_armor_premium",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "arms_chameleon",
+            "arms_orbital",
+            "arms_widow_maker"
+          ]
+        },
+        {
+          "Name": "carousel_armor_platinum",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "arms_oracle",
+            "arms_dutch",
+            "arms_ballista",
+            "arms_spectrum",
+            "arms_hammerhead"	
+          ]
+        }
+      ]
+    }
+  ]
+}

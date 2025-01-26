@@ -1,0 +1,22 @@
+{
+  "Name": "weapon",
+  "Type": "weapon",
+  "Race": 3,
+  "Sections": [
+    {
+      "Name": "carousel_weapon_grenades",
+      "Shelves": [
+        {
+          "Name": "grenades",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "frag_grenade", 
+            "plasma_grenade", 
+            "spike_grenade"
+          ]
+        }
+      ]
+    }
+  ]
+}

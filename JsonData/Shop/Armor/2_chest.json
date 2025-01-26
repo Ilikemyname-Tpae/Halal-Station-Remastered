@@ -1,0 +1,46 @@
+{
+  "Name": "armor_chest",
+  "Type": "armor",
+  "Race": 1,
+  "Sections": [
+    {
+      "Name": "carousel_armor_chest",
+      "Shelves": [
+        {
+          "Name": "carousel_armor_standard",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "chest_scanner",
+            "chest_air_assault",
+            "chest_juggernaut",
+            "chest_gungnir",
+            "chest_hoplite"
+          ]
+        },
+        {
+          "Name": "carousel_armor_premium",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "chest_chameleon",
+            "chest_orbital",
+            "chest_widow_maker"
+          ]
+        },
+        {
+          "Name": "carousel_armor_platinum",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "chest_oracle",
+            "chest_dutch",
+            "chest_ballista",
+            "chest_spectrum",
+            "chest_hammerhead"	
+          ]
+        }
+      ]
+    }
+  ]
+}

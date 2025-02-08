@@ -15,45 +15,69 @@ namespace Halal_Station_Remastered.Utils.Services.PresenceServices
             using var connection = new MySqlConnection(_connectionString);
             await connection.OpenAsync();
 
-            var selectQuery = @"
+            using var transaction = await connection.BeginTransactionAsync();
+            try
+            {
+                var selectQuery = @"
                 SELECT p.PartyId, p.Owner, p.MatchmakeState, p.GameData
                 FROM party p
                 WHERE p.UserId = @UserId";
 
-            using (var selectCommand = new MySqlCommand(selectQuery, connection))
-            {
-                selectCommand.Parameters.AddWithValue("@UserId", userId);
-
-                using (var reader = await selectCommand.ExecuteReaderAsync())
+                using (var selectCommand = new MySqlCommand(selectQuery, connection, transaction))
                 {
-                    if (await reader.ReadAsync())
+                    selectCommand.Parameters.AddWithValue("@UserId", userId);
+
+                    using (var reader = await selectCommand.ExecuteReaderAsync())
                     {
-                        var partyId = reader.GetString(reader.GetOrdinal("PartyId"));
-                        var isOwner = reader.GetBoolean(reader.GetOrdinal("Owner"));
-                        var matchmakeState = reader.GetInt32(reader.GetOrdinal("MatchmakeState"));
-                        var gameData = reader.GetString(reader.GetOrdinal("GameData"));
-
-                        reader.Close();
-
-                        var updateQuery = @"
-                            UPDATE party
-                            SET MatchmakeState = 0
-                            WHERE PartyId = @PartyId AND UserId = @UserId";
-
-                        using (var updateCommand = new MySqlCommand(updateQuery, connection))
+                        if (await reader.ReadAsync())
                         {
-                            updateCommand.Parameters.AddWithValue("@PartyId", partyId);
-                            updateCommand.Parameters.AddWithValue("@UserId", userId);
+                            var oldPartyId = reader.GetString(reader.GetOrdinal("PartyId"));
+                            var isOwner = reader.GetBoolean(reader.GetOrdinal("Owner"));
+                            var matchmakeState = reader.GetInt32(reader.GetOrdinal("MatchmakeState"));
+                            var gameData = reader.GetString(reader.GetOrdinal("GameData"));
 
-                            var rowsAffected = await updateCommand.ExecuteNonQueryAsync();
-                            if (rowsAffected > 0)
+                            reader.Close();
+
+                            var deleteQuery = @"
+                            DELETE FROM party 
+                            WHERE UserId = @UserId";
+
+                            using (var deleteCommand = new MySqlCommand(deleteQuery, connection, transaction))
                             {
-                                return (partyId, isOwner, matchmakeState, gameData, true);
+                                deleteCommand.Parameters.AddWithValue("@UserId", userId);
+                                await deleteCommand.ExecuteNonQueryAsync();
                             }
+
+                            var newPartyId = Guid.NewGuid().ToString();
+                            var insertQuery = @"
+                            INSERT INTO party (PartyId, UserId, Owner, MatchmakeState, GameData)
+                            VALUES (@PartyId, @UserId, @Owner, @MatchmakeState, @GameData)";
+
+                            using (var insertCommand = new MySqlCommand(insertQuery, connection, transaction))
+                            {
+                                insertCommand.Parameters.AddWithValue("@PartyId", newPartyId);
+                                insertCommand.Parameters.AddWithValue("@UserId", userId);
+                                insertCommand.Parameters.AddWithValue("@Owner", true);
+                                insertCommand.Parameters.AddWithValue("@MatchmakeState", 0);
+                                insertCommand.Parameters.AddWithValue("@GameData", gameData);
+
+                                await insertCommand.ExecuteNonQueryAsync();
+                            }
+
+                            await transaction.CommitAsync();
+                            return (newPartyId, true, 0, gameData, true);
                         }
                     }
                 }
+
+                await transaction.CommitAsync();
             }
+            catch
+            {
+                await transaction.RollbackAsync();
+                throw;
+            }
+
             return (null, false, 0, null, false);
         }
     }

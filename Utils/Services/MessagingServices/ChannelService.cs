@@ -26,9 +26,10 @@ namespace Halal_Station_Remastered.Utils.Services.MessagingServices
 
                 foreach (var channel in channels)
                 {
-                    var selectQuery = "SELECT Id, Name, Messages, Members FROM Channels WHERE Name = @Name";
+                    var selectQuery = "SELECT Id, Name, Messages, Members FROM Channels WHERE Name = @Name OR Name = @PrivateName";
                     var selectCommand = new MySqlCommand(selectQuery, connection);
                     selectCommand.Parameters.AddWithValue("@Name", channel.Name);
+                    selectCommand.Parameters.AddWithValue("@PrivateName", $"#private_{channel.Name}");
 
                     using (var reader = await selectCommand.ExecuteReaderAsync())
                     {
@@ -39,14 +40,20 @@ namespace Halal_Station_Remastered.Utils.Services.MessagingServices
                             var messages = reader.GetString("Messages");
                             var members = reader.GetString("Members");
 
-                            List<Message> messageList;
-                            try
+                            using JsonDocument doc = JsonDocument.Parse(messages);
+                            var messageArray = doc.RootElement;
+
+                            var messageList = new List<Message>();
+                            foreach (JsonElement msgElement in messageArray.EnumerateArray())
                             {
-                                messageList = JsonSerializer.Deserialize<List<Message>>(messages);
-                            }
-                            catch (JsonException ex)
-                            {
-                                throw new Exception($"Error deserializing messages: {ex.Message}");
+                                var fromElement = msgElement.GetProperty("From");
+                                messageList.Add(new Message
+                                {
+                                    FromId = fromElement.GetProperty("Id").GetInt32(),
+                                    Text = msgElement.GetProperty("Text").GetString(),
+                                    Timestamp = msgElement.GetProperty("Timestamp").GetInt64(),
+                                    Id = messageList.Count + 1
+                                });
                             }
 
                             var filteredMessages = _userStateUpdaterServices.FilterSeenMessages(userId, messageList);

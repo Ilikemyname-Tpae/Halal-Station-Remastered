@@ -12,30 +12,49 @@ namespace Halal_Station_Remastered.Utils.Services.PresenceServices
             _connectionString = configuration.GetConnectionString("DefaultConnection");
         }
 
-        public async Task<(string partyId, bool isOwner, int matchmakeState, string gameData)> GetPartyStatusAsync(int? userId)
+        public async Task<(string partyId, List<(int userId, bool isOwner)> members, int matchmakeState, string gameData)> GetPartyStatusAsync(int? userId)
         {
             using var connection = new MySqlConnection(_connectionString);
             await connection.OpenAsync();
 
+            var getPartyIdSql = @"
+            SELECT PartyId 
+            FROM party 
+            WHERE UserId = @UserId";
+
+            var partyIdCommand = new MySqlCommand(getPartyIdSql, connection);
+            partyIdCommand.Parameters.AddWithValue("@UserId", userId);
+            var partyId = (string)await partyIdCommand.ExecuteScalarAsync();
+
+            if (partyId == null)
+            {
+                return (null, new List<(int, bool)>(), 0, null);
+            }
+
             var sql = @"
-                SELECT p.PartyId, p.Owner, p.MatchmakeState, p.GameData
-                FROM party p
-                WHERE p.UserId = @UserId";
+            SELECT p.UserId, p.Owner, p.MatchmakeState, p.GameData
+            FROM party p
+            WHERE p.PartyId = @PartyId";
 
             var command = new MySqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@UserId", userId);
+            command.Parameters.AddWithValue("@PartyId", partyId);
+
+            var members = new List<(int userId, bool isOwner)>();
+            int matchmakeState = 0;
+            string gameData = null;
 
             using var reader = await command.ExecuteReaderAsync();
-            if (reader.Read())
+            while (await reader.ReadAsync())
             {
-                var partyId = reader.GetString("PartyId");
+                var memberId = reader.GetInt32("UserId");
                 var isOwner = reader.GetBoolean("Owner");
-                var matchmakeState = reader.GetInt32("MatchmakeState");
-                var gameData = reader.GetString("GameData");
+                members.Add((memberId, isOwner));
 
-                return (partyId, isOwner, matchmakeState, gameData);
+                matchmakeState = reader.GetInt32("MatchmakeState");
+                gameData = reader.GetString("GameData");
             }
-            return (null, false, 0, null);
+
+            return (partyId, members, matchmakeState, gameData);
         }
     }
 }

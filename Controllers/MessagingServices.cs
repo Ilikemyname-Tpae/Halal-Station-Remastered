@@ -87,8 +87,26 @@ namespace Halal_Station_Remastered.Controllers
         public async Task<IActionResult> Send([FromBody] SendRequest request)
         {
             var userId = Header.ExtractUserIdFromHeaders(Request.Headers);
-            var channelService = new SendService(_configuration);
-            var isSuccess = await channelService.AddMessageToChannelAsync(userId, request.ChannelName, request.Message);
+            var sendService = new SendService(_configuration);
+            var isSuccess = await sendService.AddMessageToChannelAsync(userId, request.ChannelName, request.Message);
+
+            var response = new
+            {
+                SendResult = new
+                {
+                    retCode = ClientCodes.Success,
+                    data = true
+                }
+            };
+            return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+        }
+
+        [HttpPost("SendServiceMessage")]
+        public async Task<IActionResult> SendServiceMessage([FromBody] SendRequest request)
+        {
+            var userId = Header.ExtractUserIdFromHeaders(Request.Headers);
+            var sendService = new SendService(_configuration);
+            var isSuccess = await sendService.AddMessageToChannelAsync(userId, request.ChannelName, request.Message);
 
             if (!isSuccess)
             {
@@ -97,7 +115,7 @@ namespace Halal_Station_Remastered.Controllers
 
             var response = new
             {
-                SendResult = new
+                SendServiceMessageResult = new
                 {
                     retCode = ClientCodes.Success,
                     data = true

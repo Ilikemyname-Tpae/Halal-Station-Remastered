@@ -47,8 +47,12 @@ namespace Halal_Station_Remastered.Controllers
         }
 
         [HttpPost("ReportOnlineStats")]
-        public IActionResult ReportOnlineStats()
+        public async Task<IActionResult> ReportOnlineStats()
         {
+            var reportStats = new ReportOnlineStatsService(_configuration);
+
+            var (usersFound, usersIngame) = await reportStats.GetOnlineStatsAsync();
+
             var response = new
             {
                 ReportOnlineStatsResult = new
@@ -56,11 +60,11 @@ namespace Halal_Station_Remastered.Controllers
                     retCode = ClientCodes.Success,
                     data = new
                     {
-                        UsersMainMenu = 1,
-                        UsersQueue = 0,
-                        UsersIngame = 0,
+                        UsersMainMenu = 0,
+                        UsersQueue = usersFound,
+                        UsersIngame = usersIngame,
                         UsersRematch = 0,
-                        MatchmakeSessions = 1
+                        MatchmakeSessions = usersIngame > 0 ? 1 : 0
                     }
                 }
             };
@@ -72,7 +76,13 @@ namespace Halal_Station_Remastered.Controllers
         {
             var userId = Header.ExtractUserIdFromHeaders(Request.Headers);
             var partyService = new PartyService(_configuration);
-            var (partyId, isOwner, matchmakeState, gameData) = await partyService.GetPartyStatusAsync(userId);
+            var (partyId, members, matchmakeState, gameData) = await partyService.GetPartyStatusAsync(userId);
+
+            var sessionMembers = members.Select(m => new
+            {
+                User = new { Id = m.userId },
+                IsOwner = m.isOwner
+            }).ToArray();
 
             var response = new
             {
@@ -85,14 +95,7 @@ namespace Halal_Station_Remastered.Controllers
                         {
                             Id = partyId
                         },
-                        SessionMembers = new[]
-                        {
-                    new
-                    {
-                        User = new { Id = userId },
-                        IsOwner = isOwner
-                    }
-                },
+                        SessionMembers = sessionMembers,
                         MatchmakeState = matchmakeState,
                         GameData = gameData
                     }
@@ -187,10 +190,45 @@ namespace Halal_Station_Remastered.Controllers
                     new
                     {
                         User = new { Id = userId },
-                        IsOwner = isOwner
+                        IsOwner = true 
                     }
                 },
                         MatchmakeState = 0,
+                        GameData = gameData
+                    }
+                }
+            };
+            return Header.AddUserContextAndReturnContent(Request.Headers, Response.Headers, response);
+        }
+
+        [HttpPost("PartyJoin")]
+        public async Task<IActionResult> PartyJoin([FromBody] JsonElement requestBody)
+        {
+            var userId = Header.ExtractUserIdFromHeaders(Request.Headers);
+            var newPartyId = requestBody.GetProperty("party").GetProperty("Id").GetString();
+            var partyService = new PartyJoinService(_configuration);
+            var (success, isOwner, matchmakeState, gameData) = await partyService.JoinPartyAsync(userId, newPartyId);
+
+            var response = new
+            {
+                PartyJoinResult = new
+                {
+                    retCode = ClientCodes.Success,
+                    data = new
+                    {
+                        Party = new
+                        {
+                            Id = newPartyId
+                        },
+                        SessionMembers = new[]
+                        {
+                    new
+                    {
+                        User = new { Id = userId },
+                        IsOwner = isOwner
+                    }
+                },
+                        MatchmakeState = matchmakeState,
                         GameData = gameData
                     }
                 }

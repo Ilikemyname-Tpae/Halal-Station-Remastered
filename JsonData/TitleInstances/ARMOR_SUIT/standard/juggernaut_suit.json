@@ -1,0 +1,19 @@
+[
+  {
+    "className": "ARMOR_SUIT",
+    "name": "juggernaut_suit",
+    "parents": [],
+    "props": [
+      {
+        "type": 3,
+        "strVal": "juggernaut_suit",
+        "name": "NAME"
+      },
+      {
+        "type": 6,
+        "strList": ["chest_juggernaut", "shoulders_juggernaut", "arms_juggernaut", "legs_juggernaut", "helmet_juggernaut"],
+        "name": "ARMOR_PIECE_COLLECTION"
+      }
+    ]
+  }
+]

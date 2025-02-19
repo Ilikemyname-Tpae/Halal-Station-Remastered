@@ -1,0 +1,39 @@
+{
+    "ItemId": "power_plant",
+    "Requirements": [],
+    "Unlocks": [],
+    "BundleItems": [
+        {
+            "Duration": 3600,
+            "ItemId": "power_plant"
+        }
+    ],
+    "UnlockedLevel": 0,
+    "OfferLine": [
+        {
+            "Duration": 3600,
+            "Offers": [
+                {
+                    "OfferId": "power_plant",
+                    "Currency": "gold",
+                    "Price": 10,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 10,
+                        "ExpireAt": 0
+                    }
+                },
+                {
+                    "OfferId": "power_plant_cr",
+                    "Currency": "cr",
+                    "Price": 600,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 600,
+                        "ExpireAt": 0
+                    }
+                }
+            ]
+        }
+    ]
+}

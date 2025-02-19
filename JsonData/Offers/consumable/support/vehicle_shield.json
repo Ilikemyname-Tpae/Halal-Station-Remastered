@@ -1,0 +1,39 @@
+{
+    "ItemId": "vehicle_shield",
+    "Requirements": [],
+    "Unlocks": [],
+    "BundleItems": [
+        {
+            "Duration": 3600,
+            "ItemId": "vehicle_shield"
+        }
+    ],
+    "UnlockedLevel": 0,
+    "OfferLine": [
+        {
+            "Duration": 3600,
+            "Offers": [
+                {
+                    "OfferId": "vehicle_shield",
+                    "Currency": "gold",
+                    "Price": 10,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 10,
+                        "ExpireAt": 0
+                    }
+                },
+                {
+                    "OfferId": "vehicle_shield_cr",
+                    "Currency": "cr",
+                    "Price": 600,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 600,
+                        "ExpireAt": 0
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "className": "GAMEPLAY_MODIFIER",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mod_shotgun_spread",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "shotgun_spread",
+        "name": "MODIFIER_NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "mod_unit_abs",
+        "name": "MODIFIER_UNITS"
+      }
+    ],
+    "name": "mod_shotgun_spread",
+    "parents": []
+  }
+]

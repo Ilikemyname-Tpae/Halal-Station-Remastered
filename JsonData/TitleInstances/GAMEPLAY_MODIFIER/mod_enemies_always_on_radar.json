@@ -1,0 +1,24 @@
+[
+  {
+    "className": "GAMEPLAY_MODIFIER",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mod_enemies_always_on_radar",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "enemies_always_on_radar",
+        "name": "MODIFIER_NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "mod_unit_bool",
+        "name": "MODIFIER_UNITS"
+      }
+    ],
+    "name": "mod_enemies_always_on_radar",
+    "parents": []
+  }
+]

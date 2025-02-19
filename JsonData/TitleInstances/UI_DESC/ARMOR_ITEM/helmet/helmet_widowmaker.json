@@ -4,7 +4,7 @@
     "props": [
       {
         "type": 3,
-        "strVal": "helmet_widowmaker",
+        "strVal": "helmet_widow_maker",
         "name": "NAME"
       },
       {
@@ -48,7 +48,7 @@
         "name": "ITEM_QUALITY"
       }
     ],
-    "name": "helmet_widowmaker",
+    "name": "helmet_widow_maker",
     "parents": []
   }
 ]

@@ -1,0 +1,39 @@
+{
+    "ItemId": "helmet_hoplite",
+    "Requirements": [],
+    "Unlocks": [],
+    "BundleItems": [
+        {
+            "Duration": 0,
+            "ItemId": "helmet_hoplite"
+        }
+    ],
+    "UnlockedLevel": 0,
+    "OfferLine": [
+        {
+            "Duration": 0,
+            "Offers": [
+                {
+                    "OfferId": "helmet_hoplite",
+                    "Currency": "gold",
+                    "Price": 390,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 390,
+                        "ExpireAt": 0
+                    }
+                },
+                {
+                    "OfferId": "helmet_hoplite_cr",
+                    "Currency": "cr",
+                    "Price": 2300,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 2300,
+                        "ExpireAt": 0
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+[
+  {
+    "className": "ARMOR_SUIT",
+    "name": "scanner_suit",
+    "parents": [],
+    "props": [
+      {
+        "type": 3,
+        "strVal": "scanner_suit",
+        "name": "NAME"
+      },
+      {
+        "type": 6,
+        "strList": ["chest_scanner", "shoulders_scanner", "arms_scanner", "legs_scanner", "helmet_scanner"],
+        "name": "ARMOR_PIECE_COLLECTION"
+      }
+    ]
+  }
+]

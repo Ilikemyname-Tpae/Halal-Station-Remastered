@@ -1,0 +1,24 @@
+[
+  {
+    "className": "GAMEPLAY_MODIFIER",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mod_detonate_on_player_cdt",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "detonate_on_player_cdt",
+        "name": "MODIFIER_NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "mod_unit_bool",
+        "name": "MODIFIER_UNITS"
+      }
+    ],
+    "name": "mod_detonate_on_player_cdt",
+    "parents": []
+  }
+]

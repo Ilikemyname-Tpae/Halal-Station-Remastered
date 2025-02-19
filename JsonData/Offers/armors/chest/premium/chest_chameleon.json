@@ -1,0 +1,39 @@
+{
+    "ItemId": "chest_chameleon",
+    "Requirements": [],
+    "Unlocks": [],
+    "BundleItems": [
+        {
+            "Duration": 0,
+            "ItemId": "chest_chameleon"
+        }
+    ],
+    "UnlockedLevel": 0,
+    "OfferLine": [
+        {
+            "Duration": 0,
+            "Offers": [
+                {
+                    "OfferId": "chest_chameleon",
+                    "Currency": "gold",
+                    "Price": 130,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 130,
+                        "ExpireAt": 0
+                    }
+                },
+                {
+                    "OfferId": "chest_chameleon_cr",
+                    "Currency": "cr",
+                    "Price": 900,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 900,
+                        "ExpireAt": 0
+                    }
+                }
+            ]
+        }
+    ]
+}

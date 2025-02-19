@@ -1,0 +1,19 @@
+{
+  "Name": "career_shop",
+  "Type": "career",
+  "Race": 3,
+  "Sections": [
+    {
+      "Name": "Ranger",
+      "Shelves": [
+        {
+          "Name": "shelf_career_ranger",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+          ]
+        }
+      ]
+    }
+  ]
+}

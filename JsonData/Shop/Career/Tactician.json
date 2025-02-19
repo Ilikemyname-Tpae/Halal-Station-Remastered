@@ -1,0 +1,19 @@
+{
+  "Name": "career_shop",
+  "Type": "career",
+  "Race": 3,
+  "Sections": [
+    {
+      "Name": "Tactician",
+      "Shelves": [
+        {
+          "Name": "shelf_career_tactician",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+          ]
+        }
+      ]
+    }
+  ]
+}

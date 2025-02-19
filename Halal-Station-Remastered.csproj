@@ -23,6 +23,12 @@
   <ItemGroup>
     <Folder Include="JsonData\Offers\" />
     <Folder Include="JsonData\Shop\" />
+    <Folder Include="JsonData\TitleInstances\ITEM\armor\platinum\legs\" />
+    <Folder Include="JsonData\TitleInstances\ITEM\armor\platinum\helmet\" />
+    <Folder Include="JsonData\TitleInstances\ITEM\armor\platinum\arms\" />
+    <Folder Include="JsonData\TitleInstances\ITEM\armor\platinum\shoulders\" />
+    <Folder Include="JsonData\TitleInstances\ITEM\armor\platinum\chest\" />
+    <Folder Include="JsonData\TitleInstances\UI_DESC\GAMEPLAY_MODIFIER\" />
   </ItemGroup>
 
 </Project>

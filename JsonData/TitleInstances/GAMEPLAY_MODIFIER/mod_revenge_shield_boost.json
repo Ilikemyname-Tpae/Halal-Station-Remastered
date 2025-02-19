@@ -1,0 +1,24 @@
+[
+  {
+    "className": "GAMEPLAY_MODIFIER",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mod_revenge_shield_boost",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "revenge_shield_boost",
+        "name": "MODIFIER_NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "mod_unit_percent",
+        "name": "MODIFIER_UNITS"
+      }
+    ],
+    "name": "mod_revenge_shield_boost",
+    "parents": []
+  }
+]

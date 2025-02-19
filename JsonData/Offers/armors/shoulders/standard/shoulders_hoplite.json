@@ -1,0 +1,39 @@
+{
+    "ItemId": "shoulders_hoplite",
+    "Requirements": [],
+    "Unlocks": [],
+    "BundleItems": [
+        {
+            "Duration": 0,
+            "ItemId": "shoulders_hoplite"
+        }
+    ],
+    "UnlockedLevel": 0,
+    "OfferLine": [
+        {
+            "Duration": 0,
+            "Offers": [
+                {
+                    "OfferId": "shoulders_hoplite",
+                    "Currency": "gold",
+                    "Price": 390,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 390,
+                        "ExpireAt": 0
+                    }
+                },
+                {
+                    "OfferId": "shoulders_hoplite_cr",
+                    "Currency": "cr",
+                    "Price": 2300,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 2300,
+                        "ExpireAt": 0
+                    }
+                }
+            ]
+        }
+    ]
+}

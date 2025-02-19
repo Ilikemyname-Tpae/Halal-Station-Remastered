@@ -1,0 +1,24 @@
+[
+  {
+    "className": "GAMEPLAY_MODIFIER",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mod_vehicle_shield_regen_delay",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "vehicle_shield_regen_delay",
+        "name": "MODIFIER_NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "mod_unit_percent",
+        "name": "MODIFIER_UNITS"
+      }
+    ],
+    "name": "mod_vehicle_shield_regen_delay",
+    "parents": []
+  }
+]

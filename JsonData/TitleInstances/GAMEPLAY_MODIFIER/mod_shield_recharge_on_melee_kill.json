@@ -1,0 +1,24 @@
+[
+  {
+    "className": "GAMEPLAY_MODIFIER",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mod_shield_recharge_on_melee_kill",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "shield_recharge_on_melee_kill",
+        "name": "MODIFIER_NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "mod_unit_bool",
+        "name": "MODIFIER_UNITS"
+      }
+    ],
+    "name": "mod_shield_recharge_on_melee_kill",
+    "parents": []
+  }
+]

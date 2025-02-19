@@ -1,0 +1,39 @@
+{
+    "ItemId": "helmet_ballista",
+    "Requirements": [],
+    "Unlocks": [],
+    "BundleItems": [
+        {
+            "Duration": 0,
+            "ItemId": "helmet_ballista"
+        }
+    ],
+    "UnlockedLevel": 0,
+    "OfferLine": [
+        {
+            "Duration": 0,
+            "Offers": [
+                {
+                    "OfferId": "helmet_ballista",
+                    "Currency": "gold",
+                    "Price": 390,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 390,
+                        "ExpireAt": 0
+                    }
+                },
+                {
+                    "OfferId": "helmet_ballista_cr",
+                    "Currency": "cr",
+                    "Price": 2300,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 2300,
+                        "ExpireAt": 0
+                    }
+                }
+            ]
+        }
+    ]
+}

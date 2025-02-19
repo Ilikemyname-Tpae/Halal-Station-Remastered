@@ -1,0 +1,19 @@
+[
+  {
+    "className": "ARMOR_SUIT",
+    "name": "dutch_suit",
+    "parents": [],
+    "props": [
+      {
+        "type": 3,
+        "strVal": "dutch_suit",
+        "name": "NAME"
+      },
+      {
+        "type": 6,
+        "strList": [ "chest_dutch", "shoulders_dutch", "arms_dutch", "legs_dutch", "helmet_dutch" ],
+        "name": "ARMOR_PIECE_COLLECTION"
+      }
+    ]
+  }
+]

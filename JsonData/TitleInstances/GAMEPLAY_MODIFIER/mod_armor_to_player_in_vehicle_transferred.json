@@ -1,0 +1,24 @@
+[
+  {
+    "className": "GAMEPLAY_MODIFIER",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mod_armor_to_player_in_vehicle_transferred",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "armor_to_player_in_vehicle_transferred",
+        "name": "MODIFIER_NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "mod_unit_abs",
+        "name": "MODIFIER_UNITS"
+      }
+    ],
+    "name": "mod_armor_to_player_in_vehicle_transferred",
+    "parents": []
+  }
+]

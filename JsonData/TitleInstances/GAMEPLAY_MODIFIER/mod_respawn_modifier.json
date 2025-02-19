@@ -1,0 +1,24 @@
+[
+  {
+    "className": "GAMEPLAY_MODIFIER",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mod_respawn_modifier",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "respawn_modifier",
+        "name": "MODIFIER_NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "mod_unit_seconds",
+        "name": "MODIFIER_UNITS"
+      }
+    ],
+    "name": "mod_respawn_modifier",
+    "parents": []
+  }
+]

@@ -4,17 +4,17 @@
     "props": [
       {
         "type": 3,
-        "strVal": "active_camo",
+        "strVal": "tripmine",
         "name": "NAME"
       },
       {
         "type": 3,
-        "strVal": "cons_active_camo_name",
+        "strVal": "cons_trip_mine_name",
         "name": "UI_NAME_ID"
       },
       {
         "type": 3,
-        "strVal": "cons_active_camo_desc",
+        "strVal": "cons_trip_mine_desc",
         "name": "UI_DESC_ID"
       },
       {
@@ -24,27 +24,27 @@
       },
       {
         "type": 3,
-        "strVal": "tpActivecamoSmall",
+        "strVal": "tpTripMineSmall",
         "name": "UI_ICON"
       },
       {
         "type": 3,
-        "strVal": "tpActivecamoMed",
+        "strVal": "tpTripMineMed",
         "name": "UI_ICON_MED"
       },
       {
         "type": 3,
-        "strVal": "tpActivecamoBig",
+        "strVal": "tpTripMineBig",
         "name": "UI_ICON_BIG"
       },
       {
         "type": 3,
-        "strVal": "cons_active_camo",
+        "strVal": "cons_tripmine",
         "name": "UI_VIDEO"
       },
       {
         "type": 3,
-        "strVal": "cons_active_camo",
+        "strVal": "cons_tripmine",
         "name": "ITEM_QUALITY"
       }
     ],

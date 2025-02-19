@@ -1,0 +1,39 @@
+{
+    "ItemId": "respawn_speed",
+    "Requirements": [],
+    "Unlocks": [],
+    "BundleItems": [
+        {
+            "Duration": 3600,
+            "ItemId": "respawn_speed"
+        }
+    ],
+    "UnlockedLevel": 0,
+    "OfferLine": [
+        {
+            "Duration": 3600,
+            "Offers": [
+                {
+                    "OfferId": "respawn_speed",
+                    "Currency": "gold",
+                    "Price": 10,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 10,
+                        "ExpireAt": 0
+                    }
+                },
+                {
+                    "OfferId": "respawn_speed_cr",
+                    "Currency": "cr",
+                    "Price": 600,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 600,
+                        "ExpireAt": 0
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "className": "GAMEPLAY_MODIFIER",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mod_zoom_radar",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "zoom_radar",
+        "name": "MODIFIER_NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "mod_unit_bool",
+        "name": "MODIFIER_UNITS"
+      }
+    ],
+    "name": "mod_zoom_radar",
+    "parents": []
+  }
+]

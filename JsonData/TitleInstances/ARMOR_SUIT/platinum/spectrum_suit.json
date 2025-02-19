@@ -1,0 +1,19 @@
+[
+  {
+    "className": "ARMOR_SUIT",
+    "name": "spectrum_suit",
+    "parents": [],
+    "props": [
+      {
+        "type": 3,
+        "strVal": "spectrum_suit",
+        "name": "NAME"
+      },
+      {
+        "type": 6,
+        "strList": ["chest_spectrum", "shoulders_spectrum", "arms_spectrum", "legs_spectrum", "helmet_spectrum"],
+        "name": "ARMOR_PIECE_COLLECTION"
+      }
+    ]
+  }
+]

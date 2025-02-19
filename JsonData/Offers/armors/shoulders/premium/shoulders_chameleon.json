@@ -1,0 +1,39 @@
+{
+    "ItemId": "shoulders_chameleon",
+    "Requirements": [],
+    "Unlocks": [],
+    "BundleItems": [
+        {
+            "Duration": 0,
+            "ItemId": "shoulders_chameleon"
+        }
+    ],
+    "UnlockedLevel": 0,
+    "OfferLine": [
+        {
+            "Duration": 0,
+            "Offers": [
+                {
+                    "OfferId": "shoulders_chameleon",
+                    "Currency": "gold",
+                    "Price": 130,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 130,
+                        "ExpireAt": 0
+                    }
+                },
+                {
+                    "OfferId": "shoulders_chameleon_cr",
+                    "Currency": "cr",
+                    "Price": 900,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 900,
+                        "ExpireAt": 0
+                    }
+                }
+            ]
+        }
+    ]
+}

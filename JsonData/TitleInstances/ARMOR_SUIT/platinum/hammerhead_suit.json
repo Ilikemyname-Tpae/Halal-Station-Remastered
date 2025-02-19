@@ -1,0 +1,19 @@
+[
+  {
+    "className": "ARMOR_SUIT",
+    "name": "hammerhead_suit",
+    "parents": [],
+    "props": [
+      {
+        "type": 3,
+        "strVal": "hammerhead_suit",
+        "name": "NAME"
+      },
+      {
+        "type": 6,
+        "strList": ["chest_hammerhead", "shoulders_hammerhead", "arms_hammerhead", "legs_hammerhead", "helmet_hammerhead"],
+        "name": "ARMOR_PIECE_COLLECTION"
+      }
+    ]
+  }
+]

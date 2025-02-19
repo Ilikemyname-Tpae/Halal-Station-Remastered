@@ -1,0 +1,39 @@
+{
+    "ItemId": "tripmine",
+    "Requirements": [],
+    "Unlocks": [],
+    "BundleItems": [
+        {
+            "Duration": 3600,
+            "ItemId": "tripmine"
+        }
+    ],
+    "UnlockedLevel": 0,
+    "OfferLine": [
+        {
+            "Duration": 3600,
+            "Offers": [
+                {
+                    "OfferId": "tripmine",
+                    "Currency": "gold",
+                    "Price": 15,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 15,
+                        "ExpireAt": 0
+                    }
+                },
+                {
+                    "OfferId": "tripmine_cr",
+                    "Currency": "cr",
+                    "Price": 900,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 900,
+                        "ExpireAt": 0
+                    }
+                }
+            ]
+        }
+    ]
+}

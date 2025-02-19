@@ -1,0 +1,24 @@
+[
+  {
+    "className": "GAMEPLAY_MODIFIER",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mod_grenades_max",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "grenades_max",
+        "name": "MODIFIER_NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "mod_unit_abs",
+        "name": "MODIFIER_UNITS"
+      }
+    ],
+    "name": "mod_grenades_max",
+    "parents": []
+  }
+]

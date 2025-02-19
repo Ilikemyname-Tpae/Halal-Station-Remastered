@@ -1,0 +1,33 @@
+{
+  "ItemId": "ranger_kit_offer",
+  "Requirements": [],
+  "Unlocks": [ "color_pri_scanner_blue_87", "assault_rifle" ],
+  "BundleItems": [
+    {
+      "Duration": 0,
+      "ItemId": "assault_rifle"
+    },
+    {
+      "Duration": 0,
+      "ItemId": "color_pri_scanner_blue_87"
+    }
+  ],
+  "UnlockedLevel": 0,
+  "OfferLine": [
+    {
+      "Duration": 0,
+      "Offers": [
+        {
+          "OfferId": "ranger_kit_offer",
+          "Currency": "gold",
+          "Price": 0,
+          "ExpireAt": 0,
+          "Sale": {
+            "Price": 0,
+            "ExpireAt": 0
+          }
+        }
+      ]
+    }
+  ]
+}

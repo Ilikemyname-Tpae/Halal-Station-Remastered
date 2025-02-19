@@ -1,0 +1,46 @@
+{
+  "Name": "armor_shoulder",
+  "Type": "armor",
+  "Race": 1,
+  "Sections": [
+    {
+      "Name": "carousel_armor_shoulder",
+      "Shelves": [
+        {
+          "Name": "carousel_armor_standard",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "shoulders_scanner",
+            "shoulders_air_assault",
+            "shoulders_juggernaut",
+            "shoulders_gungnir",
+            "shoulders_hoplite"
+          ]
+        },
+        {
+          "Name": "carousel_armor_premium",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "shoulders_chameleon",
+            "shoulders_orbital",
+            "shoulders_widow_maker"
+          ]
+        },
+        {
+          "Name": "carousel_armor_platinum",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "shoulders_oracle",
+            "shoulders_dutch",
+            "shoulders_ballista",
+            "shoulders_spectrum",
+            "shoulders_hammerhead"
+          ]
+        }
+      ]
+    }
+  ]
+}

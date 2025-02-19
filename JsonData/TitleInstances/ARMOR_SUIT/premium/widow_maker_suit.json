@@ -1,0 +1,19 @@
+[
+  {
+    "className": "ARMOR_SUIT",
+    "name": "widow_maker_suit",
+    "parents": [],
+    "props": [
+      {
+        "type": 3,
+        "strVal": "widow_maker_suit",
+        "name": "NAME"
+      },
+      {
+        "type": 6,
+        "strList": ["chest_widow_maker", "shoulders_widow_maker", "arms_widow_maker", "legs_widow_maker", "helmet_widow_maker"],
+        "name": "ARMOR_PIECE_COLLECTION"
+      }
+    ]
+  }
+]

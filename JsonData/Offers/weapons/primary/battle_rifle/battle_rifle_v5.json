@@ -1,0 +1,34 @@
+{
+  "ItemId": "battle_rifle_v5",
+  "Requirements": [],
+  "Unlocks": [],
+  "BundleItems": [],
+  "UnlockedLevel": 0,
+  "OfferLine": [
+    {
+      "Duration": 3600,
+      "Offers": [
+        {
+          "OfferId": "battle_rifle_v5",
+          "Currency": "gold",
+          "Price": 75,
+          "ExpireAt": 0,
+          "Sale": {
+            "Price": 75,
+            "ExpireAt": 0
+          }
+        },
+        {
+          "OfferId": "battle_rifle_v5_cr",
+          "Currency": "cr",
+          "Price": 750,
+          "ExpireAt": 0,
+          "Sale": {
+            "Price": 750,
+            "ExpireAt": 0
+          }
+        }
+      ]
+    }
+  ]
+}

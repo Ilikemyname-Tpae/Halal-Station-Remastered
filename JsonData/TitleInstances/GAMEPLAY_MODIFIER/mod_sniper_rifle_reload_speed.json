@@ -1,0 +1,24 @@
+[
+  {
+    "className": "GAMEPLAY_MODIFIER",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mod_sniper_rifle_reload_speed",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "sniper_rifle_reload_speed",
+        "name": "MODIFIER_NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "mod_unit_percent",
+        "name": "MODIFIER_UNITS"
+      }
+    ],
+    "name": "mod_sniper_rifle_reload_speed",
+    "parents": []
+  }
+]

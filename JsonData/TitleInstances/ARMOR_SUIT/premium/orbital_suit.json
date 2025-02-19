@@ -1,0 +1,19 @@
+[
+  {
+    "className": "ARMOR_SUIT",
+    "name": "orbital_suit",
+    "parents": [],
+    "props": [
+      {
+        "type": 3,
+        "strVal": "orbital_suit",
+        "name": "NAME"
+      },
+      {
+        "type": 6,
+        "strList": ["chest_orbital", "shoulders_orbital", "arms_orbital", "legs_orbital", "helmet_orbital"],
+        "name": "ARMOR_PIECE_COLLECTION"
+      }
+    ]
+  }
+]

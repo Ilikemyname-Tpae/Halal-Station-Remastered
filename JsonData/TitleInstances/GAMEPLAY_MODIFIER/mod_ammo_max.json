@@ -1,0 +1,24 @@
+[
+  {
+    "className": "GAMEPLAY_MODIFIER",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mod_ammo_max",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "ammo_max",
+        "name": "MODIFIER_NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "mod_unit_abs",
+        "name": "MODIFIER_UNITS"
+      }
+    ],
+    "name": "mod_ammo_max",
+    "parents": []
+  }
+]

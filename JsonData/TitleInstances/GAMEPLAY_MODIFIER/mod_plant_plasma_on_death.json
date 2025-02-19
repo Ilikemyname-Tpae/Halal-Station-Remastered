@@ -1,0 +1,24 @@
+[
+  {
+    "className": "GAMEPLAY_MODIFIER",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mod_plant_plasma_on_death",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "plant_plasma_on_death",
+        "name": "MODIFIER_NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "mod_unit_bool",
+        "name": "MODIFIER_UNITS"
+      }
+    ],
+    "name": "mod_plant_plasma_on_death",
+    "parents": []
+  }
+]

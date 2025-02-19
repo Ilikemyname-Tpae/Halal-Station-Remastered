@@ -1,0 +1,39 @@
+{
+    "ItemId": "extra_battery",
+    "Requirements": [],
+    "Unlocks": [],
+    "BundleItems": [
+        {
+            "Duration": 3600,
+            "ItemId": "extra_battery"
+        }
+    ],
+    "UnlockedLevel": 0,
+    "OfferLine": [
+        {
+            "Duration": 3600,
+            "Offers": [
+                {
+                    "OfferId": "extra_battery",
+                    "Currency": "gold",
+                    "Price": 10,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 10,
+                        "ExpireAt": 0
+                    }
+                },
+                {
+                    "OfferId": "extra_battery_cr",
+                    "Currency": "cr",
+                    "Price": 600,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 600,
+                        "ExpireAt": 0
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -4,7 +4,7 @@
     "props": [
       {
         "type": 3,
-        "strVal": "arms_widowmaker",
+        "strVal": "arms_widow_maker",
         "name": "NAME"
       },
       {
@@ -48,7 +48,7 @@
         "name": "ITEM_QUALITY"
       }
     ],
-    "name": "arms_widowmaker",
+    "name": "arms_widow_maker",
     "parents": []
   }
 ]

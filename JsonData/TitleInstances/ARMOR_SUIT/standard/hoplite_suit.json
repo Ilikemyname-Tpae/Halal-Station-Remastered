@@ -1,0 +1,19 @@
+[
+  {
+    "className": "ARMOR_SUIT",
+    "name": "hoplite_suit",
+    "parents": [],
+    "props": [
+      {
+        "type": 3,
+        "strVal": "hoplite_suit",
+        "name": "NAME"
+      },
+      {
+        "type": 6,
+        "strList": [ "chest_hoplite", "shoulders_hoplite", "arms_hoplite", "legs_hoplite", "helmet_hoplite" ],
+        "name": "ARMOR_PIECE_COLLECTION"
+      }
+    ]
+  }
+]

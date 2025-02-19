@@ -1,0 +1,39 @@
+{
+    "ItemId": "arms_oracle",
+    "Requirements": [],
+    "Unlocks": [],
+    "BundleItems": [
+        {
+            "Duration": 0,
+            "ItemId": "arms_oracle"
+        }
+    ],
+    "UnlockedLevel": 0,
+    "OfferLine": [
+        {
+            "Duration": 0,
+            "Offers": [
+                {
+                    "OfferId": "arms_arms_oracle",
+                    "Currency": "gold",
+                    "Price": 130,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 130,
+                        "ExpireAt": 0
+                    }
+                },
+                {
+                    "OfferId": "arms_arms_oracle_cr",
+                    "Currency": "cr",
+                    "Price": 900,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 900,
+                        "ExpireAt": 0
+                    }
+                }
+            ]
+        }
+    ]
+}

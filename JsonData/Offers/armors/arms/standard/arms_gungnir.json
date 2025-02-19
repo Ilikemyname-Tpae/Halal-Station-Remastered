@@ -1,0 +1,39 @@
+{
+    "ItemId": "arms_gungnir",
+    "Requirements": [],
+    "Unlocks": [],
+    "BundleItems": [
+        {
+            "Duration": 0,
+            "ItemId": "arms_gungnir"
+        }
+    ],
+    "UnlockedLevel": 0,
+    "OfferLine": [
+        {
+            "Duration": 0,
+            "Offers": [
+                {
+                    "OfferId": "arms_gungnir",
+                    "Currency": "gold",
+                    "Price": 390,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 390,
+                        "ExpireAt": 0
+                    }
+                },
+                {
+                    "OfferId": "arms_gungnir_cr",
+                    "Currency": "cr",
+                    "Price": 2300,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 2300,
+                        "ExpireAt": 0
+                    }
+                }
+            ]
+        }
+    ]
+}

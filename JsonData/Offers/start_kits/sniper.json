@@ -1,0 +1,29 @@
+{
+  "ItemId": "sniper_kit_offer",
+  "Requirements": [],
+  "Unlocks": [],
+  "BundleItems": [
+    {
+      "Duration": 0,
+      "ItemId": "dmr"
+    }
+  ],
+  "UnlockedLevel": 0,
+  "OfferLine": [
+    {
+      "Duration": 0,
+      "Offers": [
+        {
+          "OfferId": "sniper_kit_offer",
+          "Currency": "gold",
+          "Price": 0,
+          "ExpireAt": 0,
+          "Sale": {
+            "Price": 0,
+            "ExpireAt": 0
+          }
+        }
+      ]
+    }
+  ]
+}

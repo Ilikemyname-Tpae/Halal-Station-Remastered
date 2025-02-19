@@ -1,0 +1,39 @@
+{
+    "ItemId": "legs_air_assault",
+    "Requirements": [],
+    "Unlocks": [],
+    "BundleItems": [
+        {
+            "Duration": 0,
+            "ItemId": "legs_air_assault"
+        }
+    ],
+    "UnlockedLevel": 0,
+    "OfferLine": [
+        {
+            "Duration": 0,
+            "Offers": [
+                {
+                    "OfferId": "legs_air_assault",
+                    "Currency": "gold",
+                    "Price": 130,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 130,
+                        "ExpireAt": 0
+                    }
+                },
+                {
+                    "OfferId": "legs_air_assault_cr",
+                    "Currency": "cr",
+                    "Price": 900,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 900,
+                        "ExpireAt": 0
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+[
+  {
+    "className": "ARMOR_SUIT",
+    "name": "ballista_suit",
+    "parents": [],
+    "props": [
+      {
+        "type": 3,
+        "strVal": "ballista_suit",
+        "name": "NAME"
+      },
+      {
+        "type": 6,
+        "strList": ["chest_ballista", "shoulders_ballista", "arms_ballista", "legs_ballista", "helmet_ballista"],
+        "name": "ARMOR_PIECE_COLLECTION"
+      }
+    ]
+  }
+]

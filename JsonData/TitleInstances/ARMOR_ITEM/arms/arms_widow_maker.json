@@ -39,12 +39,12 @@
       },
       {
         "type": 3,
-        "strVal": ";",
+        "strVal": "0.05;",
         "name": "ARMOR_MODIFIERS_VALUES"
       },
       {
         "type": 3,
-        "strVal": ";",
+        "strVal": "mod_weapon_switch_speed;",
         "name": "ARMOR_MODIFIERS_LIST"
       }
     ],

@@ -1,0 +1,24 @@
+[
+  {
+    "className": "GAMEPLAY_MODIFIER",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mod_grenade_scavenger",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "grenade_scavenger",
+        "name": "MODIFIER_NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "mod_unit_abs",
+        "name": "MODIFIER_UNITS"
+      }
+    ],
+    "name": "mod_grenade_scavenger",
+    "parents": []
+  }
+]

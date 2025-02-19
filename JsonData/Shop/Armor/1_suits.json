@@ -1,21 +1,21 @@
 {
-  "Name": "armor_shoulder",
+  "Name": "armor_suit",
   "Type": "armor",
   "Race": 1,
   "Sections": [
     {
-      "Name": "carousel_armor_shoulder",
+      "Name": "carousel_armor_suits",
       "Shelves": [
         {
           "Name": "carousel_armor_standard",
           "IsHot": false,
           "IsSale": false,
           "Items": [
-            "shoulders_scanner",
-            "shoulders_air_assault",
-            "shoulders_juggernaut",
-            "shoulders_gungnir",
-            "shoulders_hoplite"
+            "scanner_suit",
+            "air_assault_suit",
+            "juggernaut_suit",
+            "gungnir_suit",
+            "hoplite_suit"
           ]
         },
         {
@@ -23,9 +23,9 @@
           "IsHot": false,
           "IsSale": false,
           "Items": [
-            "shoulders_chameleon",
-            "shoulders_orbital",
-            "shoulders_widow_maker"
+            "chameleon_suit",
+            "orbital_suit",
+            "widow_maker_suit"
           ]
         },
         {
@@ -33,11 +33,11 @@
           "IsHot": false,
           "IsSale": false,
           "Items": [
-            "shoulders_oracle",
-            "shoulders_dutch",
-            "shoulders_ballista",
-            "shoulders_spectrum",
-            "shoulders_hammerhead"	
+            "oracle_suit",
+            "dutch_suit",
+            "ballista_suit",
+            "spectrum_suit",
+            "hammerhead_suit"
           ]
         }
       ]

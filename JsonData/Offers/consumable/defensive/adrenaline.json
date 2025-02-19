@@ -1,0 +1,39 @@
+{
+    "ItemId": "adrenaline",
+    "Requirements": [],
+    "Unlocks": [],
+    "BundleItems": [
+        {
+            "Duration": 3600,
+            "ItemId": "adrenaline"
+        }
+    ],
+    "UnlockedLevel": 0,
+    "OfferLine": [
+        {
+            "Duration": 3600,
+            "Offers": [
+                {
+                    "OfferId": "adrenaline",
+                    "Currency": "gold",
+                    "Price": 15,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 15,
+                        "ExpireAt": 0
+                    }
+                },
+                {
+                    "OfferId": "adrenaline_cr",
+                    "Currency": "cr",
+                    "Price": 900,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 900,
+                        "ExpireAt": 0
+                    }
+                }
+            ]
+        }
+    ]
+}

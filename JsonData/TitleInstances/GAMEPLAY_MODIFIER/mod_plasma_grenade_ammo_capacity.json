@@ -1,0 +1,24 @@
+[
+  {
+    "className": "GAMEPLAY_MODIFIER",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mod_plasma_grenade_ammo_capacity",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "plasma_grenade_ammo_capacity",
+        "name": "MODIFIER_NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "mod_unit_abs",
+        "name": "MODIFIER_UNITS"
+      }
+    ],
+    "name": "mod_plasma_grenade_ammo_capacity",
+    "parents": []
+  }
+]

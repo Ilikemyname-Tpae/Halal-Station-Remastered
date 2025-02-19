@@ -1,0 +1,48 @@
+{
+  "Name": "tactical_packages_shop",
+  "Type": "consumable",
+  "Race": 1,
+  "Sections": [
+    {
+      "Name": "section_loadouts",
+      "Shelves": [
+        {
+          "Name": "offensive",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "vision", 
+            "tripmine"
+          ]
+        },
+        {
+          "Name": "defensive",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "adrenaline", 
+            "deployable_cover", 
+            "regenerator"
+          ]
+        },
+        {
+          "Name": "support",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "revenge_shield", 
+            "respawn_speed", 
+            "grenade_reserve",
+            "extra_battery", 
+            "vehicle_shield", 
+            "runner",
+            "reflex", 
+            "visor", 
+            "charger", 
+            "power_plant"
+          ]
+        }
+      ]
+    }
+  ]
+}

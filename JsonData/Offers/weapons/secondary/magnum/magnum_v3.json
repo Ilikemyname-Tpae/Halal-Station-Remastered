@@ -1,0 +1,34 @@
+{
+  "ItemId": "magnum_v3",
+  "Requirements": [],
+  "Unlocks": [],
+  "BundleItems": [],
+  "UnlockedLevel": 0,
+  "OfferLine": [
+    {
+      "Duration": 3600,
+      "Offers": [
+        {
+          "OfferId": "magnum_v3",
+          "Currency": "gold",
+          "Price": 30,
+          "ExpireAt": 0,
+          "Sale": {
+            "Price": 30,
+            "ExpireAt": 0
+          }
+        },
+        {
+          "OfferId": "magnum_v3_cr",
+          "Currency": "cr",
+          "Price": 900,
+          "ExpireAt": 0,
+          "Sale": {
+            "Price": 900,
+            "ExpireAt": 0
+          }
+        }
+      ]
+    }
+  ]
+}

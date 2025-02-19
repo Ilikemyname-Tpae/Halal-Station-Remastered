@@ -1,0 +1,24 @@
+[
+  {
+    "className": "GAMEPLAY_MODIFIER",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mod_explosives_damage",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "explosives_damage",
+        "name": "MODIFIER_NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "mod_unit_abs",
+        "name": "MODIFIER_UNITS"
+      }
+    ],
+    "name": "mod_explosives_damage",
+    "parents": []
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "className": "ARMOR_SUIT",
+    "name": "air_assault_suit",
+    "parents": [],
+    "props": [
+      {
+        "type": 3,
+        "strVal": "air_assault_suit",
+        "name": "NAME"
+      },
+      {
+        "type": 6,
+        "strList": ["chest_air_assault", "shoulders_air_assault", "arms_air_assault", "legs_air_assault", "helmet_air_assault"],
+        "name": "ARMOR_PIECE_COLLECTION"
+      }
+    ]
+  }
+]

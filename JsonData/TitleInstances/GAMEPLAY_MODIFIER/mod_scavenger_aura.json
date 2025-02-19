@@ -1,0 +1,24 @@
+[
+  {
+    "className": "GAMEPLAY_MODIFIER",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mod_scavenger_aura",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "scavenger_aura",
+        "name": "MODIFIER_NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "mod_unit_abs",
+        "name": "MODIFIER_UNITS"
+      }
+    ],
+    "name": "mod_scavenger_aura",
+    "parents": []
+  }
+]

@@ -1,0 +1,39 @@
+{
+    "ItemId": "legs_orbital",
+    "Requirements": [],
+    "Unlocks": [],
+    "BundleItems": [
+        {
+            "Duration": 0,
+            "ItemId": "legs_orbital"
+        }
+    ],
+    "UnlockedLevel": 0,
+    "OfferLine": [
+        {
+            "Duration": 0,
+            "Offers": [
+                {
+                    "OfferId": "legs_orbital",
+                    "Currency": "gold",
+                    "Price": 2300,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 2300,
+                        "ExpireAt": 0
+                    }
+                },
+              {
+                "OfferId": "legs_orbital_cr",
+                "Currency": "cr",
+                "Price": 2300,
+                "ExpireAt": 0,
+                "Sale": {
+                  "Price": 2300,
+                  "ExpireAt": 0
+                }
+              }
+            ]
+        }
+    ]
+}

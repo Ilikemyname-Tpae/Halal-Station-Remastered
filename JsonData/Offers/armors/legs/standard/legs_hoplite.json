@@ -1,0 +1,39 @@
+{
+    "ItemId": "legs_hoplite",
+    "Requirements": [],
+    "Unlocks": [],
+    "BundleItems": [
+        {
+            "Duration": 0,
+            "ItemId": "legs_hoplite"
+        }
+    ],
+    "UnlockedLevel": 0,
+    "OfferLine": [
+        {
+            "Duration": 0,
+            "Offers": [
+                {
+                    "OfferId": "legs_hoplite",
+                    "Currency": "gold",
+                    "Price": 390,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 390,
+                        "ExpireAt": 0
+                    }
+                },
+                {
+                    "OfferId": "legs_hoplite_cr",
+                    "Currency": "cr",
+                    "Price": 2300,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 2300,
+                        "ExpireAt": 0
+                    }
+                }
+            ]
+        }
+    ]
+}

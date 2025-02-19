@@ -1,0 +1,19 @@
+[
+  {
+    "className": "ARMOR_SUIT",
+    "name": "gungnir_suit",
+    "parents": [],
+    "props": [
+      {
+        "type": 3,
+        "strVal": "gungnir_suit",
+        "name": "NAME"
+      },
+      {
+        "type": 6,
+        "strList": ["chest_gungnir", "shoulders_gungnir", "arms_gungnir", "legs_gungnir", "helmet_gungnir"],
+        "name": "ARMOR_PIECE_COLLECTION"
+      }
+    ]
+  }
+]

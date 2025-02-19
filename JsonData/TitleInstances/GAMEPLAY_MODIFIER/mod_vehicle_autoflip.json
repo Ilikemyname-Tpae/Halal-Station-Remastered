@@ -1,0 +1,24 @@
+[
+  {
+    "className": "GAMEPLAY_MODIFIER",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mod_vehicle_autoflip",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "vehicle_autoflip",
+        "name": "MODIFIER_NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "mod_unit_bool",
+        "name": "MODIFIER_UNITS"
+      }
+    ],
+    "name": "mod_vehicle_autoflip",
+    "parents": []
+  }
+]

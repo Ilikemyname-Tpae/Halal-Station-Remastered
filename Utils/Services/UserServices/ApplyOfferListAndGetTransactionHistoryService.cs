@@ -13,88 +13,57 @@ namespace Halal_Station_Remastered.Utils.Services.UserServices
             _connectionString = configuration.GetConnectionString("DefaultConnection");
         }
 
-        public async Task<(List<object> transactions, string errorMessage)> ProcessOffersAndGetTransactionsAsync(ApplyOfferListAndGetTransactionHistoryRequest offerRequest, int? userId)
+        public async Task<(List<object> transactions, string errorMessage)> ProcessOffersAndGetTransactionsAsync(
+            ApplyOfferListAndGetTransactionHistoryRequest offerRequest, int? userId)
         {
-            int initialValue;
-            string currencyType = "Gold";
-            int stateType = 3;
+            if (!userId.HasValue)
+                return (new List<object>(), "Invalid user ID");
 
-            var offersDirectoryPath = Path.Combine(AppContext.BaseDirectory, "JsonData", "Offers");
-            var allItemOffers = LoadOffersFromJson(offersDirectoryPath);
+            using var connection = new MySqlConnection(_connectionString);
+            await connection.OpenAsync();
+            using var transaction = await connection.BeginTransactionAsync();
 
-            var matchingOffers = allItemOffers
-                .SelectMany(io => io.OfferLine.SelectMany(ol => ol.Offers))
-                .Where(o => offerRequest.OfferIds.Contains(o.OfferId))
-                .ToList();
-
-            var transactions = new List<object>();
-
-            using (var connection = new MySqlConnection(_connectionString))
+            try
             {
-                await connection.OpenAsync();
-                using (var transaction = await connection.BeginTransactionAsync())
+                var transactions = new List<object>();
+                foreach (var offerId in offerRequest.OfferIds)
                 {
-                    try
+                    var (offer, offerError) = await GetOfferDetailsAsync(connection, transaction, offerId);
+                    if (offerError != null)
+                        return (new List<object>(), offerError);
+
+                    var currencyType = offerId.EndsWith("_cr") ? "Credits" : "Gold";
+                    var initialValue = await GetUserCurrencyAsync(connection, transaction, userId.Value, currencyType);
+
+                    if (initialValue < offer.Price)
+                        return (new List<object>(), $"Insufficient {currencyType}");
+
+                    var resultingValue = initialValue - offer.Price;
+                    var transactionEntry = CreateTransactionEntry(offerId, initialValue, resultingValue, currencyType, offerRequest.HistoryFromTime);
+
+                    await RecordTransactionAsync(connection, transaction, userId.Value, offerId, initialValue, resultingValue, offer.Price, transactionEntry);
+                    await UpdateUserCurrencyAsync(connection, transaction, userId.Value, currencyType, resultingValue);
+
+                    if (IsSpecialOffer(offerId))
                     {
-                        currencyType = offerRequest.OfferIds.Any(id => id.EndsWith("_cr")) ? "Credits" : "Gold";
-                        stateType = currencyType == "Credits" ? 2 : 3;
-
-                        initialValue = await GetInitialCurrencyValueAsync(connection, transaction, userId, currencyType);
-
-                        foreach (var offer in matchingOffers)
-                        {
-                            var resultingValue = initialValue - offer.Price;
-
-                            var transactionEntry = new
-                            {
-                                transactionItems = new[]
-                                {
-                                    new
-                                    {
-                                        stateName = offer.OfferId.Replace("_cr", ""),
-                                        stateType = stateType,
-                                        ownType = 2,
-                                        operationType = 0,
-                                        initialValue = initialValue,
-                                        resultingValue = resultingValue,
-                                        deltaValue = offer.Price,
-                                        descId = 0
-                                    }
-                                },
-                                sessionId = Guid.NewGuid().ToString(),
-                                referenceId = Guid.NewGuid().ToString(),
-                                offerId = offer.OfferId,
-                                timeStamp = offerRequest.HistoryFromTime,
-                                operationType = 0,
-                                extendedInfoItems = new[] { new { Key = "", Value = "" } }
-                            };
-                            transactions.Add(transactionEntry);
-
-                            await InsertTransactionAsync(connection, transaction, userId, offer, initialValue, resultingValue, transactionEntry);
-                            initialValue = resultingValue;
-
-                            if (IsSpecialOffer(offer.OfferId))
-                            {
-                                await UpdateSpecialOfferAsync(connection, transaction, userId, offer.OfferId);
-                            }
-                        }
-
-                        await UpdateCurrencyValueAsync(connection, transaction, userId, currencyType, initialValue);
-                        await transaction.CommitAsync();
+                        await HandleSpecialOfferAsync(connection, transaction, userId.Value, offerId);
                     }
-                    catch
-                    {
-                        await transaction.RollbackAsync();
-                        throw;
-                    }
+
+                    transactions.Add(transactionEntry);
                 }
+
+                await transaction.CommitAsync();
+                return (transactions, null);
             }
-
-            return (transactions, null);
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync();
+                return (new List<object>(), ex.Message);
+            }
         }
-
-        private List<ItemOffer> LoadOffersFromJson(string offersDirectoryPath)
+        private async Task<(Offer offer, string error)> GetOfferDetailsAsync(MySqlConnection connection, MySqlTransaction transaction, string offerId)
         {
+            var offersDirectoryPath = Path.Combine(AppContext.BaseDirectory, "JsonData", "Offers");
             var allItemOffers = new List<ItemOffer>();
 
             if (Directory.Exists(offersDirectoryPath))
@@ -111,10 +80,19 @@ namespace Halal_Station_Remastered.Utils.Services.UserServices
                 }
             }
 
-            return allItemOffers;
+            var offer = allItemOffers
+                .SelectMany(io => io.OfferLine.SelectMany(ol => ol.Offers))
+                .FirstOrDefault(o => o.OfferId == offerId);
+
+            if (offer == null)
+            {
+                return (null, $"Offer not found: {offerId}");
+            }
+
+            return (offer, null);
         }
 
-        private async Task<int> GetInitialCurrencyValueAsync(MySqlConnection connection, MySqlTransaction transaction, int? userId, string currencyType)
+        private async Task<int> GetUserCurrencyAsync(MySqlConnection connection, MySqlTransaction transaction, int userId, string currencyType)
         {
             const string query = @"SELECT Value FROM userstates WHERE UserId = @UserId AND StateName = @CurrencyType";
             using (var command = new MySqlCommand(query, connection, transaction))
@@ -123,71 +101,104 @@ namespace Halal_Station_Remastered.Utils.Services.UserServices
                 command.Parameters.AddWithValue("@CurrencyType", currencyType);
 
                 var result = await command.ExecuteScalarAsync();
-                return result != null && int.TryParse(result.ToString(), out var value) ? value : -1;
+                return result != null && int.TryParse(result.ToString(), out var value) ? value : 0;
             }
         }
 
-        private async Task InsertTransactionAsync(MySqlConnection connection, MySqlTransaction transaction, int? userId, Offer offer, int initialValue, int resultingValue, object transactionEntry)
+        private async Task UpdateUserCurrencyAsync(MySqlConnection connection, MySqlTransaction transaction, int userId, string currencyType, int newValue)
         {
-            const string query = @"
-                INSERT INTO transactions
-                (UserId, OfferId, InitialValue, ResultingValue, DeltaValue, OperationType, SessionId, ReferenceId, TimeStamp, DescId, StateName, StateType, OwnType)
-                VALUES (@UserId, @OfferId, @InitialValue, @ResultingValue, @DeltaValue, @OperationType, @SessionId, @ReferenceId, @TimeStamp, @DescId, @StateName, @StateType, @OwnType)";
+            const string query = @"UPDATE userstates SET Value = @NewValue WHERE UserId = @UserId AND StateName = @CurrencyType";
 
             using (var command = new MySqlCommand(query, connection, transaction))
             {
-                command.Parameters.AddWithValue("@UserId", userId);
-                command.Parameters.AddWithValue("@OfferId", offer.OfferId);
-                command.Parameters.AddWithValue("@InitialValue", initialValue);
-                command.Parameters.AddWithValue("@ResultingValue", resultingValue);
-                command.Parameters.AddWithValue("@DeltaValue", offer.Price);
-                command.Parameters.AddWithValue("@OperationType", 0);
-                command.Parameters.AddWithValue("@SessionId", ((dynamic)transactionEntry).sessionId);
-                command.Parameters.AddWithValue("@ReferenceId", ((dynamic)transactionEntry).referenceId);
-                command.Parameters.AddWithValue("@TimeStamp", ((dynamic)transactionEntry).timeStamp);
-                command.Parameters.AddWithValue("@DescId", 0);
-                command.Parameters.AddWithValue("@StateName", offer.OfferId.Replace("_cr", ""));
-                command.Parameters.AddWithValue("@StateType", 4);
-                command.Parameters.AddWithValue("@OwnType", 2);
-
-                await command.ExecuteNonQueryAsync();
-            }
-        }
-
-        private async Task UpdateSpecialOfferAsync(MySqlConnection connection, MySqlTransaction transaction, int? userId, string offerId)
-        {
-            const string query = @"
-                UPDATE userstates
-                SET Value = 0
-                WHERE UserId = @UserId AND StateName = 'class_select_token';
-                INSERT INTO userstates (StateName, OwnType, Value, StateType, UserId)
-                VALUES (@OfferId, 1, 1, 0, @UserId)";
-
-            using (var command = new MySqlCommand(query, connection, transaction))
-            {
-                command.Parameters.AddWithValue("@UserId", userId);
-                command.Parameters.AddWithValue("@OfferId", offerId);
-                await command.ExecuteNonQueryAsync();
-            }
-        }
-
-        private async Task UpdateCurrencyValueAsync(MySqlConnection connection, MySqlTransaction transaction, int? userId, string currencyType, int finalValue)
-        {
-            const string query = @"UPDATE userstates SET Value = @FinalValue WHERE UserId = @UserId AND StateName = @CurrencyType";
-
-            using (var command = new MySqlCommand(query, connection, transaction))
-            {
-                command.Parameters.AddWithValue("@FinalValue", finalValue);
+                command.Parameters.AddWithValue("@NewValue", newValue);
                 command.Parameters.AddWithValue("@UserId", userId);
                 command.Parameters.AddWithValue("@CurrencyType", currencyType);
 
                 await command.ExecuteNonQueryAsync();
             }
         }
+        private object CreateTransactionEntry(string offerId, int initialValue, int resultingValue, string currencyType, long timestamp)
+        {
+            return new
+            {
+                transactionItems = new[]
+                {
+                new
+                {
+                    stateName = offerId.Replace("_cr", ""),
+                    stateType = currencyType == "Credits" ? 2 : 3,
+                    ownType = offerId.StartsWith("challenge") ? 1 : 2,
+                    operationType = 0,
+                    initialValue = offerId.StartsWith("challenge") ? 0 : initialValue,
+                    resultingValue = offerId.StartsWith("challenge") ? 0 : resultingValue,
+                    deltaValue = offerId.StartsWith("challenge") ? 0 : initialValue - resultingValue,
+                    descId = 0
+                }
+            },
+                sessionId = Guid.NewGuid().ToString(),
+                referenceId = Guid.NewGuid().ToString(),
+                offerId = offerId,
+                timeStamp = timestamp,
+                operationType = 0,
+                extendedInfoItems = new[] { new { Key = "", Value = "" } }
+            };
+        }
+
+        private async Task RecordTransactionAsync(MySqlConnection connection, MySqlTransaction transaction,
+            int userId, string offerId, int initialValue, int resultingValue, int price, dynamic transactionEntry)
+        {
+            const string query = @"
+            INSERT INTO transactions 
+            (UserId, OfferId, InitialValue, ResultingValue, DeltaValue, OperationType, 
+             SessionId, ReferenceId, TimeStamp, StateName, StateType, OwnType, DescId)
+            VALUES 
+            (@UserId, @OfferId, @InitialValue, @ResultingValue, @DeltaValue, @OperationType,
+             @SessionId, @ReferenceId, @TimeStamp, @StateName, @StateType, @OwnType, @DescId)";
+
+            using var cmd = new MySqlCommand(query, connection, transaction);
+            cmd.Parameters.AddWithValue("@UserId", userId);
+            cmd.Parameters.AddWithValue("@OfferId", offerId);
+            cmd.Parameters.AddWithValue("@InitialValue", initialValue);
+            cmd.Parameters.AddWithValue("@ResultingValue", resultingValue);
+            cmd.Parameters.AddWithValue("@DeltaValue", price);
+            cmd.Parameters.AddWithValue("@OperationType", 0);
+            cmd.Parameters.AddWithValue("@SessionId", transactionEntry.sessionId);
+            cmd.Parameters.AddWithValue("@ReferenceId", transactionEntry.referenceId);
+            cmd.Parameters.AddWithValue("@TimeStamp", transactionEntry.timeStamp);
+            cmd.Parameters.AddWithValue("@StateName", offerId.Replace("_cr", ""));
+            cmd.Parameters.AddWithValue("@StateType", 4);
+            cmd.Parameters.AddWithValue("@DescId", 0);
+            cmd.Parameters.AddWithValue("@OwnType", offerId.StartsWith("challenge") ? 1 : 2);
+
+            await cmd.ExecuteNonQueryAsync();
+        }
+
+        private async Task HandleSpecialOfferAsync(MySqlConnection connection, MySqlTransaction transaction, int userId, string offerId)
+        {
+            if (IsKitOffer(offerId))
+            {
+                const string query = @"
+                UPDATE userstates 
+                SET Value = 0, OwnType = 0 
+                WHERE UserId = @UserId AND StateName = 'class_select_token';";
+
+                using var cmd = new MySqlCommand(query, connection, transaction);
+                cmd.Parameters.AddWithValue("@UserId", userId);
+                await cmd.ExecuteNonQueryAsync();
+            }
+        }
 
         private bool IsSpecialOffer(string offerId)
         {
-            return offerId == "ranger_kit_offer" || offerId == "sniper_kit_offer" || offerId == "tactician_kit_offer";
+            return IsKitOffer(offerId) || offerId.StartsWith("challenge");
+        }
+
+        private bool IsKitOffer(string offerId)
+        {
+            return offerId == "ranger_kit_offer" ||
+                   offerId == "sniper_kit_offer" ||
+                   offerId == "tactician_kit_offer";
         }
     }
 }

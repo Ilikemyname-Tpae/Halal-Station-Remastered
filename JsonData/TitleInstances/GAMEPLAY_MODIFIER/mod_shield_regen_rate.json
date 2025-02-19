@@ -1,0 +1,24 @@
+[
+  {
+    "className": "GAMEPLAY_MODIFIER",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mod_shield_regen_rate",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "shield_regen_rate",
+        "name": "MODIFIER_NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "mod_unit_percent",
+        "name": "MODIFIER_UNITS"
+      }
+    ],
+    "name": "mod_shield_regen_rate",
+    "parents": []
+  }
+]

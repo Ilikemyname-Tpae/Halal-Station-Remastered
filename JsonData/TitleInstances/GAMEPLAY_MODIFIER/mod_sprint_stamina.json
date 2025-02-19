@@ -1,0 +1,24 @@
+[
+  {
+    "className": "GAMEPLAY_MODIFIER",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mod_sprint_stamina",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "sprint_stamina",
+        "name": "MODIFIER_NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "mod_unit_seconds",
+        "name": "MODIFIER_UNITS"
+      }
+    ],
+    "name": "mod_sprint_stamina",
+    "parents": []
+  }
+]

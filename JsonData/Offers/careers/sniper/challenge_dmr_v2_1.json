@@ -1,0 +1,29 @@
+{
+    "ItemId": "challenge_dmr_v2_1",
+    "Requirements": [],
+    "Unlocks": ["dmr_v2"],
+    "BundleItems": [
+        {
+            "Duration": 0,
+            "ItemId": "dmr_v2"
+        }
+    ],
+    "UnlockedLevel": 0,
+    "OfferLine": [
+        {
+            "Duration": 0,
+            "Offers": [
+                {
+                    "OfferId": "challenge_dmr_v2_1",
+                    "Currency": "green_token",
+                    "Price": 500,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 500,
+                        "ExpireAt": 0
+                    }
+                }
+            ]
+        }
+    ]
+}

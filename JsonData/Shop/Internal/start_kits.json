@@ -1,0 +1,22 @@
+{
+  "Name": "internal_shop",
+  "Type": "internal",
+  "Race": 3,
+  "Sections": [
+    {
+      "Name": "section_career",
+      "Shelves": [
+        {
+          "Name": "shelf_bundles_start_kits",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "ranger_kit_offer",
+            "sniper_kit_offer",
+            "tactician_kit_offer"
+          ]
+        }
+      ]
+    }
+  ]
+}

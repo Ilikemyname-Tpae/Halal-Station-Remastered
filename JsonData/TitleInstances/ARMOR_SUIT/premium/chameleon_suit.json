@@ -1,0 +1,19 @@
+[
+  {
+    "className": "ARMOR_SUIT",
+    "name": "chameleon_suit",
+    "parents": [],
+    "props": [
+      {
+        "type": 3,
+        "strVal": "chameleon_suit",
+        "name": "NAME"
+      },
+      {
+        "type": 6,
+        "strList": ["chest_chameleon", "shoulders_chameleon", "arms_chameleon", "legs_chameleon", "helmet_chameleon"],
+        "name": "ARMOR_PIECE_COLLECTION"
+      }
+    ]
+  }
+]

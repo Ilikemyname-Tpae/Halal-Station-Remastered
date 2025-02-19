@@ -1,0 +1,39 @@
+{
+    "ItemId": "vision",
+    "Requirements": [],
+    "Unlocks": [],
+    "BundleItems": [
+        {
+            "Duration": 3600,
+            "ItemId": "vision"
+        }
+    ],
+    "UnlockedLevel": 0,
+    "OfferLine": [
+        {
+            "Duration": 3600,
+            "Offers": [
+                {
+                    "OfferId": "vision",
+                    "Currency": "gold",
+                    "Price": 15,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 15,
+                        "ExpireAt": 0
+                    }
+                },
+                {
+                    "OfferId": "vision_cr",
+                    "Currency": "cr",
+                    "Price": 900,
+                    "ExpireAt": 0,
+                    "Sale": {
+                        "Price": 900,
+                        "ExpireAt": 0
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+[
+  {
+    "className": "ARMOR_SUIT",
+    "name": "oracle_suit",
+    "parents": [],
+    "props": [
+      {
+        "type": 3,
+        "strVal": "oracle_suit",
+        "name": "NAME"
+      },
+      {
+        "type": 6,
+        "strList": ["chest_oracle", "shoulders_oracle", "arms_oracle", "legs_oracle", "helmet_oracle"],
+        "name": "ARMOR_PIECE_COLLECTION"
+      }
+    ]
+  }
+]

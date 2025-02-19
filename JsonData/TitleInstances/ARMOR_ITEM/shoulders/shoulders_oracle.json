@@ -39,12 +39,12 @@
       },
       {
         "type": 3,
-        "strVal": ";",
+        "strVal": "0.03;",
         "name": "ARMOR_MODIFIERS_VALUES"
       },
       {
         "type": 3,
-        "strVal": ";",
+        "strVal": "mod_energy_regeneration_rate;",
         "name": "ARMOR_MODIFIERS_LIST"
       }
     ],

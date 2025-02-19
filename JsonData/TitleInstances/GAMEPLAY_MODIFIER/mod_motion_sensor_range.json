@@ -1,0 +1,24 @@
+[
+  {
+    "className": "GAMEPLAY_MODIFIER",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mod_motion_sensor_range",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "motion_sensor_range",
+        "name": "MODIFIER_NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "mod_unit_meters",
+        "name": "MODIFIER_UNITS"
+      }
+    ],
+    "name": "mod_motion_sensor_range",
+    "parents": []
+  }
+]

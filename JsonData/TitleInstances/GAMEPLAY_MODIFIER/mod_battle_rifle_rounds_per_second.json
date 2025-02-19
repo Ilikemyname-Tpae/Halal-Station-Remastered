@@ -1,0 +1,24 @@
+[
+  {
+    "className": "GAMEPLAY_MODIFIER",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "mod_battle_rifle_rounds_per_second",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "battle_rifle_rounds_per_second",
+        "name": "MODIFIER_NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "mod_unit_percent",
+        "name": "MODIFIER_UNITS"
+      }
+    ],
+    "name": "mod_battle_rifle_rounds_per_second",
+    "parents": []
+  }
+]

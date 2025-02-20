@@ -61,6 +61,6 @@
 ![Logo](Utils/Thumbnails/logo_3.jpg)
 ![Logo](Utils/Thumbnails/logo_4.jpg)
 ![Logo](Utils/Thumbnails/logo_5.jpg)
-![Logo](Utils/Thumbnails/logo_7.jpg)
+![Logo](Utils/Thumbnails/logo_6.jpg)
 
 #### There is still many fixes and addons to implement, so please be patient.

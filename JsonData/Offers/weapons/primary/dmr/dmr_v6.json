@@ -2,12 +2,7 @@
   "ItemId": "dmr_v6",
   "Requirements": [],
   "Unlocks": [],
-  "BundleItems": [
-    {
-      "Duration": 0,
-      "ItemId": "dmr_v6"
-    }
-  ],
+  "BundleItems": [],
   "UnlockedLevel": 0,
   "OfferLine": [
     {

@@ -1,60 +1,18 @@
-# Halal-Station-Remastered
+# Halo: Online Ms23 API Remake
 ![Logo](Utils/Thumbnails/logo.PNG)
 #### USERS CAN NOW ENJOY THE SHOP AS TITLE INSTANCES HAVE NOW BEEN ADDED FOR WEAPONS, GRENADES, CONSUMABLES AND ARMORS
+
+#### ALL REQUESTS HAVE NOW BEEN IMPLEMENTED!
+
 ## TODO for the API:
-#### EndpointsDispatcherService.svc
-- ~~GetAuthorizationEndpointsAndDate~~
-#### AuthorizationService.svc
-- ~~SignIn~~
-#### FriendsService.svc
-- ~~GetSubscriptions~~
-- ~~SubscriptionAdd~~
-- ~~SubscriptionRemove~~
-#### GameStatisticsService.svc
-- ~~GetUserChallenges~~
-- ~~CheckNewUserChallenges~~
-#### HeartbeatService.svc
-- ~~GetServicesStatus~~
-#### PresenceService.svc
-- ~~PresenceConnect~~
-- ~~ReportOnlineStats~~
-- ~~PartyGetStatus~~
-- ~~GetPlaylistStats~~
-- ~~PresenceGetUsersPresence~~
-- ~~PartySetGameData~~
-- ~~PartyJoin~~
-- ~~PartyLeave~~
-- ~~MatchmakeGetStatus~~
-- ~~MatchmakeStart~~
-- ~~MatchmakeStop~~
-#### MessagingService.svc
-- ~~JoinChannels~~
-- ~~Receive~~
-- ~~LeaveChannels~~
-- ~~Send~~
-### ArbitraryStorageService.svc
-- ~~WriteDiagnosticsData~~
-- ~~WriteADFPack~~
-#### TitleResourceService.svc
-- ~~GetTitleConfiguration~~
-- ~~GetTitleTagsPatchConfiguration~~
-#### UserService.svc
-- ~~GetUserStates~~
-- ~~GetShop~~
-- ~~GetItemOffers~~
-- ~~GetTransactionHistory~~
-- ~~GetUsersBaseData~~
-- ~~GetUsersPrimaryStates~~
-- ~~GetUsersByNickname~~
-- ~~ApplyOfferListAndGetTransactionHistory~~
-- ~~NicknameChange~~
-#### UserStorageService.svc
-- ~~GetPublicData~~
-- ~~GetPrivateData~~
-- ~~SetPublicData~~
-- ~~SetPrivateData~~
-#### SessionControlService.svc
-- ~~ClientGetStatus~~
+- Implement Challenges
+- Fix Ui_Desc Images
+- Fix APPLYTRANSACTION Controller
+- Add Level Up logic and Rewards
+- Start to Matchmake all clients ONLY WHEN Playlist minimum clients have been met
+- Create a custom transaction for stats
+
+#### Will add more TODO's if there any problems I come across
 
 ## CURRENT MAINMENU
 ![Logo](Utils/Thumbnails/logo_2.jpg)

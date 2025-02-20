@@ -1,0 +1,29 @@
+[
+  {
+    "className": "ITEM",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "assault_rifle",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "item",
+        "name": "ECONOMY_MODEL_TYPE"
+      },
+      {
+        "type": 3,
+        "strVal": "Default",
+        "name": "CAREER_TREE"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "RELATED_CHALLENGES"
+      }
+    ],
+    "name": "assault_rifle",
+    "parents": []
+  }
+]

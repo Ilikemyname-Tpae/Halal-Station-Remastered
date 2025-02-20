@@ -13,16 +13,16 @@
         {
             "Duration": 0,
             "Offers": [
-                {
-                    "OfferId": "legs_orbital",
-                    "Currency": "gold",
-                    "Price": 2300,
-                    "ExpireAt": 0,
-                    "Sale": {
-                        "Price": 2300,
-                        "ExpireAt": 0
-                    }
-                },
+              {
+                "OfferId": "legs_orbital",
+                "Currency": "gold",
+                "Price": 390,
+                "ExpireAt": 0,
+                "Sale": {
+                  "Price": 390,
+                  "ExpireAt": 0
+                }
+              },
               {
                 "OfferId": "legs_orbital_cr",
                 "Currency": "cr",

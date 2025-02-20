@@ -44,7 +44,7 @@
       },
       {
         "type": 3,
-        "strVal": "rare",
+        "strVal": "uncommon",
         "name": "ITEM_QUALITY"
       }
     ],

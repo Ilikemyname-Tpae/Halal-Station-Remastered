@@ -1,0 +1,29 @@
+[
+  {
+    "className": "ITEM",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "helmet_widow_maker",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "suit",
+        "name": "ECONOMY_MODEL_TYPE"
+      },
+      {
+        "type": 3,
+        "strVal": "Sniper",
+        "name": "CAREER_TREE"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "RELATED_CHALLENGES"
+      }
+    ],
+    "name": "helmet_widow_maker",
+    "parents": []
+  }
+]

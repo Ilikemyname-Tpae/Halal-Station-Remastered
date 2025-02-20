@@ -44,7 +44,7 @@
       },
       {
         "type": 3,
-        "strVal": "uncommon",
+        "strVal": "common",
         "name": "ITEM_QUALITY"
       }
     ],

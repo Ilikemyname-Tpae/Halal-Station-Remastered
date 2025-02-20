@@ -44,7 +44,7 @@
       },
       {
         "type": 3,
-        "strVal": "legendary",
+        "strVal": "rare",
         "name": "ITEM_QUALITY"
       }
     ],

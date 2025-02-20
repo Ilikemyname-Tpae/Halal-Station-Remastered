@@ -1,0 +1,29 @@
+[
+  {
+    "className": "ITEM",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "legs_scanner",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "suit",
+        "name": "ECONOMY_MODEL_TYPE"
+      },
+      {
+        "type": 3,
+        "strVal": "Ranger",
+        "name": "CAREER_TREE"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "RELATED_CHALLENGES"
+      }
+    ],
+    "name": "legs_scanner",
+    "parents": []
+  }
+]

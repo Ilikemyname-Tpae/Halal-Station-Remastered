@@ -1,5 +1,5 @@
 {
-  "ItemId": "magnum_v2",
+  "ItemId": "plasma_pistol",
   "Requirements": [],
   "Unlocks": [],
   "BundleItems": [],
@@ -11,20 +11,20 @@
         {
           "OfferId": "plasma_pistol",
           "Currency": "gold",
-          "Price": 30,
+          "Price": 20,
           "ExpireAt": 0,
           "Sale": {
-            "Price": 30,
+            "Price": 20,
             "ExpireAt": 0
           }
         },
         {
           "OfferId": "plasma_pistol_cr",
           "Currency": "cr",
-          "Price": 850,
+          "Price": 650,
           "ExpireAt": 0,
           "Sale": {
-            "Price": 850,
+            "Price": 650,
             "ExpireAt": 0
           }
         }

@@ -1,0 +1,34 @@
+{
+  "ItemId": "smg_v1",
+  "Requirements": [],
+  "Unlocks": [],
+  "BundleItems": [],
+  "UnlockedLevel": 0,
+  "OfferLine": [
+    {
+      "Duration": 3600,
+      "Offers": [
+        {
+          "OfferId": "smg_v1",
+          "Currency": "gold",
+          "Price": 75,
+          "ExpireAt": 0,
+          "Sale": {
+            "Price": 75,
+            "ExpireAt": 0
+          }
+        },
+        {
+          "OfferId": "smg_v1_cr",
+          "Currency": "cr",
+          "Price": 1750,
+          "ExpireAt": 0,
+          "Sale": {
+            "Price": 1750,
+            "ExpireAt": 0
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "className": "WPN_UI_STATS",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "smg_v1",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 22,
+        "name": "UI_WPN_STATS_DMG"
+      },
+      {
+        "type": 1,
+        "intVal": 90,
+        "name": "UI_WPN_STATS_ROF"
+      },
+      {
+        "type": 1,
+        "intVal": 20,
+        "name": "UI_WPN_STATS_ACC"
+      },
+      {
+        "type": 1,
+        "intVal": 60,
+        "name": "UI_WPN_STATS_CLIP"
+      },
+      {
+        "type": 1,
+        "intVal": 10,
+        "name": "UI_WPN_STATS_RANGE"
+      },
+      {
+        "type": 3,
+        "strVal": "rof",
+        "name": "WPN_PRIMARY_ATTRIBUTE"
+      }
+    ],
+    "name": "smg_v1",
+    "parents": []
+  }
+]

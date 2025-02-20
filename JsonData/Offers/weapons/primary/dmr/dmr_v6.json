@@ -1,0 +1,39 @@
+{
+  "ItemId": "dmr_v6",
+  "Requirements": [],
+  "Unlocks": [],
+  "BundleItems": [
+    {
+      "Duration": 0,
+      "ItemId": "dmr_v6"
+    }
+  ],
+  "UnlockedLevel": 0,
+  "OfferLine": [
+    {
+      "Duration": 0,
+      "Offers": [
+        {
+          "OfferId": "dmr_v6",
+          "Currency": "gold",
+          "Price": 100,
+          "ExpireAt": 0,
+          "Sale": {
+            "Price": 100,
+            "ExpireAt": 0
+          }
+        },
+        {
+          "OfferId": "dmr_v6_cr",
+          "Currency": "cr",
+          "Price": 2100,
+          "ExpireAt": 0,
+          "Sale": {
+            "Price": 2100,
+            "ExpireAt": 0
+          }
+        }
+      ]
+    }
+  ]
+}

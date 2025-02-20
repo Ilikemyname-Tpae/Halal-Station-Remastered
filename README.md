@@ -1,6 +1,6 @@
 # Halal-Station-Remastered
 ![Logo](Utils/Thumbnails/logo.PNG)
-#### USERS CAN NOW PROPERLY LOGIN AND WONT FACE ANY PROBLEMS, BUT SHOPS AND SUCH WILL BE EMPTY ATM WHILST I ADD ALL THE TITLE INSTANCES.
+#### USERS CAN NOW ENJOY THE SHOP AS TITLE INSTANCES HAVE NOW BEEN ADDED FOR WEAPONS, GRENADES, CONSUMABLES AND ARMORS
 ## TODO for the API:
 #### EndpointsDispatcherService.svc
 - ~~GetAuthorizationEndpointsAndDate~~
@@ -22,7 +22,7 @@
 - ~~GetPlaylistStats~~
 - ~~PresenceGetUsersPresence~~
 - ~~PartySetGameData~~
-- PartyJoin
+- ~~PartyJoin~~
 - ~~PartyLeave~~
 - ~~MatchmakeGetStatus~~
 - ~~MatchmakeStart~~
@@ -61,7 +61,6 @@
 ![Logo](Utils/Thumbnails/logo_3.jpg)
 ![Logo](Utils/Thumbnails/logo_4.jpg)
 ![Logo](Utils/Thumbnails/logo_5.jpg)
-![Logo](Utils/Thumbnails/logo_6.jpg)
 ![Logo](Utils/Thumbnails/logo_7.jpg)
 
 #### There is still many fixes and addons to implement, so please be patient.

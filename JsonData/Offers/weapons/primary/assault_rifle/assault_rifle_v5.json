@@ -21,10 +21,10 @@
         {
           "OfferId": "assault_rifle_v5_cr",
           "Currency": "cr",
-          "Price": 750,
+          "Price": 2000,
           "ExpireAt": 0,
           "Sale": {
-            "Price": 750,
+            "Price": 2000,
             "ExpireAt": 0
           }
         }

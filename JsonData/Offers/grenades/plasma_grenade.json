@@ -1,0 +1,34 @@
+{
+  "ItemId": "plasma_grenade",
+  "Requirements": [],
+  "Unlocks": [],
+  "BundleItems": [],
+  "UnlockedLevel": 0,
+  "OfferLine": [
+    {
+      "Duration": 3600,
+      "Offers": [
+        {
+          "OfferId": "plasma_grenade",
+          "Currency": "gold",
+          "Price": 20,
+          "ExpireAt": 0,
+          "Sale": {
+            "Price": 20,
+            "ExpireAt": 0
+          }
+        },
+        {
+          "OfferId": "plasma_grenade_cr",
+          "Currency": "cr",
+          "Price": 170,
+          "ExpireAt": 0,
+          "Sale": {
+            "Price": 170,
+            "ExpireAt": 0
+          }
+        }
+      ]
+    }
+  ]
+}

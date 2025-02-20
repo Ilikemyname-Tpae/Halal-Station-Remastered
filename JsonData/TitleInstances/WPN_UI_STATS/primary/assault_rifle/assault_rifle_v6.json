@@ -1,0 +1,44 @@
+[
+  {
+    "className": "WPN_UI_STATS",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "assault_rifle_v6",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 31,
+        "name": "UI_WPN_STATS_DMG"
+      },
+      {
+        "type": 1,
+        "intVal": 53,
+        "name": "UI_WPN_STATS_ROF"
+      },
+      {
+        "type": 1,
+        "intVal": 35,
+        "name": "UI_WPN_STATS_ACC"
+      },
+      {
+        "type": 1,
+        "intVal": 32,
+        "name": "UI_WPN_STATS_CLIP"
+      },
+      {
+        "type": 1,
+        "intVal": 53,
+        "name": "UI_WPN_STATS_RANGE"
+      },
+      {
+        "type": 3,
+        "strVal": "rof",
+        "name": "WPN_PRIMARY_ATTRIBUTE"
+      }
+    ],
+    "name": "assault_rifle_v6",
+    "parents": []
+  }
+]

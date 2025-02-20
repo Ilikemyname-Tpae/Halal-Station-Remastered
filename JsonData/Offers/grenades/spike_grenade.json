@@ -1,0 +1,34 @@
+{
+  "ItemId": "spike_grenade",
+  "Requirements": [],
+  "Unlocks": [],
+  "BundleItems": [],
+  "UnlockedLevel": 0,
+  "OfferLine": [
+    {
+      "Duration": 3600,
+      "Offers": [
+        {
+          "OfferId": "spike_grenade",
+          "Currency": "gold",
+          "Price": 30,
+          "ExpireAt": 0,
+          "Sale": {
+            "Price": 30,
+            "ExpireAt": 0
+          }
+        },
+        {
+          "OfferId": "spike_grenade_cr",
+          "Currency": "cr",
+          "Price": 370,
+          "ExpireAt": 0,
+          "Sale": {
+            "Price": 370,
+            "ExpireAt": 0
+          }
+        }
+      ]
+    }
+  ]
+}

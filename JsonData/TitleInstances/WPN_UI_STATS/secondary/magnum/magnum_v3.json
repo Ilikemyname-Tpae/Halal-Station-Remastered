@@ -1,0 +1,44 @@
+[
+  {
+    "className": "WPN_UI_STATS",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "magnum_v3",
+        "name": "NAME"
+      },
+      {
+        "type": 1,
+        "intVal": 55,
+        "name": "UI_WPN_STATS_DMG"
+      },
+      {
+        "type": 1,
+        "intVal": 35,
+        "name": "UI_WPN_STATS_ROF"
+      },
+      {
+        "type": 1,
+        "intVal": 58,
+        "name": "UI_WPN_STATS_ACC"
+      },
+      {
+        "type": 1,
+        "intVal": 8,
+        "name": "UI_WPN_STATS_CLIP"
+      },
+      {
+        "type": 1,
+        "intVal": 45,
+        "name": "UI_WPN_STATS_RANGE"
+      },
+      {
+        "type": 3,
+        "strVal": "rof",
+        "name": "WPN_PRIMARY_ATTRIBUTE"
+      }
+    ],
+    "name": "magnum_v3",
+    "parents": []
+  }
+]

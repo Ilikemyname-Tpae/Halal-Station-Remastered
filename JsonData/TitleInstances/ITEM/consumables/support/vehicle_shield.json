@@ -1,0 +1,29 @@
+[
+  {
+    "className": "ITEM",
+    "props": [
+      {
+        "type": 3,
+        "strVal": "vehicle_shield",
+        "name": "NAME"
+      },
+      {
+        "type": 3,
+        "strVal": "item",
+        "name": "ECONOMY_MODEL_TYPE"
+      },
+      {
+        "type": 3,
+        "strVal": "Default",
+        "name": "CAREER_TREE"
+      },
+      {
+        "type": 3,
+        "strVal": "",
+        "name": "RELATED_CHALLENGES"
+      }
+    ],
+    "name": "vehicle_shield",
+    "parents": []
+  }
+]

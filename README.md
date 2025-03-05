@@ -7,7 +7,6 @@
 ## TODO for the API:
 - Implement Challenges
 - Fix Ui_Desc Images
-- Fix APPLYTRANSACTION Controller
 - Add Level Up logic and Rewards
 - Start to Matchmake all clients ONLY WHEN Playlist minimum clients have been met
 - Create a custom transaction for stats

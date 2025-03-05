@@ -1,0 +1,36 @@
+[
+  {
+    "name": "extra_battery",
+    "className": "BOOSTER",
+    "parents": [],
+    "props": [
+      {
+        "name": "NAME",
+        "type": 3,
+        "strVal": "extra_battery"
+      },
+      {
+        "name": "MODIFIERS",
+        "type": 7,
+        "objList": [
+          {
+            "className": "",
+            "parents": [],
+            "props": [
+              {
+                "name": "NAME",
+                "type": 3,
+                "strVal": "energy_increase_count_on_spawn"
+              },
+              {
+                "name": "VALUE",
+                "type": 2,
+                "floatVal": 1.0
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

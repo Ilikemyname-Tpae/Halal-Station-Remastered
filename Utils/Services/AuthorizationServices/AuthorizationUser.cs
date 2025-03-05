@@ -43,7 +43,7 @@ namespace Halal_Station_Remastered.Utils.Services.AuthorizationServices
                 var statesQuery = "INSERT INTO userstates (StateName, OwnType, Value, StateType, UserId) VALUES " +
                                   "('Credits', 0, 1000, 2, @UserId)," + "('Gold', 0, 100, 3, @UserId)," + "('class_select_token', 1, 1, 12, @UserId)," +
                                   "('weapon_loadout_0', 1, 1, 0, @UserId)," + "('armor_loadout_0', 1, 1, 0, @UserId)," + "('magnum', 1, 1, 4, @UserId)," +
-                                  "('frag_grenade', 1, 1, 4, @UserId)," + "('Level', 0, 1, 9, @UserId)," + "('Level_Progress', 0, 0, 1, @UserId);";
+                                  "('frag_grenade', 1, 1, 4, @UserId)," + "('Level', 0, 1, 9, @UserId)," + "('Level_Progress', 0, 0, 1, @UserId);" + "('account_rename_token', 1, 3, 12, @UserId);";
                 using var statesCommand = new MySqlCommand(statesQuery, connection, transaction);
                 statesCommand.Parameters.AddWithValue("@UserId", userId);
 

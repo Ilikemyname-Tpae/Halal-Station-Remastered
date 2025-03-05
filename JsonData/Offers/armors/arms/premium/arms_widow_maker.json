@@ -4,14 +4,14 @@
     "Unlocks": [],
     "BundleItems": [
         {
-            "Duration": 0,
+            "Duration": 3600,
             "ItemId": "arms_widow_maker"
         }
     ],
     "UnlockedLevel": 0,
     "OfferLine": [
         {
-            "Duration": 0,
+            "Duration": 3600,
             "Offers": [
                 {
                     "OfferId": "arms_widow_maker",

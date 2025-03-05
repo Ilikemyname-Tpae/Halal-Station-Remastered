@@ -1,0 +1,36 @@
+[
+  {
+    "name": "grenade_reserve",
+    "className": "BOOSTER",
+    "parents": [],
+    "props": [
+      {
+        "name": "NAME",
+        "type": 3,
+        "strVal": "grenade_reserve"
+      },
+      {
+        "name": "MODIFIERS",
+        "type": 7,
+        "objList": [
+          {
+            "className": "",
+            "parents": [],
+            "props": [
+              {
+                "name": "NAME",
+                "type": 3,
+                "strVal": "grenades_max"
+              },
+              {
+                "name": "VALUE",
+                "type": 2,
+                "floatVal": 1.0
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

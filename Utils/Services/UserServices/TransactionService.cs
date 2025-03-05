@@ -34,9 +34,18 @@ namespace Halal_Station_Remastered.Utils.Services.UserServices
                     {
                         while (await reader.ReadAsync())
                         {
+                            string offerId = reader["OfferId"].ToString();
                             int resultingValue = Convert.ToInt32(reader["ResultingValue"]);
-                            int updatedResultingValue = resultingValue - 5;
-                            int ownType = updatedResultingValue <= 0 ? 0 : Convert.ToInt32(reader["OwnType"]);
+                            int ownType = Convert.ToInt32(reader["OwnType"]);
+
+                            int updatedResultingValue = resultingValue;
+                            if (!offerId.Equals("account_rename_token") &&
+                                !offerId.StartsWith("weapon_loadout") &&
+                                !offerId.StartsWith("armor_loadout"))
+                            {
+                                updatedResultingValue = resultingValue - 5;
+                                ownType = updatedResultingValue <= 0 ? 0 : ownType;
+                            }
 
                             var transactionItem = new
                             {
@@ -55,7 +64,7 @@ namespace Halal_Station_Remastered.Utils.Services.UserServices
                                 transactionItems = new[] { transactionItem },
                                 sessionId = reader["SessionId"].ToString(),
                                 referenceId = reader["ReferenceId"].ToString(),
-                                offerId = reader["OfferId"].ToString(),
+                                offerId = offerId,
                                 timeStamp = Convert.ToInt64(reader["TimeStamp"]),
                                 operationType = Convert.ToInt32(reader["OperationType"]),
                                 extendedInfoItems = new[] { new { Key = "", Value = "" } }
@@ -63,7 +72,12 @@ namespace Halal_Station_Remastered.Utils.Services.UserServices
 
                             transactionsList.Add(transaction);
 
-                            await UpdateResultingValueAsync(userId.Value, reader["OfferId"].ToString(), updatedResultingValue, ownType, resultingValue);
+                            if (!offerId.Equals("account_rename_token") &&
+                                !offerId.StartsWith("weapon_loadout") &&
+                                !offerId.StartsWith("armor_loadout"))
+                            {
+                                await UpdateResultingValueAsync(userId.Value, offerId, updatedResultingValue, ownType, resultingValue);
+                            }
                         }
                     }
                 }

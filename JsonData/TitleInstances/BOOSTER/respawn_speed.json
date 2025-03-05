@@ -1,0 +1,36 @@
+[
+  {
+    "name": "revenge_shield",
+    "className": "BOOSTER",
+    "parents": [],
+    "props": [
+      {
+        "name": "NAME",
+        "type": 3,
+        "strVal": "revenge_shield"
+      },
+      {
+        "name": "MODIFIERS",
+        "type": 7,
+        "objList": [
+          {
+            "className": "",
+            "parents": [],
+            "props": [
+              {
+                "name": "NAME",
+                "type": 3,
+                "strVal": "respawn_modifier"
+              },
+              {
+                "name": "VALUE",
+                "type": 2,
+                "floatVal": 0.5
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

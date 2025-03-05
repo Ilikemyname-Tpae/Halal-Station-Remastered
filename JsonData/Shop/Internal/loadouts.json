@@ -1,0 +1,36 @@
+{
+  "Name": "internal_shop",
+  "Type": "internal",
+  "Race": 3,
+  "Sections": [
+    {
+      "Name": "section_loadouts",
+      "Shelves": [
+        {
+          "Name": "shelf_weapon_loadouts",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "weapon_loadout_0",
+            "weapon_loadout_1",
+            "weapon_loadout_2",
+            "weapon_loadout_3",
+            "weapon_loadout_4"
+          ]
+        },
+        {
+          "Name": "shelf_armor_loadouts",
+          "IsHot": false,
+          "IsSale": false,
+          "Items": [
+            "armor_loadout_0",
+            "armor_loadout_1",
+            "armor_loadout_2",
+            "armor_loadout_3",
+            "armor_loadout_4"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "ItemId": "weapon_loadout_1",
+  "Requirements": [],
+  "Unlocks": [ "weapon_loadout_1" ],
+  "BundleItems": [
+    {
+      "Duration": 0,
+      "ItemId": "weapon_loadout_1"
+    }
+  ],
+  "UnlockedLevel": 0,
+  "OfferLine": [
+    {
+      "Duration": 0,
+      "Offers": [
+        {
+          "OfferId": "weapon_loadout_1",
+          "Currency": "gold",
+          "Price": 600,
+          "ExpireAt": 0,
+          "Sale": {
+            "Price": 600,
+            "ExpireAt": 0
+          }
+        },
+        {
+          "OfferId": "weapon_loadout_1_cr",
+          "Currency": "cr",
+          "Price": 4500,
+          "ExpireAt": 0,
+          "Sale": {
+            "Price": 4500,
+            "ExpireAt": 0
+          }
+        }
+      ]
+    }
+  ]
+}

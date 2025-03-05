@@ -118,24 +118,179 @@ namespace Halal_Station_Remastered.Utils.Services.UserServices
                 await command.ExecuteNonQueryAsync();
             }
         }
+        private async Task RecordTransactionAsync(MySqlConnection connection, MySqlTransaction transaction,
+     int userId, string offerId, int initialValue, int resultingValue, int price, dynamic transactionEntry)
+        {
+            var duration = await GetOfferDurationAsync(offerId);
+            bool isLoadout = offerId.StartsWith("weapon_loadout") || offerId.StartsWith("armor_loadout");
+
+            const string query = @"
+INSERT INTO transactions 
+(UserId, OfferId, InitialValue, ResultingValue, DeltaValue, OperationType, 
+ SessionId, ReferenceId, TimeStamp, StateName, StateType, OwnType, DescId)
+VALUES 
+(@UserId, @OfferId, @InitialValue, @ResultingValue, @DeltaValue, @OperationType,
+ @SessionId, @ReferenceId, @TimeStamp, @StateName, @StateType, @OwnType, @DescId)";
+
+            using var cmd = new MySqlCommand(query, connection, transaction);
+            cmd.Parameters.AddWithValue("@UserId", userId);
+            cmd.Parameters.AddWithValue("@OfferId", offerId);
+
+            if (isLoadout)
+            {
+                cmd.Parameters.AddWithValue("@InitialValue", 0);
+                cmd.Parameters.AddWithValue("@ResultingValue", 1);
+                cmd.Parameters.AddWithValue("@DeltaValue", 1);
+                cmd.Parameters.AddWithValue("@StateType", 0);
+                cmd.Parameters.AddWithValue("@OwnType", 1);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@InitialValue", duration);
+                cmd.Parameters.AddWithValue("@ResultingValue", duration);
+                cmd.Parameters.AddWithValue("@DeltaValue", 0);
+                cmd.Parameters.AddWithValue("@StateType", 4);
+                cmd.Parameters.AddWithValue("@OwnType", 2);
+            }
+
+            cmd.Parameters.AddWithValue("@OperationType", 0);
+            cmd.Parameters.AddWithValue("@SessionId", transactionEntry.sessionId);
+            cmd.Parameters.AddWithValue("@ReferenceId", transactionEntry.referenceId);
+            cmd.Parameters.AddWithValue("@TimeStamp", transactionEntry.timeStamp);
+            cmd.Parameters.AddWithValue("@StateName", offerId.Replace("_cr", ""));
+            cmd.Parameters.AddWithValue("@DescId", 0);
+
+            await cmd.ExecuteNonQueryAsync();
+
+            if (isLoadout)
+            {
+                await AddToUserStatesAsync(connection, transaction, userId, offerId);
+            }
+        }
+        private async Task AddToUserStatesAsync(MySqlConnection connection, MySqlTransaction transaction, int userId, string stateName)
+        {
+            const string checkQuery = @"SELECT COUNT(*) FROM userstates WHERE UserId = @UserId AND StateName = @StateName";
+            using (var checkCmd = new MySqlCommand(checkQuery, connection, transaction))
+            {
+                checkCmd.Parameters.AddWithValue("@UserId", userId);
+                checkCmd.Parameters.AddWithValue("@StateName", stateName);
+
+                var count = Convert.ToInt32(await checkCmd.ExecuteScalarAsync());
+
+                if (count > 0)
+                {
+                    const string updateQuery = @"
+                UPDATE userstates 
+                SET Value = 1, OwnType = 1, StateType = 0
+                WHERE UserId = @UserId AND StateName = @StateName";
+
+                    using var updateCmd = new MySqlCommand(updateQuery, connection, transaction);
+                    updateCmd.Parameters.AddWithValue("@UserId", userId);
+                    updateCmd.Parameters.AddWithValue("@StateName", stateName);
+                    await updateCmd.ExecuteNonQueryAsync();
+                }
+                else
+                {
+                    const string insertQuery = @"
+                INSERT INTO userstates (UserId, StateName, Value, OwnType, StateType)
+                VALUES (@UserId, @StateName, 1, 1, 0)";
+
+                    using var insertCmd = new MySqlCommand(insertQuery, connection, transaction);
+                    insertCmd.Parameters.AddWithValue("@UserId", userId);
+                    insertCmd.Parameters.AddWithValue("@StateName", stateName);
+                    await insertCmd.ExecuteNonQueryAsync();
+                }
+            }
+        }
+
+        private async Task<int> GetOfferDurationAsync(string offerId)
+        {
+            var offersDirectoryPath = Path.Combine(AppContext.BaseDirectory, "JsonData", "Offers");
+            var allItemOffers = new List<ItemOffer>();
+
+            if (Directory.Exists(offersDirectoryPath))
+            {
+                var jsonFiles = Directory.GetFiles(offersDirectoryPath, "*.json", SearchOption.AllDirectories);
+                foreach (var filePath in jsonFiles)
+                {
+                    var jsonContent = await File.ReadAllTextAsync(filePath);
+                    var itemOffer = JsonSerializer.Deserialize<ItemOffer>(jsonContent);
+                    if (itemOffer != null)
+                    {
+                        foreach (var offerLine in itemOffer.OfferLine)
+                        {
+                            var offer = offerLine.Offers.FirstOrDefault(o => o.OfferId == offerId);
+                            if (offer != null)
+                            {
+                                return offerLine.Duration;
+                            }
+                        }
+                    }
+                }
+            }
+            return 0;
+        }
+
         private object CreateTransactionEntry(string offerId, int initialValue, int resultingValue, string currencyType, long timestamp)
         {
-            return new
+            var transactionItems = new List<object>();
+
+            if (offerId.StartsWith("weapon_loadout") || offerId.StartsWith("armor_loadout"))
             {
-                transactionItems = new[]
+                transactionItems.Add(new
                 {
-                new
+                    stateName = offerId,
+                    stateType = 0,
+                    ownType = 1,
+                    operationType = 0,
+                    initialValue = 0,
+                    resultingValue = 1,
+                    deltaValue = 1,
+                    descId = 0
+                });
+
+                transactionItems.Add(new
+                {
+                    stateName = currencyType.ToLower(),
+                    stateType = currencyType == "Credits" ? 2 : 3,
+                    ownType = 0,
+                    operationType = 0,
+                    initialValue = initialValue,
+                    resultingValue = resultingValue,
+                    deltaValue = initialValue - resultingValue,
+                    descId = 0
+                });
+            }
+            else
+            {
+                transactionItems.Add(new
                 {
                     stateName = offerId.Replace("_cr", ""),
-                    stateType = currencyType == "Credits" ? 2 : 3,
-                    ownType = offerId.StartsWith("challenge") ? 1 : 2,
+                    stateType = 4,
+                    ownType = 2,
                     operationType = 0,
-                    initialValue = offerId.StartsWith("challenge") ? 0 : initialValue,
-                    resultingValue = offerId.StartsWith("challenge") ? 0 : resultingValue,
-                    deltaValue = offerId.StartsWith("challenge") ? 0 : initialValue - resultingValue,
+                    initialValue = GetOfferDurationAsync(offerId).Result,
+                    resultingValue = GetOfferDurationAsync(offerId).Result,
+                    deltaValue = 0,
+                    descId = 2
+                });
+
+                transactionItems.Add(new
+                {
+                    stateName = currencyType.ToLower(),
+                    stateType = currencyType == "Credits" ? 2 : 3,
+                    ownType = 0,
+                    operationType = 0,
+                    initialValue = initialValue,
+                    resultingValue = resultingValue,
+                    deltaValue = initialValue - resultingValue,
                     descId = 0
-                }
-            },
+                });
+            }
+
+            return new
+            {
+                transactionItems = transactionItems,
                 sessionId = Guid.NewGuid().ToString(),
                 referenceId = Guid.NewGuid().ToString(),
                 offerId = offerId,
@@ -143,35 +298,6 @@ namespace Halal_Station_Remastered.Utils.Services.UserServices
                 operationType = 0,
                 extendedInfoItems = new[] { new { Key = "", Value = "" } }
             };
-        }
-
-        private async Task RecordTransactionAsync(MySqlConnection connection, MySqlTransaction transaction,
-            int userId, string offerId, int initialValue, int resultingValue, int price, dynamic transactionEntry)
-        {
-            const string query = @"
-            INSERT INTO transactions 
-            (UserId, OfferId, InitialValue, ResultingValue, DeltaValue, OperationType, 
-             SessionId, ReferenceId, TimeStamp, StateName, StateType, OwnType, DescId)
-            VALUES 
-            (@UserId, @OfferId, @InitialValue, @ResultingValue, @DeltaValue, @OperationType,
-             @SessionId, @ReferenceId, @TimeStamp, @StateName, @StateType, @OwnType, @DescId)";
-
-            using var cmd = new MySqlCommand(query, connection, transaction);
-            cmd.Parameters.AddWithValue("@UserId", userId);
-            cmd.Parameters.AddWithValue("@OfferId", offerId);
-            cmd.Parameters.AddWithValue("@InitialValue", initialValue);
-            cmd.Parameters.AddWithValue("@ResultingValue", resultingValue);
-            cmd.Parameters.AddWithValue("@DeltaValue", price);
-            cmd.Parameters.AddWithValue("@OperationType", 0);
-            cmd.Parameters.AddWithValue("@SessionId", transactionEntry.sessionId);
-            cmd.Parameters.AddWithValue("@ReferenceId", transactionEntry.referenceId);
-            cmd.Parameters.AddWithValue("@TimeStamp", transactionEntry.timeStamp);
-            cmd.Parameters.AddWithValue("@StateName", offerId.Replace("_cr", ""));
-            cmd.Parameters.AddWithValue("@StateType", 4);
-            cmd.Parameters.AddWithValue("@DescId", 0);
-            cmd.Parameters.AddWithValue("@OwnType", offerId.StartsWith("challenge") ? 1 : 2);
-
-            await cmd.ExecuteNonQueryAsync();
         }
 
         private async Task HandleSpecialOfferAsync(MySqlConnection connection, MySqlTransaction transaction, int userId, string offerId)

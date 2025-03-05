@@ -4,14 +4,14 @@
     "Unlocks": [],
     "BundleItems": [
         {
-            "Duration": 0,
+            "Duration": 3600,
             "ItemId": "shoulders_scanner"
         }
     ],
     "UnlockedLevel": 0,
     "OfferLine": [
         {
-            "Duration": 0,
+            "Duration": 3600,
             "Offers": [
                 {
                     "OfferId": "shoulders_scanner",

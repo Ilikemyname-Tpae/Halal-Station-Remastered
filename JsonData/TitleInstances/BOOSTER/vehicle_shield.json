@@ -1,0 +1,36 @@
+[
+  {
+    "name": "vehicle_shield",
+    "className": "BOOSTER",
+    "parents": [],
+    "props": [
+      {
+        "name": "NAME",
+        "type": 3,
+        "strVal": "vehicle_shield"
+      },
+      {
+        "name": "MODIFIERS",
+        "type": 7,
+        "objList": [
+          {
+            "className": "",
+            "parents": [],
+            "props": [
+              {
+                "name": "NAME",
+                "type": 3,
+                "strVal": "vehicle_shield_regen_speed"
+              },
+              {
+                "name": "VALUE",
+                "type": 2,
+                "floatVal": 0.5
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,36 @@
+[
+  {
+    "name": "charger",
+    "className": "BOOSTER",
+    "parents": [],
+    "props": [
+      {
+        "name": "NAME",
+        "type": 3,
+        "strVal": "charger"
+      },
+      {
+        "name": "MODIFIERS",
+        "type": 7,
+        "objList": [
+          {
+            "className": "",
+            "parents": [],
+            "props": [
+              {
+                "name": "NAME",
+                "type": 3,
+                "strVal": "energy_regeneration_rate"
+              },
+              {
+                "name": "VALUE",
+                "type": 2,
+                "floatVal": 0.5
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

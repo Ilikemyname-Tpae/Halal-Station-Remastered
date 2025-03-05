@@ -4,14 +4,14 @@
     "Unlocks": [],
     "BundleItems": [
         {
-            "Duration": 0,
+            "Duration": 3600,
             "ItemId": "helmet_hoplite"
         }
     ],
     "UnlockedLevel": 0,
     "OfferLine": [
         {
-            "Duration": 0,
+            "Duration": 3600,
             "Offers": [
                 {
                     "OfferId": "helmet_hoplite",

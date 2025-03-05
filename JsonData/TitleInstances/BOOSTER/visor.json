@@ -1,0 +1,36 @@
+[
+  {
+    "name": "visor",
+    "className": "BOOSTER",
+    "parents": [],
+    "props": [
+      {
+        "name": "NAME",
+        "type": 3,
+        "strVal": "visor"
+      },
+      {
+        "name": "MODIFIERS",
+        "type": 7,
+        "objList": [
+          {
+            "className": "",
+            "parents": [],
+            "props": [
+              {
+                "name": "NAME",
+                "type": 3,
+                "strVal": "zoom_radar"
+              },
+              {
+                "name": "VALUE",
+                "type": 1,
+                "intVal": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

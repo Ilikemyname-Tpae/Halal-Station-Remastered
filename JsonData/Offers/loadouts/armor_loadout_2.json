@@ -1,0 +1,39 @@
+{
+  "ItemId": "armor_loadout_2",
+  "Requirements": [],
+  "Unlocks": [ "armor_loadout_2" ],
+  "BundleItems": [
+    {
+      "Duration": 0,
+      "ItemId": "armor_loadout_2"
+    }
+  ],
+  "UnlockedLevel": 0,
+  "OfferLine": [
+    {
+      "Duration": 0,
+      "Offers": [
+        {
+          "OfferId": "armor_loadout_2",
+          "Currency": "gold",
+          "Price": 600,
+          "ExpireAt": 0,
+          "Sale": {
+            "Price": 600,
+            "ExpireAt": 0
+          }
+        },
+        {
+          "OfferId": "armor_loadout_2_cr",
+          "Currency": "cr",
+          "Price": 4500,
+          "ExpireAt": 0,
+          "Sale": {
+            "Price": 4500,
+            "ExpireAt": 0
+          }
+        }
+      ]
+    }
+  ]
+}

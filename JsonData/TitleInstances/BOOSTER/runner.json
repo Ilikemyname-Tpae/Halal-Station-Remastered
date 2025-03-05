@@ -1,0 +1,36 @@
+[
+  {
+    "name": "runner",
+    "className": "BOOSTER",
+    "parents": [],
+    "props": [
+      {
+        "name": "NAME",
+        "type": 3,
+        "strVal": "runner"
+      },
+      {
+        "name": "MODIFIERS",
+        "type": 7,
+        "objList": [
+          {
+            "className": "",
+            "parents": [],
+            "props": [
+              {
+                "name": "NAME",
+                "type": 3,
+                "strVal": "sprint_stamina"
+              },
+              {
+                "name": "VALUE",
+                "type": 2,
+                "floatVal": 0.5
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

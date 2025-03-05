@@ -1,0 +1,36 @@
+[
+  {
+    "name": "reflex",
+    "className": "BOOSTER",
+    "parents": [],
+    "props": [
+      {
+        "name": "NAME",
+        "type": 3,
+        "strVal": "reflex"
+      },
+      {
+        "name": "MODIFIERS",
+        "type": 7,
+        "objList": [
+          {
+            "className": "",
+            "parents": [],
+            "props": [
+              {
+                "name": "NAME",
+                "type": 3,
+                "strVal": "reflex_boost"
+              },
+              {
+                "name": "VALUE",
+                "type": 2,
+                "floatVal": 0.3
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
